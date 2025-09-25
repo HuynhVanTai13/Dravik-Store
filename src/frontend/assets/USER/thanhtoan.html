@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Thanh toán</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Font Awesome & Inter -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="CSS/mgg.css">
+    <link rel="stylesheet" href="css/hmf.css">
+    <link rel="stylesheet" href="css/pay.css">
+
+</head>
+
+<body>
+    <!-- HEADER -->
+    <header>
+        <div class="header-main">
+            <div class="img-logo">
+                <img src="img/logo.png" alt="Dravik Store">
+            </div>
+            <div class="header-nav">
+                <div class="header-search">
+                    <div class="search">
+                        <input type="text" placeholder="Nhập sản phẩm cần tìm kiếm ...">
+                        <button class="icon-search"><i class="fas fa-search"></i></button>
+                    </div>
+                    <div class="nav-top">
+                        <a href=""><i class="fas fa-file-alt"></i><p>Đơn hàng </p></a>
+                        <a href=""><i class="fas fa-heart"></i><p>Yêu thích </p></a>
+                        <a href=""><i class="fas fa-user"></i><p>Tài khoản </p></a>
+                        <a href="" class="cart"><i class="fas fa-shopping-cart"></i><p>Giỏ hàng </p><span class="badge">3</span></a>
+                    </div>
+                </div>
+                <div class="nav-bottom">
+                    <a href="">Trang chủ</a>
+                    <a href="">Giới thiệu</a>
+                    <a href="">Sản phẩm </a>
+                    <a href="">Tin tức </a>
+                    <a href="">Hàng mới </a>
+                    <a href="">Liên hệ </a>
+                    <a href="">Sản phẩm giảm giá  </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- HEADER MOBILE -->
+    <div class="mobile-header">
+        <span class="menu-icon"><i class="fas fa-bars"></i></span>
+        <div class="img-logo"><img src="img/logo.png" alt="Dravik Store"></div>
+        <div class="icon-group">
+            <span><i class="fas fa-search"></i></span>
+            <span class="cart"><i class="fas fa-shopping-cart"></i><span class="badge">3</span></span>
+        </div>
+    </div>
+    <!-- SIDEBAR/OFFCANVAS MENU -->
+    <div id="mobileMenu" class="mobile-offcanvas">
+        <div class="mobile-menu-header">
+            <span class="close-btn" id="closeMobileMenu">&times;</span>
+            <img src="img/logo.png" alt="Dravik Store" class="offcanvas-logo">
+        </div>
+        <nav class="mobile-menu-nav">
+            <a href="#">Trang chủ</a>
+            <a href="#">Giới thiệu</a>
+            <a href="#">Sản phẩm</a>
+            <a href="#">Tin tức</a>
+            <a href="#">Hàng mới</a>
+            <a href="#">Liên hệ</a>
+            <a href="#">Sản phẩm giảm giá</a>
+            <hr>
+            <a href="#"><i class="fas fa-user"></i> Tài khoản</a>
+            <a href="#"><i class="fas fa-heart"></i> Yêu thích</a>
+            <a href="#"><i class="fas fa-file-alt"></i> Đơn hàng</a>
+            <a href="#"><i class="fas fa-shopping-cart"></i> Giỏ hàng</a>
+            <div class="mobile-search">
+                <input type="text" placeholder="Tìm kiếm...">
+                <button><i class="fas fa-search"></i></button>
+            </div>
+        </nav>
+    </div>
+    <div id="menuOverlay" class="menu-overlay"></div>
+
+    <div class="container">
+        <!-- Cột 1: Thông tin đặt hàng -->
+        <div class="section">
+            <h3>THÔNG TIN ĐẶT HÀNG</h3>
+            <div class="form-group">
+                <label for="fullname">Họ và tên:</label>
+                <input type="text" placeholder="Nhập họ và tên ...">
+            </div>
+            <div class="form-group">
+                <label for="phone">Số điện thoại:</label>
+                <input type="text" placeholder="Nhập số điện thoại ...">
+            </div>
+            <div class="form-group">
+                <label for="address">Địa chỉ:</label>
+                <input type="text" placeholder="Nhập địa chỉ ...">
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" placeholder="Nhập email ...">
+            </div>
+        </div>
+
+
+
+        <!-- Cột 2: Thông tin nhận hàng -->
+        <div class="section">
+            <h3>THÔNG TIN NHẬN HÀNG</h3>
+            <div class="form-group">
+                <label for="fullname">Họ và tên:</label>
+                <input type="text" placeholder="Nhập họ và tên ...">
+            </div>
+            <div class="form-group">
+                <label for="phone">Số điện thoại:</label>
+                <input type="text" placeholder="Nhập số điện thoại ...">
+            </div>
+            <div class="form-group">
+                <label for="address">Địa chỉ:</label>
+                <input type="text" placeholder="Nhập địa chỉ ...">
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" placeholder="Nhập email ...">
+            </div>
+            <div class="form-group">
+                <label for="note">Ghi chú:</label>
+                <textarea rows="3" placeholder="Nhập ghi chú của bạn tại đây..."></textarea>
+            </div>
+
+            <div class="form-group">
+                <h4>MÃ GIẢM GIÁ</h4>
+                <button id="openVoucherBtn">Chọn mã giảm giá</button>
+                <div id="selectedCodesContainer"></div>
+            </div>
+
+            <!-- POPUP CHỌN MÃ -->
+            <div id="voucherPopupOverlay">
+                <div class="voucher-popup">
+                    <div class="voucher-content">
+                        <button id="closeVoucherBtn">x</button>
+                        <div class="voucher-group">
+                            <h4>MÃ GIẢM GIÁ</h4>
+
+                            <div class="voucher-item" data-type="product" data-code="SP123">
+                                <input class="voucher-radio" type="radio" name="productCode">
+                                <div class="voucher-info">
+                                    <div class="code">NHẬP MÃ: SP123</div>
+                                    <div class="desc">Giảm 10% cho đơn hàng từ 300K<br>Chỉ áp dụng sản phẩm điện tử</div>
+                                </div>
+                                <button onclick="event.stopPropagation(); toggleConditionPopup(true, 'SP123')">Điều kiện</button>
+                                <div class="voucher-conditions" hidden>
+                                    <ul>
+                                        <li>Đơn hàng từ 300K</li>
+                                        <li>Chỉ áp dụng sản phẩm điện tử</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="voucher-item" data-type="product" data-code="SP456">
+                                <input class="voucher-radio" type="radio" name="productCode">
+                                <div class="voucher-info">
+                                    <div class="code">NHẬP MÃ: SP456</div>
+                                    <div class="desc">Giảm 20K cho đơn hàng từ 500K<br>Chỉ áp dụng sản phẩm thời trang</div>
+                                </div>
+                                <button onclick="event.stopPropagation(); toggleConditionPopup(true, 'SP456')">Điều kiện</button>
+                                <div class="voucher-conditions" hidden>
+                                    <ul>
+                                        <li>Đơn hàng từ 500K</li>
+                                        <li>Chỉ áp dụng sản phẩm thời trang</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="voucher-item" data-type="product" data-code="SP789">
+                                <input class="voucher-radio" type="radio" name="productCode">
+                                <div class="voucher-info">
+                                    <div class="code">NHẬP MÃ: SP789</div>
+                                    <div class="desc">Free ship cho đơn hàng từ 500K<br>Áp dụng khu vực Tp.HCM</div>
+                                </div>
+                                <button onclick="event.stopPropagation(); toggleConditionPopup(true, 'SP789')">Điều kiện</button>
+                                <div class="voucher-conditions" hidden>
+                                    <ul>
+                                        <li>Đơn hàng từ 500K</li>
+                                        <li>Áp dụng khu vực Tp.HCM</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button id="applyBtn">Áp dụng mã giảm giá</button>
+                </div>
+            </div>
+
+            <!-- POPUP ĐIỀU KIỆN -->
+            <div id="conditionPopupOverlay">
+                <div class="condition-popup">
+                    <div class="condition-header">
+                        <h3>NHẬP MÃ: <span id="popupCodeText"></span></h3>
+                        <button class="close-condition-btn" onclick="toggleConditionPopup(false)">×</button>
+                    </div>
+                    <div class="condition-body">
+                        <p><strong>Mã khuyến mãi:</strong> <span id="popupCode"></span></p>
+                        <p><strong>Điều kiện:</strong></p>
+                        <ul id="popupConditions"></ul>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <h4>PHƯƠNG THỨC THANH TOÁN</h4>
+                <!-- Placeholder -->
+            </div>
+        </div>
+
+        <!-- Cột 3: Đơn hàng -->
+        <div class="section">
+            <h3>ĐƠN HÀNG</h3>
+            <div class="order-item">
+                <img src="IMG/ao-thun-nam-excool-den-1.webp" alt="shirt">
+                <span style="font-size: 14px;">Áo thun nam mặc trong thoáng khí nhanh khô Excool</span>
+                <span style="font-size: 14px; margin: 15px;">x1</span>
+                <span style="font-size: 16px;">119.000₫</span>
+            </div>
+            <div class="order-item">
+                <img src="IMG/ao-thun-nam-excool-den-2.webp" alt="shirt">
+                <span style="font-size: 14px;">Áo thun nam mặc trong thoáng khí nhanh khô Excool</span>
+                <span style="font-size: 14px; margin: 15px;">x1</span>
+                <span style="font-size: 16px;">119.000₫</span>
+            </div>
+            <div class="order-item">
+                <img src="IMG/ao-thun-nam-excool-den-3.webp" alt="shirt">
+                <span style="font-size: 14px;">Áo thun nam mặc trong thoáng khí nhanh khô Excool</span>
+                <span style="font-size: 14px; margin: 15px;">x1</span>
+                <span style="font-size: 16px;">119.000₫</span>
+            </div>
+            <a href="#" class="back-link" style="margin-left: 140px;">Xem thêm</a>
+
+            <div class="order-summary">
+                <div style="margin: 10px;"><span>Tạm tính</span><span>119.000 ₫</span></div>
+                <div style="margin: 10px;"><span>Giảm giá trên đơn</span><span>-30.000 ₫</span></div>
+                <div style="margin: 10px;"><span>Phí vận chuyển</span><span>40.000 ₫</span></div>
+                <div style="margin: 10px;" class="total-price"><span>Tổng cộng</span><span>129.000 ₫</span></div>
+            </div>
+
+            <button class="submit-btn">ĐẶT HÀNG</button>
+        </div>
+    </div>
+    <script src="js/mgg.js"></script>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="row-footer">
+            <div class="col-4-footer">
+                <img src="img/logo-footer.png" alt="">
+                <div class="icon-3-footer">
+                    <span><i class="fa-solid fa-location-dot"></i></span>
+                    <p>Địa chỉ: 158/25, Phạm Văn Chiêu, Phường 8, Gò Vấp, TP Hồ Chí Minh</p>
+                </div>
+                <div class="icon-3-footer">
+                    <span><i class="fa-solid fa-phone"></i></span>
+                    <p>Số điện thoại: 1234567890</p>
+                </div>
+                <div class="icon-3-footer">
+                    <span><i class="fa-solid fa-envelope"></i></span>
+                    <p>Email: Dravikstore@gmail.com</p>
+                </div>
+            </div>
+            <div class="col-4-footer">
+                <h4>Hỗ trợ khách hàng</h4>
+                <p class="mgb-20">Chính sách đổi hàng</p>
+                <p class="mgb-20">Chính sách bảo hành</p>
+                <p class="mgb-20">Bảo mật thông tin</p>
+                <p class="mgb-20">Hỗ trợ giao hàng</p>
+            </div>
+            <div class="col-4-footer htkh">
+                <h4>Tổng đài hỗ trợ</h4>
+                <p class="mgb-20">Gọi mua hàng: 123456790 (8h-20h)</p>
+                <p class="mgb-20">Gọi bảo hành: 1234567890 (8h-20h)</p>
+                <p class="mgb-20">Gọi khiếu nại: 1234567890 (8h-20h)</p>
+            </div>
+            <div class="col-4-footer">
+                <h4>Gửi mail ngay để nhận ưu đãi !</h4>
+                <div class="subscribe-box">
+                    <input type="email" placeholder="Thả email nhận khuyến mãi...">
+                    <button><i class="fas fa-paper-plane"></i></button>
+                </div>
+                <h4>Phương thức thanh toán</h4>
+                <div class="payment-methods">
+                    <img src="img/vnpay.jpg" alt="VNPAY">
+                    <img src="img/cod.jpg" alt="COD">
+                    <img src="img/momo.jpg" alt="MoMo">
+                    <img src="img/visa.jpg" alt="Vietcombank">
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">© Bản quyền thuộc về DRAVIK STORE</div>
+    </footer>
+    <script src="js/hmf.js"></script>
+    <!--JS-->
+    <script src="js/chitietsp.js"></script>
+
+</body>
+
+</html>

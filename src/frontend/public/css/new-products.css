@@ -1,0 +1,104 @@
+/* ===== NEW page only ===== */
+.new-products .product-title {
+  display: flex; align-items: center; gap: 10px;
+  margin: 18px 0 22px;
+}
+
+.title-logo-new {
+  font-weight: 800; letter-spacing: .5px;
+  background: linear-gradient(90deg, #ff9d2f, #ff6126, #ff2d55);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+  filter: drop-shadow(0 0 6px rgba(255, 97, 38, .55));
+  animation: newGlow 1.4s ease-in-out infinite alternate;
+}
+
+/* badge “NEW” ở góc ảnh */
+.new-products .badge-new {
+  position: absolute; top: 10px; right: 10px;
+  padding: 6px 10px; border-radius: 999px;
+  font-size: 12px; font-weight: 800; letter-spacing: .6px;
+  background: linear-gradient(135deg, #ffb347, #ff6a00);
+  color: #fff; text-shadow: 0 1px 1px rgba(0,0,0,.18);
+  box-shadow: 0 6px 16px rgba(255, 106, 0, .32);
+  z-index: 2;
+}
+.new-products .badge-new::before {
+  content: "🔥";
+  margin-right: 6px;
+  display: inline-block;
+  transform-origin: 50% 80%;
+  animation: flame 1.2s ease-in-out infinite;
+}
+
+/* nhãn “Hết hàng” đồng bộ 2 trang */
+.new-products .flag-out,
+.sale-products .flag-out {
+  position: absolute; top: 10px; left: 10px;
+  background: rgba(0,0,0,.72);
+  color: #fff; padding: 4px 8px; border-radius: 6px; font-size: 12px;
+  z-index: 2;
+}
+
+/* dòng giá & đã bán — tinh chỉnh nhẹ */
+.new-products .price-line,
+.sale-products .price-line {
+  color: #cd1919; font-size: 16px; font-weight: 550; margin-bottom: 7px;
+}
+.new-products .price-line del,
+.sale-products .price-line del {
+  color: #979797; font-size: 14px; margin-left: 4px;
+}
+.new-products .sold-line span,
+.sale-products .sold-line span {
+  color: #cd1919;
+}
+
+/* paging gọn, dùng chung */
+.new-products .paging,
+.sale-products .paging {
+  display: flex; justify-content: center; margin-top: 28px; gap: 6px; font-size: 14px;
+}
+.pg-btn {
+  padding: 6px 10px; border: 1px solid #e5e7eb; border-radius: 8px; background: #fff; cursor: pointer;
+}
+.pg-btn:hover { background: #f3f4f6; }
+.pg-btn.active { background: #2563eb; color: #fff; box-shadow: 0 4px 10px rgba(37,99,235,.25); border-color: #2563eb; }
+.pg-btn:disabled { opacity: .5; cursor: not-allowed; }
+.pg-dots { padding: 6px 8px; color: #6b7280; }
+
+/* btn disabled + cart disabled — dùng chung */
+.btn-disabled,
+.btn-cart.disabled {
+  pointer-events: none; cursor: not-allowed;
+  background: #e5e7eb !important; color: #6b7280 !important; border: 1px solid #e5e7eb !important; opacity: .95;
+}
+
+/* Animations */
+@keyframes newGlow {
+  from { filter: drop-shadow(0 0 3px rgba(255, 97, 38, .45)); }
+  to   { filter: drop-shadow(0 0 10px rgba(255, 45, 85, .75)); }
+}
+@keyframes flame {
+  0%   { transform: translateY(0) scale(1); }
+  50%  { transform: translateY(-1px) scale(1.06); }
+  100% { transform: translateY(0) scale(1); }
+}
+
+/* mobile fix nhỏ */
+@media (max-width: 640px) {
+  .new-products .product-title { font-size: 18px; }
+  .new-products .badge-new { font-size: 11px; padding: 5px 9px; }
+}
+
+/* --- Center the NEW heading --- */
+.new-products .product-title {
+  width: 100%;
+  justify-content: center;   /* căn giữa theo trục ngang */
+  text-align: center;        /* căn chữ giữa */
+  gap: 10px;                 /* giữ khoảng cách logo NEW và chữ */
+}
+
+.new-products .product-title .title-logo-new {
+  margin-right: 4px;         /* nhẹ nhàng giữa logo và chữ */
+  display: inline-block;
+}

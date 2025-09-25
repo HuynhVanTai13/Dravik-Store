@@ -1,0 +1,519 @@
+/* ===== MAIN CONTAINER ===== */
+
+.main-container {
+    width: 1300px;
+    margin: 0px auto;
+    display: flex;
+    gap: 20px;
+    background-color: #fff;
+}
+
+
+/* ===== SIDEBAR ===== */
+
+.sidebar {
+    width: 240px;
+    border-right: 1px solid #ddd;
+}
+
+.sidebar h2 {
+    font-size: 20px;
+    /* tăng từ 18px lên 20px */
+    margin-bottom: 16px;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar ul li {
+    margin-bottom: 12px;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px!important;
+    /* tăng từ 14px lên 16px */
+    transition: color 0.3s;
+}
+
+.sidebar ul li a:hover {
+    color: #007bff;
+}
+
+.sidebar ul li.active a {
+    color: red;
+    font-weight: bold;
+}
+
+
+/* ===== CONTENT AREA ===== */
+
+.content {
+    flex: 1;
+}
+
+.btn-edit {
+    background-color: #ffc107;
+    /* vàng */
+    color: #000;
+    border: 1px solid #ffc107;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 13px;
+    transition: 0.3s;
+}
+
+.btn-edit:hover {
+    background-color: #e0a800;
+    color: white;
+}
+
+.btn-delete {
+    background-color: #dc3545;
+    /* đỏ */
+    color: white;
+    border: 1px solid #dc3545;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 13px;
+    margin-left: 6px;
+    transition: 0.3s;
+}
+
+.btn-delete:hover {
+    background-color: #b02a37;
+}
+
+.content h2 {
+    font-size: 20px;
+    margin-bottom: 16px;
+}
+
+.content table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    margin-bottom: 24px;
+    margin-top: 5px;
+}
+
+.content table th,
+.content table td {
+    border: 1px solid #ccc;
+    padding: 12px;
+    font-size: 14px;
+    text-align: center;
+    margin-top: 5px;
+}
+
+
+/* ===== BUTTON STYLES ===== */
+
+.active-btn {
+    background-color: #d4f4e1;
+    border: 1px solid green;
+    color: green;
+    padding: 6px 12px;
+    font-size: 13px;
+    cursor: default;
+    border-radius: 4px;
+    margin-top: 5px;
+}
+
+.choose-btn {
+    background-color: #fff;
+    border: 1px solid #007bff;
+    color: #007bff;
+    padding: 6px 12px;
+    font-size: 13px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin-top: 5px;
+}
+
+.choose-btn:hover {
+    background-color: #007bff;
+    color: #fff;
+}
+
+
+/* ===== ADD NEW ADDRESS BUTTON ===== */
+
+.add-address {
+    text-align: center;
+    margin-top: 16px;
+}
+
+.add-address button {
+    padding: 10px 24px;
+    border: 1px solid #007bff;
+    background-color: white;
+    color: #007bff;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.add-address button:hover {
+    background-color: #007bff;
+    color: white;
+}
+
+
+/* css/address.css */
+
+
+/* … tất cả CSS hiện có của bạn … */
+
+
+/* Modal overlay với backdrop blur */
+
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(4px);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    animation: fadeInOverlay 0.2s ease-out;
+}
+
+
+/* Fade-in overlay */
+
+@keyframes fadeInOverlay {
+    from {
+        background: rgba(0, 0, 0, 0);
+    }
+    to {
+        background: rgba(0, 0, 0, 0.4);
+    }
+}
+
+
+/* Modal box */
+
+.modal {
+    background: #fff;
+    padding: 30px 25px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 420px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    position: relative;
+    transform: translateY(-20px);
+    opacity: 0;
+    animation: slideInModal 0.3s forwards ease-out;
+}
+
+
+/* Slide-in modal */
+
+@keyframes slideInModal {
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+
+/* Close icon */
+
+.modal-close {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    font-size: 24px;
+    color: #666;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.modal-close:hover {
+    color: #000;
+}
+
+
+/* Modal header */
+
+.modal h3 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 20px;
+    color: #001f5d;
+    text-align: center;
+}
+
+
+/* Form inside modal */
+
+.modal form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.modal form label {
+    font-weight: 600;
+    font-size: 14px;
+    color: #333;
+}
+
+.modal form input {
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+    transition: border-color 0.2s;
+}
+
+.modal form input:focus {
+    border-color: #0055cc;
+    outline: none;
+}
+
+
+/* Modal action buttons */
+
+.modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.modal-actions button {
+    padding: 8px 18px;
+    font-size: 14px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+#cancelEdit {
+    background: #f0f0f0;
+    color: #555;
+}
+
+#cancelEdit:hover {
+    background: #e0e0e0;
+}
+
+#editAddressForm button[type="submit"] {
+    background: #0055cc;
+    color: #fff;
+}
+
+#editAddressForm button[type="submit"]:hover {
+    background: #004bb5;
+}
+
+.choose-btn {
+    background-color: #ddd;
+    color: #333;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.active-btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+}
+
+
+/* Breadcrumb */
+
+.breadcrumb {
+    background-color: #f0f0f0;
+    padding: 12px 30px;
+    font-size: 14px;
+}
+
+
+/* ===== Tablet và mobile lớn (<= 1024px) ===== */
+
+@media (max-width: 1024px) {
+    .main-container {
+        width: 95%;
+        margin: 20px auto;
+        flex-direction: column;
+        gap: 20px;
+    }
+    .sidebar,
+    .content {
+        width: 100%;
+    }
+    /* Cho phép table scroll ngang nếu quá rộng */
+    .content table {
+        display: block;
+        width: 100%;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+}
+
+
+/* ===== Mobile (<= 768px) ===== */
+
+@media (max-width: 768px) {
+    .main-container {
+        gap: 15px;
+        padding: 0 15px;
+    }
+    .sidebar {
+        order: 1;
+        background: #f9f9f9;
+        padding: 15px;
+        border-radius: 8px;
+    }
+    .content {
+        order: 2;
+        background: #fff;
+        padding: 15px;
+        border-radius: 8px;
+    }
+    .sidebar h2,
+    .content h2 {
+        font-size: 18px;
+    }
+    .sidebar p,
+    .content table th,
+    .content table td {
+        font-size: 14px;
+    }
+    .add-address button,
+    .btn-edit,
+    .btn-delete,
+    .choose-btn,
+    .active-btn {
+        padding: 8px 16px;
+        font-size: 12px;
+    }
+}
+
+
+/* ===== Mobile siêu nhỏ (<= 480px) ===== */
+
+@media (max-width: 480px) {
+    .main-container {
+        padding: 0 10px;
+        gap: 10px;
+    }
+    .sidebar h2,
+    .content h2 {
+        font-size: 16px;
+    }
+    .sidebar ul li a {
+        font-size: 14px;
+    }
+    .content table th,
+    .content table td {
+        padding: 6px;
+        font-size: 12px;
+    }
+    /* Tab trải ngang nếu cần */
+    .content table {
+        font-size: 12px;
+    }
+}
+
+
+/* css/responsive.css */
+
+
+/* … các media queries responsive hiện có của bạn … */
+
+
+/* ===== Responsive cho main-container và table ===== */
+
+@media (max-width: 1024px) {
+    .main-container {
+        flex-direction: column;
+        width: 95%;
+        margin: 20px auto;
+        padding: 0;
+        gap: 20px;
+    }
+    .sidebar,
+    .content {
+        width: 100%;
+    }
+    .content table {
+        display: block;
+        width: 100%;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+}
+
+@media (max-width: 768px) {
+    .main-container {
+        gap: 15px;
+        padding: 0 15px;
+    }
+    .sidebar,
+    .content {
+        background: #f9f9f9;
+        padding: 15px;
+        border-radius: 8px;
+    }
+    .sidebar {
+        order: 1;
+    }
+    .content {
+        order: 2;
+    }
+    .sidebar h2,
+    .content h2 {
+        font-size: 18px;
+    }
+    .sidebar p,
+    .content table th,
+    .content table td {
+        font-size: 14px;
+    }
+    .btn-edit,
+    .btn-delete,
+    .choose-btn,
+    .active-btn,
+    .add-address button {
+        padding: 8px 16px;
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-container {
+        padding: 0 10px;
+        gap: 10px;
+    }
+    .sidebar h2,
+    .content h2 {
+        font-size: 16px;
+    }
+    .sidebar p,
+    .content p,
+    form label {
+        font-size: 13px;
+    }
+    .content table th,
+    .content table td {
+        padding: 6px;
+        font-size: 12px;
+    }
+}

@@ -1,0 +1,506 @@
+:root {
+    --container-width: 1300px;
+    --sidebar-width: 260px;
+    --gutter: 10px;
+}
+
+.container {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0px;
+}
+
+.product-grid-row {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--gutter);
+}
+
+.sidebar {
+    width: 200px;
+    background: #fff;
+    border-radius: 12px;
+    margin-top: 10px;
+    box-shadow: 0 2px 12px #eeeefc2c;
+    flex-shrink: 0;
+}
+
+.filter-block {
+    margin-bottom: 26px;
+    margin-top: 20px;
+}
+
+.filter-block h3 {
+    font-size: 20px;
+    margin: 0 0 15px 0;
+    color: #212121;
+    font-weight: 700;
+    letter-spacing: 0.1px;
+}
+
+.filter-block label {
+    display: block;
+    font-size: 14px;
+    color: #222;
+    margin-bottom: 7px;
+    cursor: pointer;
+    font-weight: 400;
+    padding-left: 2px;
+}
+
+.filter-block input[type="checkbox"] {
+    margin-right: 8px;
+    accent-color: #09225a;
+}
+
+.product-content {
+    flex: 1 1 0;
+    min-width: 0;
+    width: 100%;
+}
+
+.product-title {
+    text-align: center;
+    font-size: 26px;
+    font-weight: 700;
+    letter-spacing: 0.2px;
+    color: #111;
+    margin: 24px 0px;
+}
+
+
+/* ============= GRID SẢN PHẨM ============= */
+
+.row-3 {
+    width: 1300px;
+    margin: 0px auto;
+    display: flex;
+    gap: 20px;
+}
+
+.row-2 {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+/* Card mặc định 5 cột desktop */
+
+.products-page .col-5-sp {
+    width: calc(calc(100% - 80px) / 5);
+    height: 100%;
+    border: 1px solid #CFCBCB;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: transform, box-shadow;
+    padding-bottom: 15px;
+    border-radius: 5px;
+    /* đồng đều chiều cao: card là 1 cột */
+    display: flex;
+    flex-direction: column;
+}
+
+.products-page .col-5-sp:hover {
+    transform: translateY(-10px);
+}
+
+
+/* Hình */
+
+.img-sp {
+    width: 100%;
+    height: 250px;
+}
+
+.products-page .col-5-sp img {
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    /* ảnh nằm trọn khung */
+}
+
+
+/* Nội dung card */
+
+.trang-sp {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.products-page .text-sp {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+    gap: 10px;
+}
+
+.products-page .left-sp {
+    width: 200px;
+}
+
+.products-page .left-sp .name-sp {
+    width: 100%;
+    height: 50px;
+    /* 2 dòng */
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 16px;
+    color: #000;
+}
+
+
+/* Nút mua */
+
+.products-page .left-sp a {
+    background-color: #001F5D;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    text-decoration: none;
+    padding: 7px 47px;
+}
+
+.products-page .left-sp a:hover {
+    background-color: #054b95;
+}
+
+
+/* Cột action phải (tim + giỏ) */
+
+.right-sp {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: space-around;
+}
+
+.right-sp button {
+    width: 35px;
+    height: 35px;
+    font-size: 20px;
+    text-align: center;
+    padding: 5px;
+    border: 1px solid #001F5D;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    color: #000;
+}
+
+
+/* ================== FAV BUTTON (TRÁI TIM) ================== */
+
+.right-sp .heart-btn {
+    position: relative;
+    display: grid;
+    place-items: center;
+    width: 35px;
+    height: 35px;
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    /* override border chung */
+    border-radius: 5px;
+    color: #9ca3af;
+    /* xám mặc định */
+    transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease, color .15s ease;
+    cursor: pointer;
+}
+
+.right-sp .heart-btn i {
+    font-size: 18px;
+    line-height: 1;
+}
+
+
+/* đang yêu thích -> đỏ tươi */
+
+.right-sp .heart-btn[aria-pressed="true"] {
+    color: #ef4444;
+    border-color: #fecaca;
+}
+
+
+/* hover nảy nhẹ */
+
+.right-sp .heart-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, .06);
+    border-color: #d1d5db;
+}
+
+
+/* tooltip chữ */
+
+.right-sp .heart-btn::after {
+    content: "Yêu thích";
+    position: absolute;
+    top: 50%;
+    right: 100%;
+    transform: translateY(-50%);
+    margin-right: 8px;
+    background: #111;
+    color: #fff;
+    font-size: 12px;
+    padding: 6px 8px;
+    border-radius: 6px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .12s ease;
+}
+
+.right-sp .heart-btn[aria-pressed="true"]::after {
+    content: "Hủy yêu thích";
+}
+
+.right-sp .heart-btn:hover::after {
+    opacity: 1;
+}
+
+.right-sp .heart-btn+button {
+    border-color: #001F5D;
+}
+
+.right-sp .heart-btn:disabled {
+    opacity: .6;
+    cursor: not-allowed;
+}
+
+.right-sp .heart-btn:disabled::after {
+    display: none;
+}
+
+
+/* ---------- PHÂN TRANG ---------- */
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.page {
+    border: 2px solid #e2e2e2;
+    background: #fff;
+    color: #212121;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 21px;
+    font-weight: 500;
+    margin: 0 2px;
+    cursor: pointer;
+    transition: background .18s, color .16s, border .18s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.page.active,
+.page:hover {
+    background: #09225a;
+    color: #fff;
+    border: 2px solid #09225a;
+}
+
+.page i {
+    font-size: 22px;
+}
+
+
+/* ======= Khung phụ ======= */
+
+.breadcrumb {
+    background: #f0f0f0;
+    padding: 15px 10px;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.breadcrumb a {
+    color: #0055cc;
+    text-decoration: none;
+}
+
+.main-content {
+    width: 1300px;
+    margin: 0 auto;
+}
+
+
+/* (nhắc lại) để flex-wrap khi thu nhỏ */
+
+.row-3 {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+
+/* ========== RESPONSIVE ========== */
+
+
+/* ≤1100: thu gọn width */
+
+@media (max-width: 1100px) {
+    .container {
+        max-width: 98vw;
+    }
+    .product-grid-row {
+        flex-direction: column;
+    }
+    .sidebar {
+        width: 100%;
+        margin-bottom: 24px;
+        padding: 16px 8px;
+    }
+}
+
+
+/* Mobile ≤640: ẩn các cụm filter, 2 cột, card đồng đều, tim cạnh nút mua, ẩn giỏ */
+
+
+/* Mobile ≤640: ẩn filter, 2 cột, và đặt tim sát nút Mua ngay */
+
+@media (max-width: 640px) {
+    /* Ẩn các cụm filter/sort – chỉ để lại nút “Lọc” */
+    .mobile-hide {
+        display: none !important;
+    }
+    /* Lưới 2 cột */
+    .products-page .row-3 {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+    .products-page .col-5-sp {
+        width: 100%;
+        padding-bottom: 10px;
+    }
+    /* Ảnh đồng đều */
+    .img-sp {
+        height: 180px;
+    }
+    .img-sp img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+    /* ---------- HÀNG NÚT MUA + TIM NGAY KỀ NHAU ---------- */
+    /* Biến khối text-sp thành flex, “phẳng” .left-sp để các phần tử con
+     (name, giá, đã bán, nút mua) trở thành item ngang hàng với .right-sp */
+    .products-page .text-sp {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-end;
+        gap: 8px;
+    }
+    .products-page .left-sp {
+        display: contents;
+        /* rất quan trọng để tim đứng sát nút mua */
+        width: auto;
+    }
+    /* Thứ tự hiển thị: Tên → Giá → Đã bán → Mua ngay → Tim */
+    .products-page .left-sp .name-sp {
+        order: 1;
+        flex-basis: 100%;
+        height: 44px;
+        /* 2 dòng, trùng yêu cầu */
+    }
+    /* p thứ 2 là giá, p thứ 3 là đã bán (giữ nguyên cấu trúc hiện tại) */
+    .products-page .left-sp p:nth-of-type(2) {
+        order: 2;
+        flex-basis: 100%;
+    }
+    .products-page .left-sp p:nth-of-type(3) {
+        order: 3;
+        flex-basis: 100%;
+    }
+    /* Nút Mua ngay */
+    .products-page .left-sp a {
+        order: 4;
+        display: inline-flex;
+        align-items: center;
+        height: 36px;
+        padding: 7px 25px;
+        /* gọn trên mobile */
+    }
+    /* Khối tim (và giỏ) đặt ngay cạnh nút mua */
+    .products-page .right-sp {
+        order: 5;
+        display: inline-flex;
+        flex-direction: row;
+        gap: 8px;
+        margin-left: 4px;
+        /* sát nút mua */
+        align-self: flex-end;
+    }
+    /* Ẩn nút giỏ trên mobile, chỉ giữ tim */
+    .products-page .right-sp button:not(.heart-btn) {
+        display: none !important;
+    }
+    .right-sp .heart-btn {
+        width: 36px;
+        height: 36px;
+    }
+    .main-content {
+        width: auto;
+    }
+}
+
+
+/* ≤900/700 vẫn giữ fallback (không ảnh hưởng yêu cầu mới) */
+
+@media (max-width: 900px) {
+    .container {
+        padding: 12px 2vw 40px 2vw;
+    }
+}
+
+@media (max-width: 700px) {
+    .product-title {
+        font-size: 25px;
+    }
+}
+
+@media (max-width: 390px) {
+    .filter-modal {
+        max-width: 92vw !important;
+    }
+}
+
+
+/* ---- FILTER MODAL SIZER (ép modal nhỏ gọn trên mobile) ---- */
+
+.filter-modal {
+    /* luôn nhỏ hơn viewport, tránh tràn */
+    width: min(92vw, 420px) !important;
+    max-width: 420px !important;
+    border-radius: 16px;
+}
+
+@media (min-width: 640px) {
+    .filter-modal {
+        width: min(92vw, 560px) !important;
+        max-width: 560px !important;
+    }
+}
+
+
+/* Phòng TH ancestor làm modal stretch toàn chiều cao */
+
+.filter-modal {
+    max-height: 85vh;
+    display: flex;
+    flex-direction: column;
+}

@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Dravik Store - Tin tức</title>
+    <link rel="stylesheet" href="css/tintuc.css">
+    <link rel="stylesheet" href="css/hmf.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhaina+2:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Baloo+Bhaina+2:wght@400;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    <!-- HEADER -->
+    <header>
+        <div class="header-main">
+            <div class="img-logo">
+                <img src="img/logo.png" alt="Dravik Store">
+            </div>
+            <div class="header-nav">
+                <div class="header-search">
+                    <div class="search">
+                        <input type="text" placeholder="Nhập sản phẩm cần tìm kiếm ...">
+                        <button class="icon-search"><i class="fas fa-search"></i></button>
+                    </div>
+                    <div class="nav-top">
+                        <a href=""><i class="fas fa-file-alt"></i><p>Đơn hàng </p></a>
+                        <a href=""><i class="fas fa-heart"></i><p>Yêu thích </p></a>
+                        <a href=""><i class="fas fa-user"></i><p>Tài khoản </p></a>
+                        <a href="" class="cart"><i class="fas fa-shopping-cart"></i><p>Giỏ hàng </p><span class="badge">3</span></a>
+                    </div>
+                </div>
+                <div class="nav-bottom">
+                    <a href="">Trang chủ</a>
+                    <a href="">Giới thiệu</a>
+                    <a href="">Sản phẩm </a>
+                    <a href="">Tin tức </a>
+                    <a href="">Hàng mới </a>
+                    <a href="">Liên hệ </a>
+                    <a href="">Sản phẩm giảm giá  </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- HEADER MOBILE -->
+    <div class="mobile-header">
+        <span class="menu-icon"><i class="fas fa-bars"></i></span>
+        <div class="img-logo"><img src="img/logo.png" alt="Dravik Store"></div>
+        <div class="icon-group">
+            <span><i class="fas fa-search"></i></span>
+            <span class="cart"><i class="fas fa-shopping-cart"></i><span class="badge">3</span></span>
+        </div>
+    </div>
+    <!-- SIDEBAR/OFFCANVAS MENU -->
+    <div id="mobileMenu" class="mobile-offcanvas">
+        <div class="mobile-menu-header">
+            <span class="close-btn" id="closeMobileMenu">&times;</span>
+            <img src="img/logo.png" alt="Dravik Store" class="offcanvas-logo">
+        </div>
+        <nav class="mobile-menu-nav">
+            <a href="#">Trang chủ</a>
+            <a href="#">Giới thiệu</a>
+            <a href="#">Sản phẩm</a>
+            <a href="#">Tin tức</a>
+            <a href="#">Hàng mới</a>
+            <a href="#">Liên hệ</a>
+            <a href="#">Sản phẩm giảm giá</a>
+            <hr>
+            <a href="#"><i class="fas fa-user"></i> Tài khoản</a>
+            <a href="#"><i class="fas fa-heart"></i> Yêu thích</a>
+            <a href="#"><i class="fas fa-file-alt"></i> Đơn hàng</a>
+            <a href="#"><i class="fas fa-shopping-cart"></i> Giỏ hàng</a>
+            <div class="mobile-search">
+                <input type="text" placeholder="Tìm kiếm...">
+                <button><i class="fas fa-search"></i></button>
+            </div>
+        </nav>
+    </div>
+    <div id="menuOverlay" class="menu-overlay"></div>
+
+    <!-- MAIN -->
+    <main class="main container">
+        <!-- Breadcrumb -->
+        <nav class="breadcrumb">
+            <a href="#">Trang chủ</a> / <span class="current">Tin tức</span>
+        </nav>
+        <!-- Tiêu đề -->
+        <h1 class="page-title">Tin tức</h1>
+        <!-- Filter Row -->
+        <div class="filter-row">
+            <select><option>Trending</option></select>
+            <select><option>Mặc đẹp</option></select>
+            <button>Dravik Store có gì?</button>
+        </div>
+        <!-- Section chính: 12 cột chia 8/4 -->
+        <div class="main-row">
+            <!-- Left 8 cột -->
+            <section class="main-left">
+                <h2 class="sec-title">Bài viết nổi bật</h2>
+                <div class="news-highlight">
+                    <img src="img/anh1.png" alt="Highlight" class="news-highlight-img">
+                    <div class="highlight-meta">21/05/2025 &middot; Thời trang</div>
+                    <div class="highlight-title">VIPDAY – ĐẶC QUYỀN THÀNH VIÊN DRAVIK STORE</div>
+                    <div class="highlight-desc">Tận hưởng ưu đãi lên đến 30% cho toàn bộ sản phẩm tại website và cửa hàng cơ hội tuyệt vời để bạn làm mới tủ đồ với mức giá hấp dẫn...</div>
+                </div>
+                <div class="news-highlight" style="margin-top:32px;">
+                    <img src="img/21 (1).webp" alt="Highlight2" class="news-highlight-img">
+                    <div class="highlight-meta">20/05/2025 &middot; Thời trang</div>
+                    <div class="highlight-title">VIPDAY – ĐẶC QUYỀN THÀNH VIÊN DRAVIK STORE</div>
+                    <div class="highlight-desc">Tận hưởng ưu đãi lên đến 30% cho toàn bộ sản phẩm tại website và cửa hàng cơ hội tuyệt vời để bạn làm mới tủ đồ với mức giá hấp dẫn...</div>
+                </div>
+            </section>
+            <!-- Right 4 cột -->
+            <aside class="main-right">
+                <div class="side-block">
+                    <div class="side-title">Xem Nhiều nhất</div>
+                    <div class="side-news-list">
+                        <div class="side-news-item">
+                            <img src="img/anh1.png" alt="">
+                            <div>
+                                <p class="xemnhieu">20 tháng 05, 2025 · Thời trang</p>
+                                <span>Dravik Store nâng tầm trải nghiệm...</span>
+                            </div>
+                        </div>
+                        <div class="side-news-item">
+                            <img src="img/thumb2.jpg" alt="">
+                            <div>
+                                <p class="xemnhieu">20 tháng 05, 2025 · Thời trang</p>
+                                <span>Dravik Store nâng tầm trải nghiệm...</span>
+                            </div>
+                        </div>
+                        <div class="side-news-item">
+                            <img src="img/thumb3.jpg" alt="">
+                            <div>
+                                <p class="xemnhieu">20 tháng 05, 2025 · Thời trang</p>
+                                <span>Dravik Store nâng tầm trải nghiệm...</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="side-block">
+                    <div class="side-title">Sự kiện hot</div>
+                    <div class="hot-events-list">
+                        <div class="hot-event-item">
+                            <span class="event-date">20/05</span>
+                            <div>
+                                Sự kiện Sale hot 2025<br>
+                                <small>Đài Bắc, Đài Loan (Trung Quốc)</small>
+                            </div>
+                        </div>
+                        <div class="hot-event-item">
+                            <span class="event-date">20/05</span>
+                            <div>
+                                Sự kiện Sale hot 2025<br>
+                                <small>Đài Bắc, Đài Loan (Trung Quốc)</small>
+                            </div>
+                        </div>
+                        <div class="hot-event-item">
+                            <span class="event-date">20/05</span>
+                            <div>
+                                Sự kiện Sale hot 2025<br>
+                                <small>Đài Bắc, Đài Loan (Trung Quốc)</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="side-block">
+                    <ul class="vip-list">
+                        <li>🎁 VIP DAY – ƯU ĐÃI ĐẶC QUYỀN DÀNH RIÊNG CHO THÀNH VIÊN DRAVIK STORE</li>
+                        <li>🎁 VIP DAY – ƯU ĐÃI ĐẶC QUYỀN DÀNH RIÊNG CHO THÀNH VIÊN DRAVIK STORE</li>
+                    </ul>
+                </div>
+            </aside>
+        </div>
+        <!-- Banner “Có gì mới” -->
+        <section class="new-banner">
+            <div class="new-banner-title">Dravik Store Có Gì Mới</div>
+            <div class="new-banner-cards">
+                <div class="new-banner-card">
+                    <img src="img/21 (1).webp" alt="">
+                    <div class="event-desc">
+                        <div class="event-meta">SỰ KIỆN NEW | 20/08/2025</div>
+                        <div class="event-title">Mừng lễ lớn, nhân dịp 2/9, DRAVIK STORE mang đến chương trình GIẢM 20% tất cả ...</div>
+                    </div>
+                </div>
+                <div class="new-banner-card">
+                    <img src="img/21 (1).webp" alt="">
+                    <div class="event-desc">
+                        <div class="event-meta">SỰ KIỆN NEW | 20/08/2025</div>
+                        <div class="event-title">Mừng lễ lớn, nhân dịp 2/9, DRAVIK STORE mang đến chương trình GIẢM 20% tất cả ...</div>
+                    </div>
+                </div>
+                <div class="new-banner-card">
+                    <img src="img/21 (1).webp" alt="">
+                    <div class="event-desc">
+                        <div class="event-meta">SỰ KIỆN NEW | 20/08/2025</div>
+                        <div class="event-title">Mừng lễ lớn, nhân dịp 2/9, DRAVIK STORE mang đến chương trình GIẢM 20% tất cả ...</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Grid tin mới nhất -->
+        <section class="latest-news">
+            <div class="sec-title">Các bài viết mới</div>
+            <div class="latest-grid">
+                <!-- Chỉ cần copy các block bên dưới ra 12-15 lần, thay ảnh/text nếu muốn -->
+                <div class="latest-card">
+                    <img src="img/baiviet2.webp" alt="">
+                    <div class="latest-card-title">ÁO THUN THE GOODE VIBE – NÉT TƯƠI MỚI ĐẬM CÁ TÍNH</div>
+                    <div class="latest-card-desc">Chiếc áo thun The Goode Vibe màu xanh mát từ Freelancer mang hoạ tiết hoa sắc nét và thông điệp...</div>
+                    <div class="latest-meta">
+                        <span>21/05/2025</span>
+                        <a href="#">Xem thêm &gt;&gt;</a>
+                    </div>
+                </div>
+
+                <div class="latest-card">
+                    <img src="news1.jpg" alt="">
+                    <div class="latest-card-title">ÁO THUN THE GOODE VIBE – NÉT TƯƠI MỚI ĐẬM CÁ TÍNH</div>
+                    <div class="latest-card-desc">Chiếc áo thun The Goode Vibe màu xanh mát từ Freelancer mang hoạ tiết hoa sắc nét và thông điệp...</div>
+                    <div class="latest-meta">
+                        <span>21/05/2025</span>
+                        <a href="#">Xem thêm &gt;&gt;</a>
+                    </div>
+                </div>
+
+                <div class="latest-card">
+                    <img src="news1.jpg" alt="">
+                    <div class="latest-card-title">ÁO THUN THE GOODE VIBE – NÉT TƯƠI MỚI ĐẬM CÁ TÍNH</div>
+                    <div class="latest-card-desc">Chiếc áo thun The Goode Vibe màu xanh mát từ Freelancer mang hoạ tiết hoa sắc nét và thông điệp...</div>
+                    <div class="latest-meta">
+                        <span>21/05/2025</span>
+                        <a href="#">Xem thêm &gt;&gt;</a>
+                    </div>
+                </div>
+
+                <div class="latest-card">
+                    <img src="news1.jpg" alt="">
+                    <div class="latest-card-title">ÁO THUN THE GOODE VIBE – NÉT TƯƠI MỚI ĐẬM CÁ TÍNH</div>
+                    <div class="latest-card-desc">Chiếc áo thun The Goode Vibe màu xanh mát từ Freelancer mang hoạ tiết hoa sắc nét và thông điệp...</div>
+                    <div class="latest-meta">
+                        <span>21/05/2025</span>
+                        <a href="#">Xem thêm &gt;&gt;</a>
+                    </div>
+                </div>
+
+                <div class="latest-card">
+                    <img src="news1.jpg" alt="">
+                    <div class="latest-card-title">ÁO THUN THE GOODE VIBE – NÉT TƯƠI MỚI ĐẬM CÁ TÍNH</div>
+                    <div class="latest-card-desc">Chiếc áo thun The Goode Vibe màu xanh mát từ Freelancer mang hoạ tiết hoa sắc nét và thông điệp...</div>
+                    <div class="latest-meta">
+                        <span>21/05/2025</span>
+                        <a href="#">Xem thêm &gt;&gt;</a>
+                    </div>
+                </div>
+                <div class="latest-card">
+                    <img src="news1.jpg" alt="">
+                    <div class="latest-card-title">ÁO THUN THE GOODE VIBE – NÉT TƯƠI MỚI ĐẬM CÁ TÍNH</div>
+                    <div class="latest-card-desc">Chiếc áo thun The Goode Vibe màu xanh mát từ Freelancer mang hoạ tiết hoa sắc nét và thông điệp...</div>
+                    <div class="latest-meta">
+                        <span>21/05/2025</span>
+                        <a href="#">Xem thêm &gt;&gt;</a>
+                    </div>
+                </div>
+                <div class="latest-card">
+                    <img src="news1.jpg" alt="">
+                    <div class="latest-card-title">ÁO THUN THE GOODE VIBE – NÉT TƯƠI MỚI ĐẬM CÁ TÍNH</div>
+                    <div class="latest-card-desc">Chiếc áo thun The Goode Vibe màu xanh mát từ Freelancer mang hoạ tiết hoa sắc nét và thông điệp...</div>
+                    <div class="latest-meta">
+                        <span>21/05/2025</span>
+                        <a href="#">Xem thêm &gt;&gt;</a>
+                    </div>
+                </div>
+                <div class="latest-card">
+                    <img src="news1.jpg" alt="">
+                    <div class="latest-card-title">ÁO THUN THE GOODE VIBE – NÉT TƯƠI MỚI ĐẬM CÁ TÍNH</div>
+                    <div class="latest-card-desc">Chiếc áo thun The Goode Vibe màu xanh mát từ Freelancer mang hoạ tiết hoa sắc nét và thông điệp...</div>
+                    <div class="latest-meta">
+                        <span>21/05/2025</span>
+                        <a href="#">Xem thêm &gt;&gt;</a>
+                    </div>
+                </div>
+
+                <div class="latest-card">
+                    <img src="news1.jpg" alt="">
+                    <div class="latest-card-title">ÁO THUN THE GOODE VIBE – NÉT TƯƠI MỚI ĐẬM CÁ TÍNH</div>
+                    <div class="latest-card-desc">Chiếc áo thun The Goode Vibe màu xanh mát từ Freelancer mang hoạ tiết hoa sắc nét và thông điệp...</div>
+                    <div class="latest-meta">
+                        <span>21/05/2025</span>
+                        <a href="#">Xem thêm &gt;&gt;</a>
+                    </div>
+                </div>
+                <!-- ... nhiều card ... -->
+            </div>
+            <div class="pagination">
+                <span class="active">1</span>
+                <span>2</span>
+                <span>3</span>
+                <span>...</span>
+                <span>5</span>
+                <span>&rarr;</span>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="row-footer">
+            <div class="col-4-footer">
+                <img src="img/logo-footer.png" alt="">
+                <div class="icon-3-footer">
+                    <span><i class="fa-solid fa-location-dot"></i></span>
+                    <p>Địa chỉ: 158/25, Phạm Văn Chiêu, Phường 8, Gò Vấp, TP Hồ Chí Minh</p>
+                </div>
+                <div class="icon-3-footer">
+                    <span><i class="fa-solid fa-phone"></i></span>
+                    <p>Số điện thoại: 1234567890</p>
+                </div>
+                <div class="icon-3-footer">
+                    <span><i class="fa-solid fa-envelope"></i></span>
+                    <p>Email: Dravikstore@gmail.com</p>
+                </div>
+            </div>
+            <div class="col-4-footer">
+                <h4>Hỗ trợ khách hàng</h4>
+                <p class="mgb-20">Chính sách đổi hàng</p>
+                <p class="mgb-20">Chính sách bảo hành</p>
+                <p class="mgb-20">Bảo mật thông tin</p>
+                <p class="mgb-20">Hỗ trợ giao hàng</p>
+            </div>
+            <div class="col-4-footer htkh">
+                <h4>Tổng đài hỗ trợ</h4>
+                <p class="mgb-20">Gọi mua hàng: 123456790 (8h-20h)</p>
+                <p class="mgb-20">Gọi bảo hành: 1234567890 (8h-20h)</p>
+                <p class="mgb-20">Gọi khiếu nại: 1234567890 (8h-20h)</p>
+            </div>
+            <div class="col-4-footer">
+                <h4>Gửi mail ngay để nhận ưu đãi !</h4>
+                <div class="subscribe-box">
+                    <input type="email" placeholder="Thả email nhận khuyến mãi...">
+                    <button><i class="fas fa-paper-plane"></i></button>
+                </div>
+                <h4>Phương thức thanh toán</h4>
+                <div class="payment-methods">
+                    <img src="img/vnpay.jpg" alt="VNPAY">
+                    <img src="img/cod.jpg" alt="COD">
+                    <img src="img/momo.jpg" alt="MoMo">
+                    <img src="img/visa.jpg" alt="Vietcombank">
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">© Bản quyền thuộc về DRAVIK STORE</div>
+    </footer>
+    <script src="js/hmf.js"></script>
+</body>
+
+</html>

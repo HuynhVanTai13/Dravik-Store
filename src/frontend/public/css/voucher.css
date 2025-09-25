@@ -1,0 +1,475 @@
+/* ===== Voucher section ===== */
+
+.voucher-section {
+    margin: 12px 0 20px;
+}
+
+
+/* tránh sai số width do padding/border ở các phần tử con */
+
+.voucher-section *,
+.voucher-track,
+.voucher-card {
+    box-sizing: border-box;
+}
+
+.voucher-row {
+    position: relative;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+
+/* Track = Flex (4/3/2/2 thẻ theo viewport) */
+
+.voucher-track {
+    --gap: 14px;
+    --pad: 40px;
+    /* chừa 2 bên cho mũi tên */
+    display: flex;
+    flex-wrap: nowrap;
+    /* QUAN TRỌNG: không cho quấn dòng */
+    gap: var(--gap);
+    padding: 6px var(--pad);
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    /* ẩn scrollbar (Firefox) */
+    justify-content: flex-start;
+    /* tránh center xung đột scroll-snap */
+    min-width: 0;
+    /* chống co bóp trong flex cha */
+}
+
+.voucher-track::-webkit-scrollbar {
+    display: none;
+}
+
+
+/* Khi không có mũi tên – chỉ bỏ pad, KHÔNG center */
+
+.voucher-track.centered {
+    --pad: 0px;
+    justify-content: flex-start;
+}
+
+
+/* Card chiếm 1/4 khung desktop (mặc định) */
+
+.voucher-card {
+    box-sizing: border-box;
+    flex: 0 0 calc((100% - 3*var(--gap) - 2*var(--pad))/3.48);
+    min-width: calc((100% - 3*var(--gap) - 2*var(--pad))/3.48);
+    scroll-snap-align: start;
+    border: 1px solid #dcdcdc;
+    border-radius: 10px;
+    padding: 10px;
+    background: #fff;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, .03);
+    min-height: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* đảm bảo item không bị co khi tổng chiều rộng > track */
+    flex-shrink: 0;
+}
+
+
+/* responsive: 3 thẻ */
+
+@media (max-width:1200px) {
+    .voucher-card {
+        flex-basis: calc((100% - 2*var(--gap) - 2*var(--pad)) / 3);
+        min-width: calc((100% - 2*var(--gap) - 2*var(--pad)) / 3);
+    }
+}
+
+
+/* responsive: 2 thẻ */
+
+@media (max-width:900px) {
+    .voucher-card {
+        flex-basis: calc((100% - 1*var(--gap) - 2*var(--pad)) / 2);
+        min-width: calc((100% - 1*var(--gap) - 2*var(--pad)) / 2);
+    }
+}
+
+
+/* mobile: vẫn 2 thẻ/khung, thu nhỏ nội dung */
+
+@media (max-width:560px) {
+    .voucher-card {
+        flex-basis: calc((100% - 1*var(--gap) - 2*var(--pad)) / 2);
+        min-width: calc((100% - 1*var(--gap) - 2*var(--pad)) / 2);
+        padding: 10px;
+        min-height: 100px;
+        border-radius: 8px;
+    }
+    .vc-tag {
+        font-size: 12px;
+    }
+    .vc-cap {
+        font-size: 12px;
+    }
+    .vc-discount {
+        font-size: 18px;
+    }
+    .vc-code-inline {
+        font-size: 12px;
+    }
+    .vc-claim {
+        padding: 6px 10px;
+        border-radius: 6px;
+        font-size: 13px;
+    }
+}
+
+
+/* Nội dung card */
+
+.vc-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.vc-tag {
+    color: #0d2a66;
+    font-weight: 700;
+    letter-spacing: .5px;
+    font-size: 20px;
+}
+
+.vc-cap {
+    color: #667;
+    font-weight: 600;
+}
+
+.vc-discount {
+    font-size: 14px;
+    color: #667;
+}
+
+.vc-foot {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+}
+
+.vc-code-inline {
+    color: #223;
+    font-size: 14px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.vc-code-inline b {
+    color: #0d2a66;
+}
+
+.vc-claim {
+    background: #0d2a66;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 4px 8px;
+    cursor: pointer;
+    font-size: 14px;
+    width: 70px;
+    text-align: center;
+}
+
+.vc-claim:hover {
+    filter: brightness(1.05);
+}
+
+
+/* arrows (đặt 2 bên, overlay nhẹ) */
+
+.vc-arrow {
+    position: absolute;
+    top: 50%;
+    background: #fff;
+    border: 1px solid #e6e6e6;
+    border-radius: 5px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, .08);
+    cursor: pointer;
+    z-index: 2;
+    padding: 7px;
+}
+
+.vc-arrow.left {
+    left: 6px;
+}
+
+.vc-arrow.right {
+    right: 6px;
+}
+
+@media (max-width:560px) {
+    .vc-arrow {
+        width: 32px;
+        height: 32px;
+    }
+    .vc-arrow.left {
+        left: 4px;
+    }
+    .vc-arrow.right {
+        right: 4px;
+    }
+}
+
+
+/* ===== Congrats modal (popup) ===== */
+
+.voucher-modal-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, .45);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 99;
+}
+
+.voucher-modal {
+    width: min(520px, 96vw);
+    /* mobile full hơn */
+    background: #fff;
+    border-radius: 16px;
+    padding: 24px 20px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, .2);
+}
+
+@media (max-width:560px) {
+    .voucher-modal {
+        padding: 16px 14px;
+        border-radius: 12px;
+    }
+    .vc-title {
+        font-size: 20px;
+    }
+    .vc-sub {
+        font-size: 16px;
+    }
+    .vc-desc {
+        font-size: 13px;
+    }
+    .vc-close {
+        padding: 10px 14px;
+    }
+}
+
+.scale-in {
+    animation: scaleIn .18s ease-out;
+}
+
+@keyframes scaleIn {
+    from {
+        transform: scale(.92);
+        opacity: .2
+    }
+    to {
+        transform: scale(1);
+        opacity: 1
+    }
+}
+
+.vc-title {
+    font-size: 24px;
+    font-weight: 800;
+    margin: 2px 0 6px;
+    color: #111;
+}
+
+.vc-sub {
+    font-size: 18px;
+    font-weight: 700;
+    margin: 0;
+    color: #0d2a66;
+}
+
+.vc-code {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: #f5f7ff;
+    border: 1px dashed #c9d2f8;
+    padding: 10px 12px;
+    border-radius: 10px;
+    margin: 12px auto 8px;
+    width: max-content;
+    max-width: 90%;
+}
+
+.vc-code span {
+    font-weight: 800;
+    color: #0d2a66;
+    letter-spacing: .5px;
+}
+
+.vc-code button {
+    background: #0d2a66;
+    color: #fff;
+    border: 0;
+    border-radius: 8px;
+    padding: 6px 10px;
+    cursor: pointer;
+}
+
+.vc-desc {
+    color: #666;
+    font-size: 14px;
+    margin: 8px 0 4px;
+}
+
+.vc-close {
+    margin-top: 10px;
+    background: #e7ecff;
+    color: #0d2a66;
+    border: 0;
+    border-radius: 10px;
+    padding: 10px 16px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+
+/* confetti */
+
+.confetti {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: radial-gradient(circle at 20% 30%, rgba(255, 0, 92, .15) 0 6px, transparent 7px), radial-gradient(circle at 80% 40%, rgba(0, 102, 255, .15) 0 6px, transparent 7px), radial-gradient(circle at 55% 75%, rgba(255, 153, 0, .15) 0 6px, transparent 7px);
+    animation: floaty 2.2s ease-in-out infinite alternate;
+}
+
+@keyframes floaty {
+    from {
+        transform: translateY(-4px)
+    }
+    to {
+        transform: translateY(4px)
+    }
+}
+
+
+/* nút X đóng popup */
+
+.vc-x {
+    position: absolute;
+    top: 10px;
+    right: 12px;
+    width: 36px;
+    height: 36px;
+    border: 0;
+    background: transparent;
+    font-size: 26px;
+    line-height: 36px;
+    color: #667;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.vc-x:hover {
+    color: #0d2a66;
+}
+
+
+/* nút Mua ngay dùng lại .vc-close để đồng bộ, chỉ đổi màu */
+
+.vc-buy {
+    background: #0d2a66 !important;
+    color: #fff !important;
+}
+
+.vc-buy:hover {
+    filter: brightness(1.05);
+}
+
+
+/* ===== MOBILE ≤640px: 2 voucher/khung – vừa khung, không lệch ===== */
+
+@media (max-width: 640px) {
+    .voucher-row {
+        gap: 0;
+    }
+    /* Track không chừa pad 2 bên để khỏi lệch mép */
+    .voucher-track {
+        --gap: 12px;
+        --pad: 0px;
+        padding: 6px var(--pad);
+        width: 100%;
+        justify-content: flex-start;
+    }
+    /* Mỗi card chiếm đúng (100% - gap)/2 => 2 thẻ vừa khít */
+    .voucher-card {
+        flex: 0 0 calc((100% - var(--gap)) / 2) !important;
+        min-width: calc((100% - var(--gap)) / 2) !important;
+        border-radius: 12px;
+        padding: 12px;
+        min-height: 120px;
+        /* cao đồng đều */
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        /* nội dung trải đều */
+    }
+    /* Nút mũi tên overlay, không chiếm bề ngang */
+    .vc-arrow {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 32px;
+        height: 32px;
+        z-index: 2;
+    }
+    .vc-arrow.left {
+        left: 6px;
+    }
+    .vc-arrow.right {
+        right: 6px;
+    }
+    /* Chữ trong thẻ vừa mắt */
+    .vc-tag {
+        font-size: 14px;
+        font-weight: 700;
+    }
+    .vc-cap {
+        font-size: 12px;
+    }
+    .vc-discount {
+        font-size: 12px;
+    }
+    /* 👉 MÃ VOUCHER xuống dòng khi dài */
+    .vc-code-inline {
+        font-size: 12px;
+        white-space: normal;
+        /* cho phép xuống dòng */
+        word-break: break-word;
+        /* bẻ từ khi dài */
+        overflow-wrap: anywhere;
+        /* đảm bảo không tràn */
+    }
+    .vc-claim {
+        font-size: 12px;
+        padding: 6px 5px;
+        border-radius: 6px;
+        width: 90px;
+    }
+}

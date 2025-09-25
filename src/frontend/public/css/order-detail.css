@@ -1,0 +1,703 @@
+/* ===== Biến theme – chỉ áp dụng trong .odr ===== */
+
+.odr {
+    --brand: #0b3b77;
+    --brand-line: #1f4f8f;
+    --brand-weak: rgba(11, 59, 119, .1);
+    --ok: #16a34a;
+    --warn: #d97706;
+    --link: #0b3b77;
+    --muted: #6b7280;
+    --border: #eef2f7;
+    --dot: 20px;
+    --line-h: 3px;
+}
+
+
+/* ===== Container & card ===== */
+
+.odr .odr-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 12px;
+}
+
+.odr .odr-card {
+    background: #fff;
+    border-radius: 14px;
+    padding: 18px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, .06);
+    margin-bottom: 14px;
+}
+
+.odr .odr-card.center {
+    text-align: center;
+}
+
+.odr h3 {
+    margin: 0 0 10px;
+    font-size: 20px;
+    font-weight: 600;
+    color: #111827;
+}
+
+.odr .btn {
+    border: 0;
+    background: var(--brand);
+    color: #fff;
+    padding: 10px 14px;
+    border-radius: 10px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    font-weight: 600;
+}
+
+.odr .btn.tiny {
+    padding: 8px 12px;
+    font-size: 13px;
+}
+
+.odr .btn.outline {
+    background: transparent;
+    color: var(--brand);
+    border: 1px solid var(--brand);
+}
+
+.odr .odr-actions {
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+/* ===== Header/breadcrumb của TRANG (không phải site header) ===== */
+
+.odr .odr-header {
+    margin-top: 12px;
+}
+
+.odr .odr-breadcrumb {
+    color: var(--muted);
+    margin-bottom: 8px;
+    display: flex;
+    gap: 6px;
+    align-items: center;
+    background: #f5f7fb;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 10px 12px;
+    font-size: 13px;
+}
+
+.odr .odr-breadcrumb a {
+    color: var(--link);
+    text-decoration: none;
+}
+
+.odr .odr-headrow {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 10px;
+    background: #fff;
+    border-radius: 14px;
+    padding: 14px 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, .06);
+    margin-bottom: 12px;
+}
+
+.odr .odr-headrow .left .row {
+    margin: 2px 0;
+    font-size: 14px;
+    color: #374151;
+}
+
+.odr .pill {
+    background: var(--brand-weak);
+    color: var(--brand);
+    padding: 5px 10px;
+    border-radius: 999px;
+    margin-left: 6px;
+    display: inline-block;
+    font-weight: 600;
+}
+
+.odr .status {
+    padding: 7px 10px;
+    border-radius: 999px;
+    font-weight: 600;
+    font-size: 13px;
+}
+
+.odr .tag-pending {
+    background: #f3f4f6;
+    color: #6b7280;
+}
+
+.odr .tag-confirmed,
+.odr .tag-processing {
+    background: #fff7ed;
+    color: var(--warn);
+}
+
+.odr .tag-shipping {
+    background: #eff6ff;
+    color: #2563eb;
+}
+
+.odr .tag-completed {
+    background: #ecfdf5;
+    color: var(--ok);
+}
+
+.odr .tag-cancelled {
+    background: #fef2f2;
+    color: #dc2626;
+}
+
+
+/* ===== Timeline ===== */
+
+.odr .timeline {
+    display: flex;
+    gap: 0;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 4px 16px;
+}
+
+.odr .t-step {
+    position: relative;
+    flex: 1 1 0;
+    text-align: center;
+}
+
+.odr .t-step .dot {
+    position: relative;
+    z-index: 2;
+    width: var(--dot);
+    height: var(--dot);
+    border-radius: 50%;
+    margin: 0 auto 6px;
+    background: #fff;
+    border: 3px solid #d7dce4;
+}
+
+.odr .t-step .dot::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: calc(var(--dot) * 0.6);
+    height: calc(var(--dot) * 0.6);
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background: #d7dce4;
+}
+
+.odr .t-step.current .dot::after,
+.odr .t-step.done .dot::after {
+    background: var(--brand);
+}
+
+.odr .t-step .line {
+    position: absolute;
+    top: calc(var(--dot)/2 - var(--line-h)/2);
+    left: calc(50% + var(--dot)/2 + 2px);
+    right: calc(-50% + var(--dot)/2 + 2px);
+    height: var(--line-h);
+    border-radius: 999px;
+    background: #e5e7eb;
+    z-index: 1;
+}
+
+.odr .t-step.current .line,
+.odr .t-step.done .line {
+    background: var(--brand-line);
+}
+
+.odr .t-step:last-child .line {
+    display: none;
+}
+
+.odr .t-step .label {
+    font-size: 16px;
+    color: #6b7280;
+}
+
+.odr .t-step.done .label,
+.odr .t-step.current .label {
+    color: #111827;
+}
+
+
+/* ===== Huỷ đơn ===== */
+
+.odr .odr-cancelled {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #fef2f2;
+    color: #dc2626;
+    border: 1px solid #fecaca;
+    border-radius: 12px;
+    padding: 12px 14px;
+    margin-bottom: 12px;
+}
+
+.odr .odr-cancelled .icon {
+    font-size: 18px;
+}
+
+
+/* ===== Grid ===== */
+
+.odr .grid12 {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 16px;
+}
+
+.odr .col-6 {
+    grid-column: span 6;
+}
+
+
+/* ===== Key-Value ===== */
+
+.odr .kv {
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    gap: 10px;
+    align-items: start;
+    padding: 8px 0;
+    border-bottom: 1px dashed var(--border);
+    font-size: 16px;
+}
+
+.odr .kv:last-child {
+    border-bottom: 0;
+}
+
+.odr .kv>span {
+    color: #6b7280;
+    white-space: nowrap;
+    font-weight: 500;
+}
+
+.odr .kv>b {
+    font-weight: 600;
+    color: #111827;
+    word-break: break-word;
+    overflow-wrap: anywhere;
+}
+
+.odr .kv.right>b {
+    justify-self: end;
+    text-align: right;
+}
+
+
+/* ===== Money ===== */
+
+.odr .money .row {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    font-size: 14px;
+}
+
+.odr .money .minus {
+    color: #dc2626;
+}
+
+.odr .money .total span:last-child {
+    color: #e11d48;
+    font-weight: 700;
+}
+
+
+/* ===== Items + Rating ===== */
+
+.odr .items {
+    display: grid;
+    gap: 12px;
+}
+
+.odr .item {
+    display: grid;
+    grid-template-columns: 100px 1fr auto auto;
+    gap: 12px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 12px;
+    align-items: center;
+}
+
+.odr .thumb {
+    width: 100px;
+    height: 100px;
+    border-radius: 10px;
+    object-fit: cover;
+    border: 1px solid #e5e7eb;
+}
+
+.odr .meta .name {
+    font-weight: 600;
+    margin-bottom: 2px;
+    font-size: 15px;
+    color: #1f2937;
+}
+
+.odr .meta .sub {
+    color: #6b7280;
+    font-size: 12.5px;
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.odr .price {
+    font-weight: 600;
+    font-size: 15px;
+}
+
+.odr .act {
+    display: flex;
+    gap: 8px;
+    justify-content: flex-end;
+}
+
+.odr .rate-box {
+    grid-column: 1 / -1;
+    background: #f9fafb;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 12px;
+    margin-top: 8px;
+}
+
+.odr .rate-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.odr .rate-row.col {
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.odr .rate-row textarea {
+    width: 100%;
+    min-height: 84px;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    padding: 10px;
+    resize: vertical;
+    outline: none;
+    font-size: 14px;
+}
+
+.odr .rate-row input[type=file] {
+    padding: 8px;
+    background: #fff;
+    border: 1px dashed #cbd5e1;
+    border-radius: 10px;
+    width: 100%;
+}
+
+.odr .previews {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-top: 8px;
+}
+
+.odr .previews img {
+    width: 78px;
+    height: 78px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 1px solid #e5e7eb;
+}
+
+.odr .stars {
+    display: inline-flex;
+    gap: 4px;
+}
+
+.odr .star {
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+    line-height: 1;
+    color: #cbd5e1;
+    transition: transform .05s ease;
+}
+
+.odr .star:hover {
+    transform: scale(1.05);
+}
+
+.odr .star.filled {
+    color: #f59e0b;
+    text-shadow: 0 0 10px rgba(245, 158, 11, .35);
+}
+
+.odr .rate-actions {
+    display: flex;
+    gap: 8px;
+    justify-content: flex-end;
+}
+
+
+/* ===== Responsive ===== */
+
+@media (max-width: 992px) {
+    .odr .col-6 {
+        grid-column: span 12;
+    }
+    .odr .kv {
+        grid-template-columns: 130px 1fr;
+    }
+    .odr .item {
+        grid-template-columns: 78px 1fr auto;
+    }
+}
+
+
+/* =========================================================
+   POPUP “THAY ĐỔI ĐỊA CHỈ” – chữ nhỏ & nhẹ, z-index cao
+   ========================================================= */
+
+.odr .odr-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.45);
+    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px);
+    display: grid;
+    place-items: center;
+    z-index: 6000;
+    /* nằm trên header */
+    padding: 16px;
+    animation: odr-fade-in .18s ease-out;
+}
+
+.odr .odr-modal {
+    width: 100%;
+    max-width: 560px;
+    background: #ffffff;
+    color: #0f172a;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(2, 6, 23, 0.25);
+    overflow: hidden;
+    transform-origin: center;
+    animation: odr-pop-in .22s cubic-bezier(.2, .8, .2, 1);
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    font-size: 13px;
+    /* nhỏ hơn */
+}
+
+.odr .odr-modal-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 14px;
+    border-bottom: 1px solid rgba(15, 23, 42, 0.06);
+}
+
+.odr .odr-modal-title {
+    font-weight: 600;
+    font-size: 14px;
+}
+
+
+/* bớt đậm & nhỏ */
+
+.odr .odr-modal-close {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    border-radius: 10px;
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    background: #fff;
+    cursor: pointer;
+    transition: background .15s ease, transform .12s ease;
+}
+
+.odr .odr-modal-close:hover {
+    background: #f8fafc;
+    transform: translateY(-1px);
+}
+
+.odr .odr-modal-body {
+    padding: 14px;
+    display: grid;
+    gap: 12px;
+}
+
+.odr .odr-field {
+    display: grid;
+    gap: 6px;
+}
+
+.odr .odr-field>span {
+    font-size: 12px;
+    color: #475569;
+    font-weight: 600;
+}
+
+.odr .odr-field input {
+    width: 100%;
+    height: 40px;
+    border-radius: 12px;
+    border: 1px solid rgba(15, 23, 42, 0.12);
+    padding: 0 12px;
+    background: #fff;
+    outline: none;
+    transition: border-color .15s ease, box-shadow .15s ease;
+    font-size: 13px;
+}
+
+.odr .odr-field input:focus {
+    border-color: #6366f1;
+    box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.12);
+}
+
+.odr .odr-address-line {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.odr .odr-modal-actions {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+    padding: 10px 14px;
+    border-top: 1px solid rgba(15, 23, 42, 0.06);
+}
+
+
+/* Spinner */
+
+.odr .spinner {
+    width: 16px;
+    height: 16px;
+    border-radius: 999px;
+    border: 2px solid #cbd5e1;
+    border-top-color: #111827;
+    display: inline-block;
+    animation: odr-spin .8s linear infinite;
+}
+
+
+/* Danh sách địa chỉ (popup) – chữ nhỏ & nhẹ hơn */
+
+.odr .current-address {
+    background: #f8fafc;
+    border-radius: 10px;
+    padding: 10px 12px;
+}
+
+.odr .addr-list {
+    display: grid;
+    gap: 10px;
+    max-height: 330px;
+    overflow: auto;
+    padding-right: 4px;
+}
+
+.odr .addr-item {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    border-radius: 12px;
+    padding: 10px 12px;
+    background: #fff;
+    cursor: pointer;
+    transition: border-color .15s ease, box-shadow .15s ease, background .15s ease;
+    font-size: 13px;
+}
+
+.odr .addr-item:hover {
+    background: #fbfdff;
+    border-color: #93c5fd;
+    box-shadow: 0 4px 12px rgba(15, 23, 42, .05);
+}
+
+.odr .addr-item.active {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, .15);
+}
+
+.odr .addr-radio {
+    margin-top: 4px;
+}
+
+.odr .addr-meta {
+    line-height: 1.35;
+    font-size: 16px;
+}
+
+.odr .addr-top {
+    font-weight: 600;
+}
+
+
+/* bớt đậm */
+
+.odr .addr-desc {
+    color: #475569;
+    font-size: 16px;
+}
+
+.odr .badge {
+    display: inline-block;
+    margin-top: 4px;
+    font-size: 12px;
+    background: #eef2ff;
+    color: #4338ca;
+    padding: 2px 8px;
+    border-radius: 999px;
+}
+
+
+/* Animations */
+
+@keyframes odr-spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes odr-pop-in {
+    0% {
+        transform: scale(.96);
+        opacity: .0
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1
+    }
+}
+
+@keyframes odr-fade-in {
+    from {
+        opacity: 0
+    }
+    to {
+        opacity: 1
+    }
+}

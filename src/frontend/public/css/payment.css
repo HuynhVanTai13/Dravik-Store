@@ -1,0 +1,294 @@
+/* =========== Layout =========== */
+.payment-container {
+  max-width: 1180px;
+  margin: 36px auto 0 auto;
+  padding: 0 16px 38px 16px;
+  background: #fff;
+}
+
+.payment-main {
+  display: flex;
+  gap: 38px;
+  align-items: flex-start;
+}
+
+/* 2 cột chính */
+.payment-col-left { flex: 1; min-width: 340px; }
+.payment-col-right { flex: 1; min-width: 340px; }
+
+/* =========== Box chung =========== */
+.payment-box {
+  background: #fff;
+  border-radius: 13px;
+  box-shadow: 0 2px 12px #1e387920;
+  padding: 28px 28px 24px 28px;
+  margin-bottom: 30px;
+  width: 100%;
+}
+
+.payment-title {
+  font-size: 21px;
+  font-weight: bold;
+  color: #1e3879;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.title-actions { display:flex; gap:10px; margin-left:auto; }
+
+.payment-add-address-btn {
+  font-size: 15px;
+  color: #0052cc;
+  border: 1.4px solid #0052cc;
+  background: #f6f8ff;
+  border-radius: 7px;
+  padding: 5px 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background .13s, color .13s;
+}
+.payment-add-address-btn:hover { background:#e3eafd; color:#00215e; border-color:#1e3879; }
+
+.payment-edit-btn {
+  background: #fff;
+  color: #0052cc;
+  border: 1.2px solid #0052cc;
+  border-radius: 7px;
+  padding: 6px 18px;
+  font-size: 14.5px;
+  font-weight: 500;
+  cursor: pointer;
+  margin-left: 12px;
+  transition: background .13s, color .13s;
+}
+.payment-edit-btn:hover { background:#e3eafd; color:#00215e; border-color:#1e3879; }
+
+.payment-cancel-btn {
+  background: #eee;
+  color: #232323;
+  border: none;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 15px;
+  padding: 7px 18px;
+  cursor: pointer;
+  transition: background .12s;
+}
+.payment-cancel-btn:hover { background:#e3e7f0; }
+
+.payment-save-btn {
+  background: #133572;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 16px;
+  padding: 7px 22px;
+  cursor: pointer;
+  transition: background .16s;
+}
+.payment-save-btn:hover { background:#1e3879; }
+
+.empty-inline { display:flex; align-items:center; gap:12px; }
+
+/* =========== Địa chỉ nhận hàng =========== */
+.payment-address-item {
+  display: flex;
+  align-items: center;
+  border: 1px solid #e3e7f0;
+  background: #fff;
+  padding: 18px 18px 16px 12px;
+  border-radius: 11px;
+  margin-bottom: 15px;
+  gap: 18px;
+  transition: box-shadow .18s;
+  position: relative;
+}
+.payment-address-item.active { border: 2px solid #1e3879; box-shadow: 0 2px 12px #1235720d; background:#f6f8ff; }
+.payment-address-item.no-pointer { cursor: default; }
+
+.payment-radio-label { display:flex; align-items:flex-start; flex:1; cursor:pointer; gap:10px; }
+.payment-address-item input[type="radio"] { margin-top:4px; accent-color:#1e3879; width:18px; height:18px; }
+
+.payment-address-content { display:flex; flex-direction:column; gap:2px; }
+.payment-address-receiver { font-size:17px; font-weight:600; color:#1e3879; }
+.payment-address-desc, .payment-address-phone { font-size:15px; color:#444; }
+.payment-default-label {
+  display:inline-block; font-size:12px; background:#f3f8fc; color:#1e3879;
+  font-weight:bold; padding:2px 8px; border-radius:6px; margin-top:3px; margin-right:6px;
+}
+
+/* Popup overlay dùng chung */
+.payment-popup-overlay {
+  position: fixed; inset: 0; width: 100vw; height: 100vh;
+  background: #2227a822; display:flex; align-items:center; justify-content:center; z-index: 999;
+}
+.payment-address-popup {
+  min-width: 340px; background:#fff; border-radius: 15px; box-shadow: 0 3px 24px #001B4F33;
+  padding: 30px 28px 18px 28px; display:flex; flex-direction:column; gap:13px; max-width: 94vw;
+}
+.address-popup-size { width: 640px; max-width: 94vw; }
+.voucher-popup-size { width: 720px; max-width: 96vw; }
+.title-between { display:flex; justify-content:space-between; align-items:center; }
+.payment-popup-title { font-size:18px; font-weight:600; margin-bottom:12px; color:#1e3879; }
+
+.payment-address-popup label { font-size:15px; font-weight:500; color:#00215e; margin-bottom:3px; display:flex; flex-direction:column; gap:4px; }
+.payment-address-popup input[type="text"],
+.payment-address-popup input[type="tel"],
+.payment-address-popup input[type="number"] {
+  font-size:16px; border-radius:8px; border:1.2px solid #b4c8f0; padding:7px 10px; outline:none; margin-top:2px; margin-bottom:4px; background:#f9fbff; color:#133572;
+}
+.payment-address-popup input[type="checkbox"] { margin-right:5px; accent-color:#1e3879; }
+.payment-form-actions { display:flex; gap:16px; margin-top:11px; justify-content:flex-end; }
+.address-line { display:flex; gap:8px; }
+.payment-default-checkbox { font-size:15px; font-weight:500; color:#444; display:flex; align-items:center; margin-left:12px; }
+.payment-get-location-btn {
+  border:1.2px solid #1e3879; background:#f6f8ff; color:#1e3879; border-radius:7px; padding:5px 14px; font-size:15px;
+  cursor:pointer; font-weight:500; transition:background .14s;
+}
+.payment-get-location-btn:hover { background:#e3eafd; color:#00215e; }
+.address-select-list { max-height:380px; overflow-y:auto; padding-right:4px; }
+.address-select-list::-webkit-scrollbar { width: 8px; }
+.address-select-list::-webkit-scrollbar-thumb { background:#cdd6ef; border-radius:6px; }
+.address-select-list::-webkit-scrollbar-track { background:#f4f6fd; border-radius:6px; }
+
+/* =========== Voucher (box trái) =========== */
+.voucher-selected {
+  display:flex; gap:14px; align-items:flex-start;
+  background:#f7f9ff; border:1px dashed #cdd6ef; border-radius:12px; padding:12px 14px;
+}
+.voucher-code {
+  min-width: 92px; text-align:center; font-weight:700; border-radius:10px; padding:8px 10px; background:#e9eefb; color:#0f1f4d;
+}
+.voucher-texts { flex:1; }
+.voucher-line { font-weight:600; margin-bottom:2px; }
+.voucher-line .muted { color:#6b7280; font-weight:400; margin-left: 4px; }
+.voucher-desc { font-size:13.5px; color:#4b5563; }
+.voucher-desc .badge-error { color:#b54747; margin-left:8px; font-weight:600; }
+.voucher-note { margin-top:6px; font-size:13.5px; color:#374151; }
+
+.voucher-empty {
+  background:#fafbff; border:1px dashed #e3e7f0; border-radius:12px; padding:14px; color:#6b7280;
+}
+
+/* Popup chọn voucher */
+.voucher-list { max-height:420px; overflow-y:auto; padding-right:4px; }
+.voucher-item {
+  display:flex; gap:14px; border:1px solid #e6ebf6; border-radius:12px; padding:14px; margin-bottom:12px;
+  background:#fff; align-items:flex-start; cursor:pointer;
+}
+.voucher-item input[type="radio"] { width:18px; height:18px; margin-top:6px; accent-color:#1e3879; }
+.voucher-item.selected { box-shadow:0 0 0 2px #133572 inset; }
+.voucher-item.disabled { background:#fafafa; opacity:.75; cursor:not-allowed; }
+.voucher-meta { flex:1; }
+.voucher-head { display:flex; align-items:center; gap:12px; margin-bottom:6px; flex-wrap:wrap; }
+.voucher-discount { font-weight:700; color:#0f1f4d; }
+.badge { font-size:12.5px; padding:4px 8px; border-radius:8px; border:1px solid transparent; }
+.badge-min { background:#f5f7ff; border-color:#e6ebf6; color:#374151; }
+.badge-min-ok { background:#f1faf5; border-color:#d8f0e3; color:#166534; }
+.badge-expired { background:#fff2f2; border-color:#f5d0d0; color:#b54747; }
+.badge-warn { background:#fff9eb; border-color:#fdecc8; color:#9a6b11; }
+.voucher-foot { font-size:13.5px; color:#4b5563; }
+
+/* =========== Danh sách SP cột phải =========== */
+.payment-cart-list { margin-bottom: 14px; }
+.payment-cart-row {
+  display:flex; align-items:flex-start; border-bottom:1px solid #ededed; padding:17px 0 14px 0; gap:16px;
+}
+.payment-cart-img {
+  width:58px; height:70px; object-fit:cover; border-radius:8px; background:#fafafa; border:1px solid #ececec; display:block; margin-right:8px;
+}
+.payment-cart-info { flex:1; min-width:120px; }
+.payment-cart-name { font-size:16.5px; font-weight:500; color:#1e3879; margin-bottom:4px; }
+.payment-cart-desc { font-size:14.3px; color:#555; margin-top:2px; }
+.payment-cart-price { min-width:110px; text-align:right; font-size:16.5px; font-weight:600; color:#ea1b1b; margin-top:2px; }
+
+/* Tóm tắt */
+.payment-cart-summary { margin-top:16px; margin-bottom:14px; font-size:16px; }
+.payment-cart-summary-row { display:flex; justify-content:space-between; align-items:center; padding:3px 0; }
+.payment-cart-summary-final { font-weight:bold; color:#ea1b1b; font-size:18.5px; }
+
+/* Phương thức + ghi chú + nút */
+.payment-methods { margin:18px 0 20px 0; display:flex; gap:30px; }
+.payment-method { display:flex; align-items:center; gap:6px; font-weight:500; }
+.payment-method input[type="radio"] { accent-color:#1e3879; width:18px; height:18px; }
+
+.payment-note textarea {
+  width:100%; min-height:86px; border-radius:10px; border:1px solid #e3e7f0; padding:10px 12px; outline:none;
+}
+
+.payment-cart-btns { display:flex; gap:18px; margin-top:18px; }
+.payment-pay-btn {
+  background:#1e3879; color:#fff; font-size:18px; font-weight:bold; padding:11px 38px;
+  border-radius:11px; border:none; cursor:pointer; transition: background .18s; width:100%;
+}
+.payment-pay-btn:hover { background:#133572; }
+
+/* Toast */
+.toast-success {
+  position:fixed; top:38px; right:34px; z-index:9999; min-width:320px; max-width:380px;
+  background:#e7faf0; border:1.5px solid #1fc871; border-radius:12px; box-shadow:0 3px 24px #00C29233;
+  color:#1a6939; display:flex; align-items:flex-start; padding:24px 26px 20px 22px; gap:16px;
+  animation: toastIn .22s cubic-bezier(0.67, 0.06, 0.6, 1.6);
+}
+.toast-title { font-weight:700; font-size:19px; margin-bottom:4px; }
+.toast-desc { color:#155f36; margin-bottom:8px; }
+.toast-order { color:#11805c; }
+.toast-btn { font-size:15px; padding:7px 22px; margin-right:12px; background:#1fc871 !important; border:none !important; }
+.toast-close {
+  background:none; border:none; color:#1a6939; font-size:22px; margin-left:0; margin-top:-10px; cursor:pointer; font-weight:400; line-height:1;
+}
+/* ====== Payment Methods (box trái) ====== */
+.paymethod-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+.method-card {
+  position: relative;
+  display: grid;
+  grid-template-columns: 42px 1fr auto;
+  gap: 12px;
+  align-items: center;
+  padding: 12px 14px;
+  border: 1.4px solid #e6ebf6;
+  border-radius: 12px;
+  background: #fff;
+  cursor: pointer;
+  transition: box-shadow .15s, border-color .15s, background .15s;
+}
+.method-card:hover { border-color:#bcd0ff; box-shadow:0 2px 14px #001f5d12; background:#fafcff; }
+.method-card.selected { border-color:#133572; box-shadow:0 0 0 2px #13357220 inset; background:#f6f8ff; }
+.method-card input[type="radio"] { position:absolute; opacity:0; pointer-events:none; }
+.method-icon { width:42px; height:42px; display:flex; align-items:center; justify-content:center; background:#e9eefb; border-radius:10px; }
+.method-info { display:flex; flex-direction:column; gap:2px; }
+.method-name { font-weight:700; color:#0f1f4d; }
+.method-desc { font-size:13.5px; color:#4b5563; }
+.method-badge, .method-badge.alt {
+  font-size:12px; padding:4px 10px; border-radius:999px; border:1px solid #e6ebf6; color:#27418e; background:#eef3ff;
+}
+.method-badge.alt { color:#12643a; background:#e9f7ef; border-color:#d6efdf; }
+.method-footnote { margin-top:8px; font-size:13px; color:#6b7280; }
+
+/* ====== (giữ lại các section cũ: layout, address, voucher, cart, summary, note, buttons, modals, toast, responsive) ====== */
+
+/* Responsive tweak for methods */
+@media (max-width: 980px) {
+  .paymethod-grid { grid-template-columns: 1fr; }
+}
+
+/* Effects */
+@keyframes toastIn { from{opacity:0; transform:translateX(60px) scale(.95);} to{opacity:1; transform:translateX(0) scale(1);} }
+
+/* Responsive */
+@media (max-width: 980px) {
+  .payment-main { flex-direction: column; gap: 22px; }
+  .payment-col-left, .payment-col-right { width:100%; }
+}
+@media (max-width: 680px) {
+  .payment-container { padding: 0 2vw; }
+  .payment-box { padding: 13px 7px 14px 7px; min-width: 0; }
+  .payment-cart-price { min-width: 70px; }
+  .payment-address-popup { padding: 20px 6vw; }
+}

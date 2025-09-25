@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DRAVIK STORE - Sửa sản phẩm</title>
+    <link rel="stylesheet" href="css/edit-product.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <header class="header">
+        <button id="hamburgerButton" class="hamburger-menu-btn">
+            <i class="fas fa-bars"></i>
+        </button>
+        <div class="logo">
+            <img src="images/logo.png" alt="DRAVIK STORE Logo" class="logo-image">
+        </div>
+        <div class="header-right">
+            <div class="header-icon notification">
+                <i class="fas fa-bell"></i>
+                <span class="badge">7</span>
+            </div>
+            <div class="header-icon message">
+                <i class="fas fa-envelope"></i>
+                <span class="badge">3</span>
+            </div>
+            <div class="user-profile">
+                <img src="images/admin.jpg" alt="User Avatar" class="avatar">
+                <span class="username">John Doe</span>
+                <i class="fas fa-caret-down"></i>
+                <div class="user-dropdown">
+                    <a href="#" class="btnOpenPopup" data-form="form-account"><i class="fas fa-user-circle"></i> Tài khoản của tôi</a>
+                    <a href="#"><i class="fas fa-cog"></i> Cài đặt</a>
+                    <a href="#"><i class="fas fa-sign-out-alt"></i> Đăng xuất</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Popup dùng chung -->
+    <div id="popupOverlay" class="popup-overlay">
+        <div class="popup-content">
+            <button class="btn-close" id="btnClosePopup">&times;</button>
+            <div id="popupBody"></div>
+        </div>
+    </div>
+    <div id="formTemplates" style="display: none;">
+        <form action="" id="form-account">
+            <div class="popup-content">
+                <h3>Chỉnh sửa tài khoản</h3>
+                <div class="form-group">
+                    <label>Avatar:</label>
+                    <img src="https://i.pravatar.cc/100" id="previewAvatar" class="avatar-preview" />
+                    <input type="file" id="inputAvatar" accept="image/*" />
+                </div>
+                <div class="form-group">
+                    <label>Họ tên:</label>
+                    <input type="text" id="inputName" value="John Doe" required />
+                </div>
+                <div class="form-group">
+                    <label>Email:</label>
+                    <input type="email" id="inputEmail" value="john@example.com" required />
+                </div>
+                <div class="form-group">
+                    <label>SĐT:</label>
+                    <input type="tel" id="inputPhone" value="0123456789" required />
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="btn-save" id="btnSave">Lưu</button>
+                </div>
+            </div>
+        </form>
+
+    </div>
+
+    <aside class="sidebar" id="mySlidingSidebar">
+        <nav class="main-menu">
+            <ul>
+                <li><a href="index.html" class="active"><i class="fas fa-home"></i> <span class="menu-text">Trang chủ</span></a></li>
+                <li class="menu-section-header">Quản lý</li>
+                <li class="menu-item-has-children">
+                    <a href="product.html" class="menu-toggle"><i class="fas fa-box-open"></i> <span class="menu-text">Sản phẩm</span> <i class="fas fa-caret-down menu-arrow"></i></a>
+                    <ul class="sub-menu">
+                        <li><a href="product.html"><i class="fas fa-boxes"></i> <span class="menu-text">Tất cả sản phẩm</span></a></li>
+                        <li><a href="inventory.html"><i class="fas fa-warehouse"></i> <span class="menu-text">Sản phẩm tồn kho</span></a></li>
+                        <li><a href="spsaphet.htm"><i class="fas fa-fire-extinguisher"></i> <span class="menu-text">Sản phẩm hết hàng</span></a></li>
+                        <li><a href="spsale.html"><i class="fas fa-tag"></i> <span class="menu-text">Sản phẩm giảm giá</span></a></li>
+                    </ul>
+                </li>
+                <li><a href="categories.html"><i class="fas fa-sitemap"></i> <span class="menu-text">Danh mục</span></a></li>
+                <li><a href="brand.html"><i class="fas fa-award"></i> <span class="menu-text">Thương hiệu</span></a></li>
+                <li><a href="order.html"><i class="fas fa-receipt"></i> <span class="menu-text">Đơn hàng</span></a></li>
+                <li class="menu-item-has-children">
+                    <a href="" class="menu-toggle"><i class="fas fa-users"></i> <span class="menu-text">Tài khoản</span> <i class="fas fa-caret-down menu-arrow"></i></a>
+                    <ul class="sub-menu">
+                        <li><a href="account.html"><i class="fas fa-user"></i> <span class="menu-text">Người dùng</span></a></li>
+                        <li><a href="account-admin.html"><i class="fas fa-user-shield"></i> <span class="menu-text">Admin</span></a></li>
+                    </ul>
+                </li>
+                <li><a href="blog.html"><i class="fas fa-pen-nib"></i> <span class="menu-text">Bài viết</span></a></li>
+                <li><a href="voucher.html"><i class="fas fa-ticket-alt"></i> <span class="menu-text">Voucher</span></a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <main class="main-content">
+        <section class="section-card edit-product-section">
+            <h2>Thêm sản phẩm</h2>
+
+            <div class="form-grid-top">
+                <div class="form-grid-left">
+                    <div class="form-group">
+                        <label for="productName">Tên sản phẩm</label>
+                        <input type="text" id="productName" value="Áo thun Swe Signature Tee">
+                    </div>
+                    <div class="form-group">
+                        <label for="originalPrice">Giá sản phẩm (VNĐ)</label>
+                        <input type="text" id="originalPrice" value="119.000 VNĐ">
+                    </div>
+                    <div class="form-group">
+                        <label for="discountedPrice">Giá giảm (VNĐ)</label>
+                        <input type="text" id="discountedPrice" value="99.000 VNĐ">
+                    </div>
+                    <div class="form-group">
+                        <label for="category">Danh mục</label>
+                        <select id="category">
+                                <option value="aoThun">Áo thun</option>
+                                <option value="quan">Quần</option>
+                                <option value="giay">Giày</option>
+                            </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="brand">Thương hiệu</label>
+                        <select id="brand">
+                                <option value="signature">Signature</option>
+                                <option value="nike">Nike</option>
+                                <option value="adidas">Adidas</option>
+                            </select>
+                    </div>
+                </div>
+
+                <div class="form-grid-right">
+                    <div class="form-group">
+                        <label for="youtubeLink">Link youtube</label>
+                        <input type="text" id="youtubeLink" placeholder="Nhập đường dẫn url youtube vào đây">
+                    </div>
+                    <div class="form-group form-group-full-height"> <label for="description">Mô tả sản phẩm</label>
+                        <textarea id="description" rows="8" placeholder="Mô tả sản phẩm"></textarea> </div>
+                </div>
+            </div>
+
+            <h3>Biến thể sản phẩm</h3>
+
+            <div class="product-variants">
+                <div class="variant-item-template" style="display: none;">
+                    <div class="variant-item-header">
+                        <h4>Sản phẩm mới</h4>
+                        <button class="remove-variant-btn"><i class="fas fa-times-circle"></i> Xóa biến thể</button>
+                    </div>
+                    <div class="variant-grid">
+                        <div class="variant-left-column">
+                            <div class="form-group variant-select-color">
+                                <label>Chọn màu</label>
+                                <select>
+                                        <option value="">Chọn màu</option>
+                                        <option value="den">Đen</option>
+                                        <option value="trang">Trắng</option>
+                                        <option value="hong">Hồng</option>
+                                        <option value="xanhLa">Xanh lá</option>
+                                    </select>
+                            </div>
+
+                            <div class="form-group variant-image-upload">
+                                <label>Hình ảnh đại diện</label>
+                                <div class="file-input-container">
+                                    <input type="file" accept="image/*">
+                                    <label class="custom-file-upload">
+                                            Chọn tệp
+                                        </label>
+                                    <span class="file-name">Chưa có tệp nào được chọn</span>
+                                </div>
+                                <div class="image-preview-wrapper">
+                                    <img src="assets/images/product-placeholder.png" alt="Product Image" class="image-preview">
+                                    <button class="delete-image-btn"><i class="fas fa-times"></i></button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="variant-sizes-group">
+                            <label>Size và số lượng</label>
+                            <div class="variant-sizes">
+                                <div class="size-input-row">
+                                    <select>
+                                            <option value="">Chọn size</option>
+                                            <option value="XS">XS</option>
+                                            <option value="S">S</option>
+                                            <option value="M">M</option>
+                                            <option value="L">L</option>
+                                            <option value="XL">XL</option>
+                                            <option value="XXL">XXL</option>
+                                        </select>
+                                    <input type="number" placeholder="Số lượng">
+                                    <button class="remove-size-btn"><i class="fas fa-times"></i></button>
+                                </div>
+                                <div class="size-input-row new-size-template" style="display: none;">
+                                    <select>
+                                            <option value="">Chọn size</option>
+                                            <option value="XS">XS</option>
+                                            <option value="S">S</option>
+                                            <option value="M">M</option>
+                                            <option value="L">L</option>
+                                            <option value="XL">XL</option>
+                                            <option value="XXL">XXL</option>
+                                        </select>
+                                    <input type="number" placeholder="Số lượng">
+                                    <button class="remove-size-btn"><i class="fas fa-times"></i></button>
+                                </div>
+                                <button class="add-size-btn"><i class="fas fa-plus"></i> Thêm size</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="variant-item">
+                    <div class="variant-item-header">
+                        <h4>Sản phẩm 1</h4>
+                        <button class="remove-variant-btn"><i class="fas fa-times-circle"></i> Xóa biến thể</button>
+                    </div>
+                    <div class="variant-grid">
+                        <div class="variant-left-column">
+                            <div class="form-group variant-select-color">
+                                <label for="color1">Chọn màu</label>
+                                <select id="color1">
+                                        <option value="den">Đen</option>
+                                        <option value="trang" selected>Trắng</option>
+                                        <option value="hong">Hồng</option>
+                                        <option value="xanhLa">Xanh lá</option>
+                                    </select>
+                            </div>
+
+                            <div class="form-group variant-image-upload">
+                                <label>Hình ảnh đại diện</label>
+                                <div class="file-input-container">
+                                    <input type="file" id="imageUpload1" class="hidden-file-input" accept="image/*">
+                                    <label for="imageUpload1" class="custom-file-upload">
+                                            Chọn tệp
+                                        </label>
+                                    <span class="file-name">Chưa có tệp nào được chọn</span>
+                                </div>
+                                <div class="image-preview-wrapper" style="display: block;"> <img src="assets/images/product-placeholder.png" alt="Product Image" class="image-preview">
+                                    <button class="delete-image-btn"><i class="fas fa-times"></i></button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="variant-sizes-group">
+                            <label>Size và số lượng</label>
+                            <div class="variant-sizes">
+                                <div class="size-input-row">
+                                    <select>
+                                            <option value="XS">XS</option>
+                                            <option value="S" selected>S</option>
+                                            <option value="M">M</option>
+                                            <option value="L">L</option>
+                                            <option value="XL">XL</option>
+                                            <option value="XXL">XXL</option>
+                                        </select>
+                                    <input type="number" value="12">
+                                    <button class="remove-size-btn"><i class="fas fa-times"></i></button>
+                                </div>
+                                <div class="size-input-row">
+                                    <select>
+                                            <option value="XS">XS</option>
+                                            <option value="S">S</option>
+                                            <option value="M" selected>M</option>
+                                            <option value="L">L</option>
+                                            <option value="XL">XL</option>
+                                            <option value="XXL">XXL</option>
+                                        </select>
+                                    <input type="number" value="3">
+                                    <button class="remove-size-btn"><i class="fas fa-times"></i></button>
+                                </div>
+                                <div class="size-input-row">
+                                    <select>
+                                            <option value="XS">XS</option>
+                                            <option value="S">S</option>
+                                            <option value="M">M</option>
+                                            <option value="L" selected>L</option>
+                                            <option value="XL">XL</option>
+                                            <option value="XXL">XXL</option>
+                                        </select>
+                                    <input type="number" value="5">
+                                    <button class="remove-size-btn"><i class="fas fa-times"></i></button>
+                                </div>
+                                <div class="size-input-row">
+                                    <select>
+                                            <option value="XS">XS</option>
+                                            <option value="S">S</option>
+                                            <option value="M">M</option>
+                                            <option value="L">L</option>
+                                            <option value="XL" selected>XL</option>
+                                            <option value="XXL">XXL</option>
+                                        </select>
+                                    <input type="number" value="10">
+                                    <button class="remove-size-btn"><i class="fas fa-times"></i></button>
+                                </div>
+                                <div class="size-input-row">
+                                    <select>
+                                            <option value="XS">XS</option>
+                                            <option value="S">S</option>
+                                            <option value="M">M</option>
+                                            <option value="L">L</option>
+                                            <option value="XL">XL</option>
+                                            <option value="XXL" selected>XXL</option>
+                                        </select>
+                                    <input type="number" value="24">
+                                    <button class="remove-size-btn"><i class="fas fa-times"></i></button>
+                                </div>
+                                <div class="size-input-row">
+                                    <select>
+                                            <option value="">Chọn size</option>
+                                            <option value="XS">XS</option>
+                                            <option value="S">S</option>
+                                            <option value="M">M</option>
+                                            <option value="L">L</option>
+                                            <option value="XL">XL</option>
+                                            <option value="XXL">XXL</option>
+                                        </select>
+                                    <input type="number" placeholder="Số lượng">
+                                    <button class="remove-size-btn"><i class="fas fa-times"></i></button>
+                                </div>
+                                <div class="size-input-row new-size-template" style="display: none;">
+                                    <select>
+                                            <option value="">Chọn size</option>
+                                            <option value="XS">XS</option>
+                                            <option value="S">S</option>
+                                            <option value="M">M</option>
+                                            <option value="L">L</option>
+                                            <option value="XL">XL</option>
+                                            <option value="XXL">XXL</option>
+                                        </select>
+                                    <input type="number" placeholder="Số lượng">
+                                    <button class="remove-size-btn"><i class="fas fa-times"></i></button>
+                                </div>
+                                <button class="add-size-btn"><i class="fas fa-plus"></i> Thêm size</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="edit-product-buttons">
+                <button class="add-color-btn"><i class="fas fa-plus"></i> Thêm màu</button>
+                <button class="save-product-btn"><i class="fas fa-save"></i> Lưu sản phẩm</button>
+            </div>
+        </section>
+    </main>
+
+
+    <footer class="footer">
+        © Bản quyền thuộc về DRAVIK STORE
+    </footer>
+    <script src="js/script.js"></script>
+    <script src="js/product.js"></script>
+    <script src="js/account.js"></script>
+</body>
+
+</html>

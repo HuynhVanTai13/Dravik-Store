@@ -1,0 +1,220 @@
+/* Payment logos */
+
+.payment-methods {
+    width: 100%;
+    height: 30px;
+    margin: 3px 3px 0 0;
+    border-radius: 2px;
+    padding: 2px;
+    display: flex;
+    gap: 5px;
+}
+
+.payment-methods img {
+    height: 30px;
+    margin: 3px 3px 0 0;
+    border-radius: 5px;
+    padding: 2px;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 10px;
+    font-size: 20px;
+    color: #ccc;
+}
+
+
+/* MAIN CONTENT */
+
+.container {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.container h1 {
+    font-size: 48px;
+    /* H1 */
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #012d5a;
+}
+
+.container h2 {
+    font-size: 36px;
+    /* H2 */
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #012d5a;
+    border-left: 5px solid #fdb813;
+    padding-left: 10px;
+}
+
+.container h3 {
+    font-size: 28px;
+    /* H3 */
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.container p {
+    margin-bottom: 15px;
+    text-align: justify;
+    font-size: 16px;
+    line-height: 24px;
+    /* Body */
+}
+
+.container ul {
+    margin-left: 20px;
+    margin-bottom: 15px;
+}
+
+.container ul li {
+    list-style-type: disc;
+    margin-bottom: 8px;
+    font-size: 14px;
+    /* Small Text */
+    line-height: 20px;
+}
+
+
+/* Banner Section */
+
+.banner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    /* hoặc chiều cao bạn muốn, ví dụ 300px, 500px */
+    overflow: hidden;
+}
+
+.banner-img {
+    width: 100%;
+    height: 50%;
+    object-fit: cover;
+    /* Ảnh sẽ co/cắt để luôn lấp đầy banner */
+    display: block;
+}
+
+
+/* ========== RESPONSIVE HEADER ========== */
+
+@media (max-width: 1024px) {
+    .header-main {
+        width: 95%;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+    .header-search {
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+    }
+    .search input {
+        width: 100%;
+    }
+    .nav-top {
+        width: 100%;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+    .nav-bottom {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 30px;
+    }
+    .img-logo {
+        width: 140px;
+        height: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .search button {
+        width: 100%;
+        margin-top: 8px;
+        border-radius: 20px;
+    }
+    .nav-top a {
+        font-size: 18px;
+    }
+    .nav-top a p {
+        font-size: 14px;
+    }
+    .nav-bottom a {
+        font-size: 14px;
+    }
+}
+
+
+/* ========== RESPONSIVE BANNER ========== */
+
+@media (max-width: 768px) {
+    .banner {
+        height: auto;
+    }
+    .banner-img {
+        height: 200px;
+    }
+}
+
+
+/* ========== RESPONSIVE MAIN CONTENT ========== */
+
+@media (max-width: 768px) {
+    .container {
+        padding: 0 15px;
+    }
+    .container h1 {
+        font-size: 32px;
+    }
+    .container h2 {
+        font-size: 26px;
+    }
+    .container h3 {
+        font-size: 20px;
+    }
+    .container p,
+    .container ul li {
+        font-size: 14px;
+        line-height: 22px;
+    }
+}
+
+
+/* ========== RESPONSIVE FOOTER FIX ========== */
+
+@media (max-width: 1150px) {
+    .row-footer {
+        width: 95%;
+        flex-wrap: wrap;
+        gap: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .row-footer {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+    .col-4-footer {
+        width: 100%;
+    }
+    .subscribe-box {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .subscribe-box input,
+    .subscribe-box button {
+        width: 100%;
+    }
+    .footer-bottom {
+        font-size: 16px;
+        padding: 10px 0;
+    }
+}

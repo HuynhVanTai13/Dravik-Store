@@ -1,0 +1,116 @@
+.auth-container {
+  display: flex;
+  max-width: 900px;
+  margin: 40px auto;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  border-radius: 12px;
+  overflow: hidden;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.form-left,
+.form-right {
+  flex: 1;
+  padding: 40px 30px;
+}
+
+.form-left {
+  background-color: #003366;
+  color: white;
+}
+
+.form-left h2 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.form-left form input {
+  width: 100%;
+  padding: 12px 14px;
+  margin: 10px 0;
+  border-radius: 6px;
+  border: none;
+  outline: none;
+  font-size: 15px;
+  color: #222;  /* <-- THÊM DÒNG NÀY */
+  background: #fff; /* nếu muốn nền trắng rõ hơn */
+}
+
+
+.form-left form button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 20px;
+  background-color: #0056b3;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.form-left form button:hover {
+  background-color: #004899;
+}
+
+.social-login {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.social-login button {
+  flex: 1;
+  margin: 0 5px;
+  padding: 10px;
+  border-radius: 6px;
+  border: none;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+}
+
+.facebook-btn {
+  background-color: #1877f2;
+}
+
+.google-btn {
+  background-color: #db4437;
+}
+
+.form-right {
+  background-color: #ffffff; /* ✅ Nền trắng */
+  color: #003366;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.form-right h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.form-right p {
+  font-size: 14px;
+  margin-bottom: 20px;
+  max-width: 300px;
+}
+
+.form-right a button {
+  background-color: #003366;
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.form-right a button:hover {
+  background-color: #002850;
+}

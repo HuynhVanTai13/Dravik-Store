@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đổi màu khi bấm (Pure CSS Toggle)</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #f0f2f5;
+        }
+        /* Ẩn checkbox mặc định */
+        
+        #colorToggle {
+            display: none;
+            /* Rất quan trọng để ẩn checkbox */
+        }
+        /* CSS cho nhãn (label) của checkbox - đây sẽ là phần tử mà người dùng click */
+        
+        .toggle-button {
+            display: inline-block;
+            /* Để có thể thiết lập kích thước và padding */
+            padding: 15px 30px;
+            font-size: 18px;
+            font-weight: bold;
+            background-color: #007bff;
+            /* Màu mặc định: Xanh dương */
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.1s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            user-select: none;
+            /* Ngăn chặn việc chọn văn bản khi click */
+        }
+        /* Khi checkbox được check, thay đổi màu của nhãn (label) */
+        /* Đây là "hack": #colorToggle:checked + .toggle-button */
+        /* Nó chọn phần tử .toggle-button là anh em liền kề của checkbox đã được check */
+        
+        #colorToggle:checked+.toggle-button {
+            background-color: #dc3545;
+            /* Đổi thành màu Đỏ */
+            transform: translateY(2px);
+            /* Tạo hiệu ứng lún nhẹ */
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+        }
+        /* (Tùy chọn) Hiệu ứng hover cho nút */
+        
+        .toggle-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+
+    <input type="checkbox" id="colorToggle">
+
+    <label for="colorToggle" class="toggle-button">
+        Bấm vào tôi để đổi màu
+    </label>
+
+</body>
+
+</html>

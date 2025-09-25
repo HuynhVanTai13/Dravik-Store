@@ -1,0 +1,741 @@
+/* ---------------------------------------------------------------reponsive----------------------------------- */
+
+.hamburger-menu-btn {
+    display: none;
+    /* Mặc định ẩn trên desktop */
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0;
+    margin-right: 15px;
+    z-index: 1001;
+    /* Đảm bảo nút nằm trên cùng */
+}
+
+
+/* Sidebar */
+
+.sidebar {
+    background-color: var(--sidebar-bg);
+    color: #fff;
+    width: var(--sidebar-width);
+    height: calc(100vh - var(--header-height));
+    /* Mặc định trên desktop là static */
+    top: var(--header-height);
+    left: 0;
+    padding-top: 20px;
+    overflow-y: auto;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-out;
+    /* Transition cho transform */
+    flex-shrink: 0;
+    /* Ngăn sidebar co lại trên desktop */
+}
+
+
+/* --------------------------------product--------------------- */
+
+
+/* --- Product List Section Styles --- */
+
+.product-list-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    flex-wrap: wrap;
+    /* Allow wrapping on smaller screens */
+    gap: 15px;
+    /* Space between header elements */
+}
+
+h2 {
+    margin: 0;
+    font-size: 1.3rem;
+    color: #001F5D;
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    /* Space between search, filter, and add button */
+    flex-wrap: wrap;
+}
+
+.search-box {
+    display: flex;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    /* Ensures input and button corners are rounded together */
+    background-color: var(--card-bg);
+}
+
+.search-box input {
+    border: none;
+    padding: 10px 15px;
+    font-size: 0.95rem;
+    outline: none;
+    width: 250px;
+    /* Default width */
+    transition: width 0.3s ease;
+}
+
+.search-box input:focus {
+    width: 300px;
+    /* Expand on focus */
+}
+
+.search-box button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.2s ease;
+}
+
+.search-box button:hover {
+    background-color: #0056b3;
+}
+
+.status-filter {
+    padding: 10px 15px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    background-color: var(--card-bg);
+    color: var(--text-color);
+    font-size: 0.95rem;
+    cursor: pointer;
+}
+
+
+/* Add Product Button - Now styled as an <a> tag */
+
+.add-product-btn {
+    /* Updated color to match image_7319ee.png */
+    background-color: var(--btn-add-product-bg);
+    color: white;
+    padding: 10px 20px;
+    border-radius: var(--border-radius);
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+    text-decoration: none;
+    /* Ensure no underline */
+    border: none;
+}
+
+.add-product-btn:hover {
+    background-color: #0056b3;
+    /* Darker blue on hover */
+    transform: translateY(-2px);
+}
+
+.table-responsive {
+    overflow-x: auto;
+    margin-top: 20px;
+}
+
+.product-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: var(--white-bg);
+    min-width: 300px;
+    /* Đặt chiều rộng tối thiểu cho bảng để kích hoạt cuộn */
+}
+
+.product-table th,
+.product-table td {
+    padding: 5px 15px;
+    border: 1px solid var(--border-color);
+    vertical-align: middle;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.product-table th {
+    background-color: #001F5D;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+}
+
+.product-table tbody tr:nth-child(even) {
+    background-color: #f8f8f8;
+}
+
+.product-table tbody tr:hover {
+    background-color: #e9e9e9;
+}
+
+.product-table .product-thumb {
+    width: 50px;
+    height: 50px;
+    border-radius: 4px;
+    object-fit: cover;
+    border: 1px solid var(--border-color);
+    display: block;
+    margin: 0 auto;
+}
+
+
+/* Toggle Switch */
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 45px;
+    height: 25px;
+    margin: 0 auto;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 25px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 4px;
+    bottom: 3.5px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked+.slider {
+    background-color: var(--success-color);
+}
+
+input:focus+.slider {
+    box-shadow: 0 0 1px var(--success-color);
+}
+
+input:checked+.slider:before {
+    transform: translateX(20px);
+}
+
+
+/* Action Buttons */
+
+.product-table .actions {
+    white-space: nowrap;
+}
+
+.product-table .action-btn {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    margin: 0 3px;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    transition: background-color 0.2s ease;
+}
+
+.product-table .delete-btn a {
+    text-decoration: none;
+    color: white;
+}
+
+.product-table .delete-btn {
+    background-color: var(--danger-color);
+    color: white;
+}
+
+.product-table .delete-btn:hover {
+    background-color: #c82333;
+}
+
+.product-table .edit-btn a {
+    text-decoration: none;
+    color: white;
+}
+
+.product-table .edit-btn {
+    background-color: var(--warning-color);
+    color: white;
+}
+
+.product-table .edit-btn:hover {
+    background-color: #e0a800;
+}
+
+
+/* Pagination */
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 25px;
+    gap: 5px;
+    flex-wrap: wrap;
+}
+
+.pagination .page-link {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 8px 15px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    text-decoration: none;
+    color: var(--text-color);
+    background-color: var(--white-bg);
+    transition: background-color 0.2s ease;
+    font-size: 0.9rem;
+    min-width: 40px;
+    justify-content: center;
+}
+
+.pagination .page-link:hover:not(.disabled) {
+    background-color: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+.pagination .page-link.active {
+    background-color: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+    font-weight: bold;
+}
+
+.pagination .page-link.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    background-color: #f1f1f1;
+    color: #aaa;
+}
+
+.pagination .page-dots {
+    padding: 8px 5px;
+    color: var(--secondary-color);
+}
+
+
+/* Pagination Styles */
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    /* Căn giữa phân trang */
+    align-items: center;
+    margin-top: 30px;
+    gap: 5px;
+    /* Space between pagination links */
+}
+
+.page-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 35px;
+    height: 35px;
+    padding: 0 10px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    color: var(--text-color);
+    font-weight: 500;
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+    text-decoration: none;
+    /* Bỏ gạch chân */
+}
+
+.page-link:hover {
+    background-color: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+.page-link.active {
+    background-color: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+    cursor: default;
+}
+
+.page-link.active:hover {
+    background-color: var(--primary-color);
+    /* Keep same background on hover for active */
+    color: white;
+}
+
+.page-link i {
+    margin: 0 5px;
+}
+
+.page-dots {
+    padding: 0 8px;
+    color: var(--light-text-color);
+}
+
+
+/* Add Color button - based on image_c62ef7.png */
+
+.add-color-btn {
+    background-color: white;
+    border: 1px solid var(--btn-add-color-border);
+    color: var(--btn-add-color-border);
+    padding: 10px 20px;
+    border-radius: var(--border-radius);
+    font-size: 0.95rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.add-color-btn:hover {
+    background-color: var(--btn-add-color-border);
+    color: white;
+}
+
+
+/* Save Product button - based on image_c62ef7.png */
+
+.save-product-btn {
+    background-color: var(--btn-save-product-bg);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: var(--border-radius);
+    font-size: 0.95rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.save-product-btn:hover {
+    background-color: #0f1c30;
+    /* Slightly darker */
+}
+
+
+/* Responsive Design */
+
+@media (max-width: 992px) {
+    .sidebar {
+        width: 200px;
+    }
+    .main-content {
+        margin-left: 200px;
+    }
+    .activity-cards,
+    .revenue-cards {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+    .revenue-card .amount {
+        font-size: 1.3rem;
+    }
+    .revenue-card .label {
+        font-size: 0.85rem;
+    }
+    /* Adjust sidebar text wrapping for smaller desktop screens if needed */
+    .main-menu a {
+        padding: 12px 10px;
+        /* Reduce horizontal padding */
+    }
+    .main-menu a i {
+        margin-right: 8px;
+        /* Reduce icon margin */
+    }
+    /* Sub-menu padding for smaller desktop screens */
+    .main-menu .sub-menu {
+        padding-left: 8px;
+        /* Adjust indent */
+    }
+    .main-menu .sub-menu a {
+        padding: 8px 10px 8px 18px;
+        /* Adjust further indent and vertical padding */
+        font-size: 0.8rem;
+        /* Even smaller font on smaller screens if needed */
+    }
+    .menu-item-has-children .menu-arrow {
+        right: 10px;
+        /* Adjust arrow position */
+    }
+    /* Product List adjustments for smaller screens */
+    .product-list-section .product-list-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .product-list-section .header-actions {
+        width: 100%;
+        justify-content: flex-start;
+        margin-left: 0;
+    }
+    .product-list-section .search-box {
+        width: 100%;
+        /* Make search box full width */
+        max-width: unset;
+        /* Remove max-width on smaller screens */
+    }
+    .product-list-section .status-filter,
+    .product-list-section .add-product-btn {
+        flex-grow: 1;
+        /* Allow them to take full width if needed */
+    }
+    .product-table th,
+    .product-table td {
+        padding: 10px 8px;
+        font-size: 0.85rem;
+        /* Smaller font for table content */
+    }
+    .product-table .action-btn {
+        padding: 6px 10px;
+        /* Smaller action buttons */
+        font-size: 0.8rem;
+    }
+    .pagination .page-link {
+        padding: 6px 10px;
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        flex-direction: column;
+        /* Trên mobile, body là flex column */
+        /* Loại bỏ margin-left cho body nếu có */
+        margin-left: 0;
+    }
+    .hamburger-menu-btn {
+        display: block;
+        /* Hiển thị nút hamburger */
+    }
+    .sidebar {
+        position: fixed;
+        /* Quan trọng: Sidebar giờ là fixed để chồng lên nội dung */
+        top: var(--header-height);
+        left: 0;
+        width: var(--sidebar-width);
+        transform: translateX(-100%);
+        /* Ẩn sidebar ban đầu */
+        transition: transform 0.3s ease-out;
+        /* Hiệu ứng trượt */
+        height: calc(100vh - var(--header-height));
+        /* Chiếm hết chiều cao còn lại */
+    }
+    /* Khi sidebar mở (class `open` được thêm bởi JS) */
+    .sidebar.open {
+        transform: translateX(0);
+        /* Hiện sidebar */
+    }
+    /* Lớp phủ (overlay) khi sidebar mở */
+    body.sidebar-open::after {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+        /* Lớp phủ mờ */
+        z-index: 999;
+        /* Nằm giữa sidebar (1000) và main-content */
+        display: block;
+        cursor: pointer;
+    }
+    .main-content {
+        /* KHÔNG có margin-left để nó không bị đẩy */
+        margin-left: 0;
+        width: 100%;
+        /* Chiếm toàn bộ chiều rộng */
+        padding: 10px;
+    }
+    .user-profile img {
+        display: none;
+    }
+    .user-dropdown {
+        width: 150px;
+        height: 150px;
+        font-size: 14px;
+    }
+    .main-menu ul {
+        flex-direction: column;
+        /* Stack vertically for mobile sidebar */
+        /* To create a collapsible mobile menu, you'd make this `display: none` by default
+        and toggle `display: flex` with JS based on a hamburger icon click. */
+    }
+    .main-menu li {
+        width: 100%;
+        /* Full width */
+        margin-bottom: 0;
+        /* Remove extra margin */
+    }
+    .main-menu a {
+        justify-content: flex-start;
+        /* Align left */
+        padding: 12px 20px;
+        /* Restore original padding */
+        margin: 0;
+        /* Remove margin */
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        /* Separator */
+        white-space: normal;
+        /* Allow text to wrap if necessary on very small screens */
+        text-overflow: clip;
+        /* No ellipsis if wrapping */
+        overflow: visible;
+        /* No hidden overflow if wrapping */
+    }
+    .main-menu li:last-child>a {
+        border-bottom: none;
+    }
+    /* Mobile sub-menu padding */
+    .main-menu .sub-menu {
+        padding-left: 10px;
+        /* Adjust sub-menu indent for mobile */
+        max-height: 0;
+        /* Hidden by default */
+        transition: max-height 0.3s ease-out;
+        background-color: #354a5c;
+        /* Darker sub-menu background for distinction */
+    }
+    .main-menu .sub-menu a {
+        padding: 8px 20px 8px 20px;
+        /* Further indent for sub-sub items */
+        border-bottom: 1px dashed rgba(255, 255, 255, 0.05);
+        font-size: 0.8rem;
+    }
+    .main-menu .sub-menu li:last-child a {
+        border-bottom: none;
+    }
+    .menu-item-has-children .menu-arrow {
+        right: 20px;
+        /* Ensure arrow is visible */
+    }
+    .activity-cards,
+    .revenue-cards {
+        grid-template-columns: 1fr;
+        /* Stack cards vertically */
+    }
+    .product-list-card,
+    .chart-card {
+        min-width: unset;
+        /* Remove min-width to allow full stacking */
+        width: 100%;
+    }
+    .section-row {
+        flex-direction: column;
+        /* Stack sections vertically */
+    }
+    /* ====================main========================= */
+    h2 {
+        width: 100%;
+        text-align: center;
+        font-size: 1.3rem;
+    }
+    .search-box {
+        display: flex;
+        justify-content: space-between;
+    }
+    .add-product-btn {
+        width: 60px;
+        padding: 7px 10px;
+        justify-content: center;
+    }
+    .status-filter {
+        width: 70px;
+        margin-right: 40px;
+    }
+    /* Product List */
+    .product-list-section .product-list-header h2 {
+        font-size: 1.1rem;
+    }
+    .product-table th,
+    .product-table td {
+        padding: 8px 5px;
+        font-size: 0.75rem;
+    }
+    /* Cột hiện tại: STT (1), Tên sản phẩm (2), Ảnh (3), Danh mục (4), Thương hiệu (5), Giá (6), Đã bán (7), Tồn kho (8), Trạng thái (9), Hành động (10) */
+    /* Cần giữ lại: STT (1), Tên sản phẩm (2), Ảnh (3), GIÁ (6), Trạng thái (9), Hành động (10) */
+    /* Ẩn các cột còn lại: Danh mục (4), Thương hiệu (5), Đã bán (7), Tồn kho (8) */
+    /* Đảm bảo các cột cần hiển thị vẫn hiển thị */
+    .product-table th:nth-child(1),
+    /* STT */
+    .product-table td:nth-child(1),
+    .product-table th:nth-child(2),
+    /* Tên sản phẩm */
+    .product-table td:nth-child(2),
+    .product-table th:nth-child(3),
+    /* Ảnh */
+    .product-table td:nth-child(3),
+    .product-table th:nth-child(6),
+    /* GIÁ - THÊM VÀO ĐỂ HIỂN THỊ */
+    .product-table td:nth-child(6),
+    /* GIÁ - THÊM VÀO ĐỂ HIỂN THỊ */
+    .product-table th:nth-child(9),
+    /* Trạng thái */
+    .product-table td:nth-child(9),
+    .product-table th:nth-child(10),
+    /* Hành động */
+    .product-table td:nth-child(10) {
+        display: table-cell !important;
+        /* Dùng !important để ghi đè */
+    }
+    .product-table .product-thumb {
+        width: 35px;
+        height: 35px;
+    }
+    .product-table .action-btn {
+        padding: 5px 8px;
+        font-size: 0.65rem;
+        gap: 2px;
+    }
+    .pagination .page-link {
+        padding: 6px 10px;
+        font-size: 0.8rem;
+        min-width: 30px;
+    }
+    .switch {
+        width: 35px;
+        height: 15px;
+    }
+    .slider:before {
+        height: 13px;
+        width: 13px;
+        left: 1px;
+        bottom: 1px;
+    }
+    .product-table th,
+    .product-table td {
+        padding: 8px 5px;
+        font-size: 0.75rem;
+    }
+    .pagination .page-link {
+        padding: 6px 13px;
+    }
+}

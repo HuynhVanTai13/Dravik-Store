@@ -1,0 +1,583 @@
+/* ============================main content===================================*/
+
+.post-container {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    padding: 10px 30px;
+    width: 100%;
+    max-width: 960px;
+    margin: 0px auto;
+    /* Tăng max-width một chút để có không gian */
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    /* Chia 2 cột: nội dung chính và thông tin meta */
+    gap: 30px;
+    /* Khoảng cách giữa các cột */
+}
+
+h1 {
+    grid-column: 1 / -1;
+    /* Tiêu đề chiếm toàn bộ chiều rộng */
+    font-size: 28px;
+    color: #001F5D;
+    text-align: center;
+    /* Đảm bảo tiêu đề căn trái */
+}
+
+.main-info {
+    grid-column: 1 / 2;
+    /* Cột chính (tiêu đề, nội dung) */
+}
+
+.meta-info {
+    grid-column: 2 / 3;
+    /* Cột phụ (tác giả, danh mục, tags, ảnh, trạng thái) */
+    background-color: #f9fbfd;
+    /* Nền nhẹ cho cột phụ */
+    border-radius: 6px;
+    padding: 0px 15px;
+    /* Padding cho toàn bộ cột phụ */
+    border: 1px solid #e0e0e0;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    /* Khoảng cách tiêu chuẩn giữa các nhóm form */
+}
+
+.form-group:last-child {
+    margin-bottom: 0;
+    /* Loại bỏ margin cho nhóm cuối cùng trong mỗi section */
+}
+
+.form-group label {
+    font-size: 1.1rem;
+    color: #7f7f7f;
+    margin: 20px 0px 8px 0px;
+    /* Khoảng cách giữa label và input */
+    font-weight: 600;
+    display: block;
+    /* Đảm bảo label chiếm dòng riêng */
+}
+
+input[type="text"],
+textarea,
+select {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 15px;
+    box-sizing: border-box;
+    outline: none;
+    transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+input[type="text"]:focus,
+textarea:focus,
+select:focus {
+    border-color: #2196f3;
+    box-shadow: 0 0 0 3px rgba(33, 150, 243, 0.2);
+}
+
+textarea {
+    resize: vertical;
+    /* Cho phép thay đổi kích thước theo chiều dọc */
+    min-height: 150px;
+    /* Tăng chiều cao tối thiểu cho textarea */
+}
+
+
+/* Custom Select Dropdown */
+
+.select-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-color: #fff;
+    cursor: pointer;
+    padding-right: 30px;
+}
+
+.select-arrow {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #888;
+    pointer-events: none;
+}
+
+.hint-text {
+    font-size: 12px;
+    color: #777;
+    margin-top: 5px;
+    /* Khoảng cách từ input lên hint */
+    display: block;
+}
+
+.file-name {
+    flex-grow: 1;
+    color: #777;
+    font-size: 14px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding-right: 5px;
+    /* Đảm bảo không bị dính sát nút xóa */
+}
+
+.remove-image-btn {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    font-size: 14px;
+    flex-shrink: 0;
+}
+
+.remove-image-btn:hover {
+    background-color: #d32f2f;
+}
+
+.image-preview {
+    border: 1px dashed #ccc;
+    border-radius: 4px;
+    width: 150px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    margin-top: 10px;
+    /* Khoảng cách từ file-input-wrapper */
+    background-color: #fcfcfc;
+}
+
+.toggle-switch {
+    position: relative;
+    width: 60px;
+    height: 34px;
+}
+
+.toggle-input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.toggle-label {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.toggle-label:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+.toggle-input:checked+.toggle-label {
+    background-color: #4CAF50;
+}
+
+.toggle-input:focus+.toggle-label {
+    box-shadow: 0 0 1px #4CAF50;
+}
+
+.toggle-input:checked+.toggle-label:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+.toggle-status {
+    margin-left: 10px;
+    font-size: 15px;
+    color: #555;
+    white-space: nowrap;
+    /* Ngăn trạng thái xuống dòng */
+}
+
+
+/* Form Actions Buttons */
+
+.form-actions {
+    grid-column: 1 / -1;
+    /* Nút chiếm toàn bộ chiều rộng */
+    display: flex;
+    justify-content: flex-end;
+    /* Căn phải các nút */
+    gap: 15px;
+    border-top: 1px solid #eee;
+}
+
+.form-actions a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.save-post-btn,
+.preview-post-btn {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.save-post-btn {
+    background-color: #007bff;
+    color: white;
+}
+
+.save-post-btn:hover {
+    background-color: #0056b3;
+    transform: translateY(-1px);
+}
+
+.preview-post-btn {
+    background-color: #dc3545;
+    color: white;
+}
+
+.preview-post-btn:hover {
+    background-color: #dd0808;
+    transform: translateY(-1px);
+}
+
+
+/* Responsive Design */
+
+@media (max-width: 992px) {
+    .sidebar {
+        width: 200px;
+    }
+    .main-content {
+        margin-left: 200px;
+    }
+    .activity-cards,
+    .revenue-cards {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+    .revenue-card .amount {
+        font-size: 1.3rem;
+    }
+    .revenue-card .label {
+        font-size: 0.85rem;
+    }
+    /* Adjust sidebar text wrapping for smaller desktop screens if needed */
+    .main-menu a {
+        padding: 12px 10px;
+        /* Reduce horizontal padding */
+    }
+    .main-menu a i {
+        margin-right: 8px;
+        /* Reduce icon margin */
+    }
+    /* Sub-menu padding for smaller desktop screens */
+    .main-menu .sub-menu {
+        padding-left: 8px;
+        /* Adjust indent */
+    }
+    .main-menu .sub-menu a {
+        padding: 8px 10px 8px 18px;
+        /* Adjust further indent and vertical padding */
+        font-size: 0.8rem;
+        /* Even smaller font on smaller screens if needed */
+    }
+    .menu-item-has-children .menu-arrow {
+        right: 10px;
+        /* Adjust arrow position */
+    }
+    /* Product List adjustments for smaller screens */
+    .product-list-section .product-list-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .product-list-section .header-actions {
+        width: 100%;
+        justify-content: flex-start;
+        margin-left: 0;
+    }
+    .product-list-section .search-box {
+        width: 100%;
+        /* Make search box full width */
+        max-width: unset;
+        /* Remove max-width on smaller screens */
+    }
+    .product-list-section .status-filter,
+    .product-list-section .add-product-btn {
+        flex-grow: 1;
+        /* Allow them to take full width if needed */
+    }
+    .product-table th,
+    .product-table td {
+        padding: 10px 8px;
+        font-size: 0.85rem;
+        /* Smaller font for table content */
+    }
+    .product-table .action-btn {
+        padding: 6px 10px;
+        /* Smaller action buttons */
+        font-size: 0.8rem;
+    }
+    .pagination .page-link {
+        padding: 6px 10px;
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        flex-direction: column;
+        /* Trên mobile, body là flex column */
+        /* Loại bỏ margin-left cho body nếu có */
+        margin-left: 0;
+    }
+    .header {
+        left: 0;
+        /* Header chiếm toàn bộ chiều rộng */
+        width: 100%;
+    }
+    .hamburger-menu-btn {
+        display: block;
+        /* Hiển thị nút hamburger */
+    }
+    .header .logo {
+        margin: 0 auto;
+        /* Căn giữa logo trên mobile */
+    }
+    .sidebar {
+        position: fixed;
+        /* Quan trọng: Sidebar giờ là fixed để chồng lên nội dung */
+        top: var(--header-height);
+        left: 0;
+        width: var(--sidebar-width);
+        transform: translateX(-100%);
+        /* Ẩn sidebar ban đầu */
+        transition: transform 0.3s ease-out;
+        /* Hiệu ứng trượt */
+        height: calc(100vh - var(--header-height));
+        /* Chiếm hết chiều cao còn lại */
+    }
+    /* Khi sidebar mở (class `open` được thêm bởi JS) */
+    .sidebar.open {
+        transform: translateX(0);
+        /* Hiện sidebar */
+    }
+    /* Lớp phủ (overlay) khi sidebar mở */
+    body.sidebar-open::after {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+        /* Lớp phủ mờ */
+        z-index: 999;
+        /* Nằm giữa sidebar (1000) và main-content */
+        display: block;
+        cursor: pointer;
+    }
+    .main-content {
+        /* KHÔNG có margin-left để nó không bị đẩy */
+        margin-left: 0;
+        width: 100%;
+        /* Chiếm toàn bộ chiều rộng */
+        padding: 10px;
+    }
+    .header .bar {
+        font-size: 28px;
+    }
+    .header-icon {
+        display: none;
+    }
+    .user-profile img {
+        display: none;
+    }
+    .user-dropdown {
+        width: 150px;
+        height: 150px;
+        font-size: 14px;
+    }
+    .main-menu ul {
+        flex-direction: column;
+        /* Stack vertically for mobile sidebar */
+        /* To create a collapsible mobile menu, you'd make this `display: none` by default
+        and toggle `display: flex` with JS based on a hamburger icon click. */
+    }
+    .main-menu li {
+        width: 100%;
+        /* Full width */
+        margin-bottom: 0;
+        /* Remove extra margin */
+    }
+    .main-menu a {
+        justify-content: flex-start;
+        /* Align left */
+        padding: 12px 20px;
+        /* Restore original padding */
+        margin: 0;
+        /* Remove margin */
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        /* Separator */
+        white-space: normal;
+        /* Allow text to wrap if necessary on very small screens */
+        text-overflow: clip;
+        /* No ellipsis if wrapping */
+        overflow: visible;
+        /* No hidden overflow if wrapping */
+    }
+    .main-menu li:last-child>a {
+        border-bottom: none;
+    }
+    /* Mobile sub-menu padding */
+    .main-menu .sub-menu {
+        padding-left: 10px;
+        /* Adjust sub-menu indent for mobile */
+        max-height: 0;
+        /* Hidden by default */
+        transition: max-height 0.3s ease-out;
+        background-color: #354a5c;
+        /* Darker sub-menu background for distinction */
+    }
+    .main-menu .sub-menu a {
+        padding: 8px 20px 8px 20px;
+        /* Further indent for sub-sub items */
+        border-bottom: 1px dashed rgba(255, 255, 255, 0.05);
+        font-size: 0.8rem;
+    }
+    .main-menu .sub-menu li:last-child a {
+        border-bottom: none;
+    }
+    /* Mobile "Quản lý" section header */
+    .main-menu .menu-section-header {
+        padding: 10px 20px 5px 20px;
+        font-size: 0.8rem;
+    }
+    .menu-item-has-children .menu-arrow {
+        right: 20px;
+        /* Ensure arrow is visible */
+    }
+    .activity-cards,
+    .revenue-cards {
+        grid-template-columns: 1fr;
+        /* Stack cards vertically */
+    }
+    .product-list-card,
+    .chart-card {
+        min-width: unset;
+        /* Remove min-width to allow full stacking */
+        width: 100%;
+    }
+    .section-row {
+        flex-direction: column;
+        /* Stack sections vertically */
+    }
+    /* Footer: No longer fixed on any screen */
+    .footer {
+        position: relative;
+        bottom: auto;
+        left: auto;
+        width: 100%;
+        box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+    }
+    /* ===============main=============== */
+    .post-container {
+        padding: 15px;
+        /* Padding nhỏ hơn trên mobile rất nhỏ */
+        gap: 0px;
+    }
+    h1 {
+        font-size: 1.1rem;
+    }
+    .file-input-wrapper {
+        flex-wrap: wrap;
+        /* Cho phép các phần tử trong file input xuống dòng */
+    }
+    .file-input-wrapper .file-name {
+        flex-basis: 100%;
+        /* Tên file chiếm toàn bộ chiều rộng */
+        margin-left: 0;
+        margin-top: 8px;
+        /* Khoảng cách từ nút "Chọn ảnh" */
+    }
+    h1 {
+        grid-column: 1 / 2;
+        text-align: center;
+    }
+    .main-info,
+    .meta-info {
+        grid-column: 1 / 2;
+        padding: 0;
+        border: none;
+        background-color: transparent;
+    }
+    .form-actions {
+        flex-direction: column;
+        /* Xếp chồng nút */
+        align-items: stretch;
+    }
+    .save-post-btn,
+    .preview-post-btn {
+        width: 100%;
+        justify-content: center;
+    }
+    .toggle-group {
+        flex-direction: row;
+        /* Giữ hàng ngang nếu không quá hẹp */
+        flex-wrap: wrap;
+        /* Cho phép xuống dòng nếu cần */
+        align-items: center;
+        gap: 10px;
+    }
+    .toggle-group label:first-child {
+        margin-bottom: 0;
+    }
+    .form-group label {
+        font-size: 0.95rem;
+    }
+    input[type="text"],
+    textarea,
+    select {
+        padding: 7px 9px;
+    }
+    .post-container {
+        display: block;
+    }
+}

@@ -1,0 +1,212 @@
+/* ============= SẢN PHẨM YÊU THÍCH ============= */
+
+.fav-main {
+    max-width: 1300px;
+    margin: 0 auto;
+    min-height: 100vh;
+    padding-bottom: 24px;
+}
+
+.fav-breadcrumb {
+    font-size: 14px;
+    color: #979797;
+    padding: 36px 0 0 0;
+    margin-left: 50px;
+    letter-spacing: -0.1px;
+}
+
+.fav-breadcrumb span {
+    color: #212121;
+    font-weight: 600;
+}
+
+.fav-title {
+    text-align: center;
+    font-size: 1.35rem;
+    font-weight: 700;
+    letter-spacing: 0.2px;
+    margin: 28px 0 42px 0;
+    color: #222;
+    text-transform: uppercase;
+    font-family: inherit;
+}
+
+.heart-btn i.fa-heart {
+    color: #e03131 !important;
+}
+
+.heart-btn {
+    border: 1.5px solid #e03131;
+    background: #fff;
+    transition: background 0.18s, color 0.18s;
+}
+
+.heart-btn.active,
+.heart-btn:hover {
+    background: #fbe7e7;
+    color: #fff;
+}
+
+
+/* ---------- SẢN PHẨM ---------- */
+
+.row-3 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 26px;
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 0 8px;
+}
+
+.col-5-sp {
+    border-radius: 10px;
+    background: #fff;
+    border: 1.3px solid #cfd4e3;
+    box-shadow: 0 2px 12px rgba(13, 53, 120, 0.09);
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 13px;
+    transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.col-5-sp:hover {
+    box-shadow: 0 6px 28px #1857c015;
+    transform: translateY(-6px) scale(1.01);
+}
+
+.img-sp {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    height: 256px;
+    background: #f7fafd;
+    border-radius: 8px 8px 0 0;
+    overflow: hidden;
+}
+
+.img-sp img {
+    max-width: 100%;
+    object-fit: contain;
+}
+
+.text-sp {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 0 15px;
+    flex: 1;
+    gap: 6px;
+}
+
+.left-sp {
+    width: 67%;
+    min-width: 0;
+}
+
+.left-sp .name-sp {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #222;
+    line-height: 1.23;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.left-sp .price-row {
+    color: #cd1919;
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 7px;
+}
+
+.left-sp .gia-moi {
+    color: #e03131;
+    font-weight: 600;
+}
+
+.left-sp .gia-cu {
+    color: #979797;
+    font-size: 14px;
+    margin-left: 3px;
+}
+
+.left-sp a {
+    display: inline-block;
+    background: #001f5d;
+    color: #fff;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+    padding: 7px 36px;
+    margin-top: 7px;
+    transition: background 0.18s;
+}
+
+.left-sp a:hover {
+    background: #054b95;
+}
+
+.right-sp {
+    display: flex;
+    flex-direction: column;
+    gap: 11px;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+
+.right-sp button {
+    width: 38px;
+    height: 38px;
+    font-size: 19px;
+    text-align: center;
+    border: 1.2px solid #001F5D;
+    border-radius: 7px;
+    background: #fff;
+    color: #001F5D;
+    cursor: pointer;
+    transition: border 0.16s, color 0.15s, background 0.18s;
+}
+
+
+/* ---------- PHÂN TRANG ---------- */
+
+.fav-pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 34px 0 0 0;
+    gap: 13px;
+}
+
+.fav-page {
+    border: 1.5px solid #cfd4e3;
+    background: #fff;
+    color: #212121;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    font-size: 20px;
+    font-weight: 500;
+    margin: 0 1px;
+    cursor: pointer;
+    transition: background 0.17s, color 0.13s, border 0.17s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.fav-page.active,
+.fav-page:hover {
+    background: #3683dc;
+    color: #fff;
+    border: 1.5px solid #3683dc;
+}
+
+.fav-page i {
+    font-size: 21px;
+}

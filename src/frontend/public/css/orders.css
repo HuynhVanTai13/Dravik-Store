@@ -1,0 +1,602 @@
+/* ===========================
+   DRAVIK STORE – Orders Cards (Compact, 12 columns)
+   ĐÃ SIẾT KHOẢNG CÁCH + ĐỔI MÀU TIỀN
+   =========================== */
+
+:root {
+    --brand: #12366e;
+    --brand-600: #0e2e60;
+    --danger: #d94848;
+    --danger-600: #c92a2a;
+    --muted: #6b7280;
+    --line: #e9edf2;
+    --bg: #fff;
+    --bg-soft: #f7f9fc;
+    --text: #1f2937;
+    --radius: 10px;
+    --shadow: 0 4px 14px rgba(0, 0, 0, .06);
+    --s-1: 4px;
+    --s-2: 8px;
+    --s-3: 12px;
+    --s-4: 16px;
+    --s-5: 20px;
+}
+
+
+/* container 12 cột cho đồng nhất website */
+
+.container-12 {
+    max-width: 1300px;
+    margin: 0 auto
+}
+
+.breadcrumb {
+    background: #f0f0f0;
+    padding: 15px 10px;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.breadcrumb a {
+    color: #0055cc;
+    text-decoration: none;
+}
+
+
+/* layout */
+
+.account-container {
+    display: flex;
+    gap: 10px;
+    margin: 12px auto 20px;
+    padding: 0 8px;
+    color: var(--text)
+}
+
+
+/* sidebar – compact + sticky */
+
+.account-sidebar {
+    flex: 0 0 250px;
+    background: var(--bg);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 10px;
+    box-shadow: var(--shadow);
+    position: sticky;
+    top: 74px;
+    height: fit-content
+}
+
+.account-sidebar h3 {
+    margin: 0 0 4px;
+    font-size: 20px;
+    font-weight: 700;
+    color: #111827
+}
+
+.account-sidebar p {
+    margin: 0 0 8px;
+    font-size: 14px;
+    color: #374151
+}
+
+.account-sidebar .hl {
+    color: #e03131
+}
+
+.account-sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0
+}
+
+.account-sidebar li {
+    margin-bottom: 4px
+}
+
+.account-sidebar a {
+    display: block;
+    padding: 7px 9px;
+    font-size: 15px;
+    border-radius: 8px;
+    text-decoration: none;
+    color: #111827;
+    border-left: 3px solid transparent;
+    transition: all .15s ease
+}
+
+.account-sidebar a:hover {
+    background: #f5f7ff;
+    border-left-color: #c7d2fe;
+    color: #0b2d7a
+}
+
+.account-sidebar a.active {
+    background: #eef2ff;
+    border-left-color: #3353b8;
+    color: #0b2d7a;
+    font-weight: 700
+}
+
+.orders-cards {
+    flex: 1
+}
+
+
+/* top bar – gọn lại */
+
+.orders-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px
+}
+
+.orders-top h2 {
+    font-size: 20px;
+    margin: 0;
+    font-weight: bold;
+}
+
+.order-filter {
+    display: flex;
+    gap: 8px;
+    align-items: center
+}
+
+.order-filter label {
+    font-size: 14px;
+    color: var(--muted)
+}
+
+.order-filter select {
+    padding: 6px 10px;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: #fff;
+    font-size: 13px
+}
+
+
+/* empty */
+
+.empty {
+    border: 1px dashed var(--line);
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    background: #fff
+}
+
+.empty img {
+    width: 88px;
+    margin-bottom: 8px;
+    opacity: .9
+}
+
+.muted {
+    color: var(--muted);
+    font-size: 13px
+}
+
+
+/* buttons */
+
+.btn {
+    border: 1px solid transparent;
+    background: var(--brand);
+    color: #fff;
+    padding: 7px 10px;
+    font-size: 14px;
+    font-weight: 700;
+    border-radius: 8px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    transition: all .15s ease
+}
+
+.btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 16px rgba(18, 54, 110, .12);
+    background: var(--brand-600)
+}
+
+.btn:active {
+    transform: none
+}
+
+.btn.primary {
+    background: var(--brand)
+}
+
+.btn.danger {
+    background: var(--danger)
+}
+
+.btn.danger:hover {
+    background: var(--danger-600)
+}
+
+.btn.outline {
+    background: #fff;
+    color: var(--brand);
+    border-color: var(--brand)
+}
+
+.btn.outline:hover {
+    background: #f0f4ff
+}
+
+.btn.tiny {
+    padding: 6px 9px;
+    font-size: 14px;
+    border-radius: 7px
+}
+
+.btn:disabled {
+    opacity: .5;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none
+}
+
+
+/* status pill */
+
+.status-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 3px 7px;
+    border-radius: 999px;
+    font-size: 14px;
+    font-weight: 700;
+    border: 1px solid var(--line);
+    background: #fff;
+    color: #374151
+}
+
+.status-pill::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 999px;
+    background: currentColor
+}
+
+.status-pill.pending {
+    color: #ad6800;
+    background: #fff8e6;
+    border-color: #ffe9bf
+}
+
+.status-pill.confirmed {
+    color: #0958d9;
+    background: #eef6ff;
+    border-color: #cfe4ff
+}
+
+.status-pill.processing {
+    color: #2f9e44;
+    background: #efffee;
+    border-color: #c8f9c7
+}
+
+.status-pill.shipping {
+    color: #08979c;
+    background: #e9fffe;
+    border-color: #b7f4ef
+}
+
+.status-pill.completed {
+    color: #2f9e44;
+    background: #eafff4;
+    border-color: #baf7cf
+}
+
+.status-pill.cancelled {
+    color: #cf1322;
+    background: #fff1f0;
+    border-color: #ffd1cf
+}
+
+
+/* order card – giảm khoảng thừa */
+
+.order-card {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    margin-bottom: 8px;
+    overflow: hidden;
+    box-shadow: var(--shadow)
+}
+
+
+/* header – gọn + đặt nút giữa bên phải */
+
+.order-header {
+    position: relative;
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 8px 12px;
+    border-bottom: 1px solid var(--line);
+    background: #fff
+}
+
+.order-header .head-left {
+    display: flex;
+    flex-direction: column;
+    gap: 3px
+}
+
+.order-header .row {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+    font-size: 14px;
+    color: #374151
+}
+
+.order-header .row .label {
+    color: var(--muted)
+}
+
+.order-header .code {
+    color: var(--brand);
+    font-weight: 700;
+    text-decoration: none
+}
+
+.order-header .code:hover {
+    text-decoration: underline
+}
+
+
+/* nút "Xem chi tiết" ở giữa bên phải */
+
+.detail-float {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%)
+}
+
+
+/* items – chiều cao gọn */
+
+.product-list {
+    display: flex;
+    flex-direction: column;
+    padding: 6px 10px
+}
+
+.product-item {
+    display: grid;
+    grid-template-columns: 48px 1fr auto;
+    gap: 8px;
+    align-items: center;
+    padding: 6px;
+    border-bottom: 1px dashed var(--line)
+}
+
+.product-item:last-child {
+    border-bottom: none
+}
+
+.product-item .thumb {
+    width: 48px;
+    height: 48px;
+    border-radius: 8px;
+    border: 1px solid var(--line);
+    object-fit: cover
+}
+
+.product-item .meta {
+    min-width: 0
+}
+
+.product-item .name {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 1px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis
+}
+
+.product-item .attrs {
+    display: flex;
+    gap: 8px;
+    color: #6b7280;
+    font-size: 12.5px
+}
+
+
+/* GIÁ TIỀN: dùng màu thương hiệu, luôn hiện rõ (dẹp vụ chữ trắng) */
+
+.product-item .price {
+    font-weight: 800;
+    font-size: 14px;
+    white-space: nowrap;
+    color: var(--brand) !important;
+}
+
+
+/* footer – sát hơn + tổng trái, actions phải */
+
+.order-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    border-top: 1px solid var(--line);
+    background: #fff
+}
+
+.order-footer .total {
+    display: flex;
+    align-items: center;
+    gap: 6px
+}
+
+.order-footer .total .label {
+    color: var(--muted);
+    font-size: 17px
+}
+
+
+/* TỔNG TIỀN: dùng màu thương hiệu, đậm hơn */
+
+.order-footer .total strong {
+    font-size: 17px;
+    color: var(--brand) !important;
+}
+
+.order-footer .actions {
+    display: flex;
+    gap: 8px
+}
+
+
+/* ===== POPUP HỦY ĐƠN – .odr-* ===== */
+
+.odr-popup-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background: rgba(15, 23, 42, .55);
+    backdrop-filter: blur(2px);
+    display: grid;
+    place-items: center;
+    padding: 16px;
+}
+
+.odr-popup {
+    width: 100%;
+    max-width: 680px;
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.odr-popup.small {
+    max-width: 420px
+}
+
+.odr-title {
+    font-size: 18px;
+    font-weight: 800;
+    color: #0f172a
+}
+
+.odr-subtitle {
+    font-weight: 700;
+    margin-top: 2px;
+    color: #0f172a
+}
+
+.odr-reasons {
+    display: grid;
+    gap: 8px;
+    margin-top: 6px
+}
+
+.odr-reason {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #1f2937
+}
+
+.odr-reason input {
+    transform: translateY(1px)
+}
+
+.odr-input textarea {
+    width: 100%;
+    min-height: 96px;
+    resize: vertical;
+    padding: 8px 10px;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    outline: none;
+    font: inherit;
+    color: #0f172a;
+    background: #fff;
+}
+
+.odr-input textarea:focus {
+    border-color: #b9c8ea;
+    box-shadow: 0 0 0 3px rgba(18, 54, 110, .12)
+}
+
+.odr-actions {
+    display: flex;
+    gap: 8px;
+    justify-content: flex-end
+}
+
+.odr-actions.center {
+    justify-content: center
+}
+
+
+/* Nút trong popup */
+
+.btn.odr-cancel {
+    background: #fff;
+    color: var(--brand);
+    border: 1px solid var(--brand);
+}
+
+.btn.odr-cancel:hover {
+    background: #f0f4ff
+}
+
+.btn.odr-danger {
+    background: var(--danger);
+}
+
+.btn.odr-danger:hover {
+    background: var(--danger-600)
+}
+
+
+/* responsive */
+
+@media (max-width:1024px) {
+    .account-container {
+        flex-direction: column
+    }
+    .account-sidebar,
+    .orders-cards {
+        width: 100%
+    }
+    .account-sidebar {
+        position: static
+    }
+}
+
+@media (max-width:768px) {
+    .order-header {
+        padding-right: 108px
+    }
+    /* chừa chỗ nút nổi bên phải */
+    .product-item {
+        grid-template-columns: 44px 1fr auto
+    }
+}

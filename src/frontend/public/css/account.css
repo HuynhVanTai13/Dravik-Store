@@ -1,0 +1,85 @@
+/* ============ Account Minimal (scoped với .accm-*) ============ */
+
+:root {
+    --accm-brand: #0b3b77;
+    /* navy thương hiệu */
+    --accm-text: #1b2a45;
+    --accm-muted: #6b7890;
+    --accm-line: #e7edf5;
+    --accm-shadow: 0 8px 22px rgba(2, 8, 23, .05);
+    --accm-radius: 14px;
+}
+
+
+/* Chỉ áp dụng trong trang này */
+
+.accm-page {
+    font-size: 14px;
+    color: var(--accm-text);
+}
+
+.breadcrumb {
+    background: #f0f0f0;
+    padding: 15px 10px;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.breadcrumb a {
+    color: #0055cc;
+    text-decoration: none;
+}
+
+
+/* Card bên phải */
+
+.accm-card {
+    background: #fff;
+    border: 1px solid var(--accm-line);
+    border-radius: var(--accm-radius);
+    box-shadow: var(--accm-shadow);
+    padding: 18px;
+    flex: 1;
+}
+
+.accm-title {
+    margin: 0 0 10px 0;
+    font-size: 20px;
+    font-weight: 800;
+    color: #0e2245;
+}
+
+
+/* 3 dòng thông tin kiểu key–value */
+
+.accm-kv {
+    display: grid;
+    grid-template-columns: 160px 1fr;
+    gap: 12px;
+    padding: 8px 0;
+    border-bottom: 1px dashed var(--accm-line);
+}
+
+.accm-kv:last-child {
+    border-bottom: none
+}
+
+.accm-kv>span {
+    color: var(--accm-muted);
+    font-weight: 700
+}
+
+.accm-kv>b {
+    font-weight: 700;
+    color: var(--accm-text);
+    word-break: break-word
+}
+
+
+/* Responsive */
+
+@media (max-width: 992px) {
+    .accm-kv {
+        grid-template-columns: 120px 1fr;
+    }
+}

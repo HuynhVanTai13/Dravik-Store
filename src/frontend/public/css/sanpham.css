@@ -1,0 +1,173 @@
+
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    .filter-bar {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 20px;
+    }
+
+    .tag {
+      padding: 6px 10px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .tag img {
+      height: 50px;
+      width: 80px;
+      /* vertical-align: middle; */
+    }
+
+    .selected-brand {
+      display: none;
+      margin: 10px 20px;
+    }
+
+    .selected-tag {
+      display: inline-block;
+      background: #ddd;
+      padding: 6px 12px;
+      border-radius: 20px;
+    }
+
+    .selected-tag span {
+      margin-left: 8px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .sort-bar {
+      margin: 20px;
+    }
+
+    .sort-bar a {
+      margin: 0 10px;
+      color: blue;
+      text-decoration: none;
+    }
+
+    .product-list {
+      display: none;
+      margin: 20px;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .product-list.active {
+      display: flex;
+    }
+
+    .product {
+      border: 1px solid #ccc;
+      padding: 10px;
+      width: 150px;
+      text-align: center;
+    }
+
+    .filter-popup-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.5);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .filter-popup {
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      width: 90%;
+      max-width: 600px;
+      position: relative;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    }
+
+    .filter-section {
+      margin-bottom: 20px;
+    }
+
+    .brand-logos img {
+      width: 80px;
+      height: auto;
+      margin: 5px;
+      cursor: pointer;
+      border: 2px solid transparent;
+      transition: transform 0.3s, border-color 0.3s;
+      border-radius: 5px;
+    }
+
+    .brand-logos img:hover {
+      transform: scale(1.1);
+    }
+
+    .brand-logos img.selected {
+      border-color: #001F5D;
+    }
+
+    .size-buttons, .price-options {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .size, .price {
+      border: 1px solid #000000;
+      padding: 8px 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      background-color: #ffffff;
+      color: #000000;
+      transition: all 0.3s ease;
+    }
+
+    .size.selected, .price.selected {
+      background-color: #001F5D;
+      color: #ffffff;
+      border: 1px solid #000000;
+    }
+
+    .size-info {
+      font-size: 14px;
+      color: #555;
+      margin-top: 8px;
+    }
+
+    .filter-actions {
+      display: flex;
+      justify-content: flex-end;
+      gap: 10px;
+    }
+
+    .close-filter-btn,
+    .apply-filter-btn {
+      padding: 8px 16px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .close-filter-btn {
+      background: #ccc;
+    }
+
+    .apply-filter-btn {
+      background: #007bff;
+      color: #fff;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 20px;
+      cursor: pointer;
+    }

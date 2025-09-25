@@ -1,0 +1,105 @@
+/* ====== CATEGORY: Mobile to, rõ, 2 ô/khung ====== */
+
+@media (max-width: 640px) {
+    /* container */
+    .category-full-row {
+        position: relative;
+        gap: 0 !important;
+        padding: 0 6px;
+    }
+    /* mũi tên chồng lên, không chiếm ngang */
+    .category-nav-wrapper {
+        position: absolute !important;
+        top: 50%;
+        transform: translateY(-50%);
+        width: auto !important;
+        height: auto !important;
+        z-index: 5;
+        pointer-events: none;
+    }
+    .category-nav-wrapper .swiper-button {
+        pointer-events: auto;
+        width: 38px !important;
+        height: 38px !important;
+        box-shadow: 0 6px 16px rgba(0, 0, 0, .12);
+    }
+    .prev-wrapper {
+        left: 2px;
+    }
+    .next-wrapper {
+        right: 2px;
+    }
+    /* vùng trưng bày */
+    .main-carousel-area {
+        width: 100% !important;
+        height: auto !important;
+        /* override chiều cao 170px cũ */
+    }
+    .carousel-content {
+        width: 100%;
+        display: flex !important;
+        gap: 10px !important;
+        /* khoảng giữa 2 ô */
+        justify-content: space-between;
+    }
+    /* mỗi ô = nửa khung */
+    .col-9 {
+        flex: 0 0 calc(50% - 5px) !important;
+        max-width: calc(50% - 5px) !important;
+        min-width: 0 !important;
+        box-sizing: border-box;
+        background: #fff;
+        padding: 14px 12px !important;
+        border-radius: 16px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, .06);
+        text-align: center;
+    }
+    /* Ảnh vuông lớn – BỎ hẳn rule cũ 100px */
+    .col-9 .img-cate {
+        width: 100% !important;
+        max-width: none !important;
+        /* ← gỡ khóa 100px từ home.css */
+        aspect-ratio: 1 / 1 !important;
+        /* vuông theo bề rộng ô */
+        height: auto !important;
+        /* để aspect-ratio tính */
+        min-height: 170px !important;
+        /* đảm bảo to */
+        border: 1px solid #eee;
+        border-radius: 14px;
+        background: #f5f5f5;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+    }
+    .col-9 .img-cate img {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: contain !important;
+        /* không méo, không tràn */
+        display: block;
+    }
+    /* Chữ to rõ – ghi đè text-sm */
+    .col-9 p {
+        margin-top: 10px !important;
+        font-size: 17px !important;
+        font-weight: 700 !important;
+        line-height: 1.35 !important;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        /* tối đa 2 dòng */
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+}
+
+
+/* Phòng khi còn rule cũ nằm ngoài media */
+
+@media (max-width: 640px) {
+    .col-9 .img-cate {
+        height: auto !important;
+        max-width: none !important;
+    }
+}

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Đơn Hàng - DRAVIK STORE</title>
+  <link rel="stylesheet" href="css/orders.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="header-main">
+    <div class="img-logo"><img src="images/logo.png" alt="Dravik Store"></div>
+    <div class="header-nav">
+      <div class="header-search">
+        <div class="search">
+          <input type="text" placeholder="Nhập sản phẩm cần tìm kiếm ...">
+          <button class="icon-search"><i class="fas fa-search"></i></button>
+        </div>
+        <div class="nav-top">
+          <a href="#"><i class="fas fa-file-alt"></i><p>Đơn hàng</p></a>
+          <a href="#"><i class="fas fa-heart"></i><p>Yêu thích</p></a>
+          <a href="#"><i class="fas fa-user"></i><p>Tài khoản</p></a>
+          <a href="#" class="cart"><i class="fas fa-shopping-cart"></i><p>Giỏ hàng</p><span class="badge">3</span></a>
+        </div>
+      </div>
+      <div class="nav-bottom">
+        <a href="#">Trang chủ</a>
+        <a href="introduce.html">Giới thiệu</a>
+        <a href="#">Sản phẩm</a>
+        <a href="#">Tin tức</a>
+        <a href="#">Hàng mới</a>
+        <a href="contact.html">Liên hệ</a>
+        <a href="#">Sản phẩm giảm giá</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- HEADER MOBILE -->
+<div class="mobile-header">
+  <span class="menu-icon"><i class="fas fa-bars"></i></span>
+  <div class="img-logo"><img src="images/logo.png" alt="Dravik Store"></div>
+  <div class="icon-group">
+    <span><i class="fas fa-search"></i></span>
+    <span class="cart"><i class="fas fa-shopping-cart"></i><span class="badge">3</span></span>
+  </div>
+</div>
+
+<!-- BREADCRUMB -->
+<div class="breadcrumb">
+  <a href="#">Trang chủ</a> / Trang khách hàng
+</div>
+
+<!-- MAIN -->
+<div class="wrapper grid-12 account-container">
+  <aside class="account-sidebar col-3">
+    <h3>Trang tài khoản</h3>
+    <p>Xin chào, <span style="color:red;">Tuấn Võ</span>!</p>
+    <ul>
+      <li><a href="#">Thông tin tài khoản</a></li>
+      <li><a href="#" class="active">Đơn hàng của bạn</a></li>
+      <li><a href="#">Đổi mật khẩu</a></li>
+      <li><a href="#">Địa chỉ</a></li>
+    </ul>
+  </aside>
+
+  <section class="account-orders col-9">
+    <h2>Đơn hàng của bạn</h2>
+    <table class="orders-table">
+      <thead>
+        <tr>
+          <th>Mã đơn hàng</th>
+          <th>Tên sản phẩm</th>
+          <th>Ảnh</th>
+          <th>Ngày đặt hàng</th>
+          <th>Giá trị đơn hàng</th>
+          <th>Trạng thái</th>
+          <th>Xem chi tiết</th>
+          <th>Hành động</th>
+        </tr>
+      </thead>
+      <tbody id="ordersBody">
+        <tr><td>#DH001</td><td>Áo A</td><td><img src="images/login-bg.jpg"></td><td>01/01/2025</td><td>119.000VNĐ</td><td class="status pending">Chờ xác nhận</td><td class="view-detail"><a href="order-detail.html">Xem chi tiết</a></td><td class="action"><span class="cancel">Hủy đơn hàng</span></td></tr>
+        <tr><td>#DH002</td><td>Áo B</td><td><img src="images/login-bg.jpg"></td><td>01/02/2025</td><td>119.000VNĐ</td><td class="status done">Đã hoàn thành</td><td class="view-detail"><a href="#">Xem chi tiết</a></td><td class="action"><span class="review">Đánh giá</span> | <span class="buy-again">Mua lại</span></td></tr>
+        <tr><td>#DH003</td><td>Áo C</td><td><img src="images/login-bg.jpg"></td><td>01/03/2025</td><td>119.000VNĐ</td><td class="status done">Đã hoàn thành</td><td class="view-detail"><a href="#">Xem chi tiết</a></td><td class="action"><span class="review">Đánh giá</span> | <span class="buy-again">Mua lại</span></td></tr>
+        <tr><td>#DH004</td><td>Áo D</td><td><img src="images/login-bg.jpg"></td><td>01/04/2025</td><td>119.000VNĐ</td><td class="status done">Đã hoàn thành</td><td class="view-detail"><a href="#">Xem chi tiết</a></td><td class="action"><span class="review">Đánh giá</span> | <span class="buy-again">Mua lại</span></td></tr>
+        <tr><td>#DH005</td><td>Áo E</td><td><img src="images/login-bg.jpg"></td><td>01/05/2025</td><td>119.000VNĐ</td><td class="status done">Đã hoàn thành</td><td class="view-detail"><a href="#">Xem chi tiết</a></td><td class="action"><span class="review">Đánh giá</span> | <span class="buy-again">Mua lại</span></td></tr>
+        <tr><td>#DH006</td><td>Áo F</td><td><img src="images/login-bg.jpg"></td><td>01/06/2025</td><td>119.000VNĐ</td><td class="status done">Đã hoàn thành</td><td class="view-detail"><a href="#">Xem chi tiết</a></td><td class="action"><span class="review">Đánh giá</span> | <span class="buy-again">Mua lại</span></td></tr>
+        <tr><td>#DH007</td><td>Áo G</td><td><img src="images/login-bg.jpg"></td><td>01/07/2025</td><td>119.000VNĐ</td><td class="status done">Đã hoàn thành</td><td class="view-detail"><a href="#">Xem chi tiết</a></td><td class="action"><span class="review">Đánh giá</span> | <span class="buy-again">Mua lại</span></td></tr>
+      </tbody>
+    </table>
+    <div id="pagination" class="pagination"></div>
+  </section>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="row-footer">
+    <div class="col-4-footer">
+      <img src="images/logo-footer.png" alt="">
+      <div class="icon-3-footer">
+        <span><i class="fa-solid fa-location-dot"></i></span>
+        <p>Địa chỉ: 158/25, Phạm Văn Chiêu, Phường 8, Gò Vấp, TP Hồ Chí Minh</p>
+      </div>
+      <div class="icon-3-footer">
+        <span><i class="fa-solid fa-phone"></i></span>
+        <p>Số điện thoại: 1234567890</p>
+      </div>
+      <div class="icon-3-footer">
+        <span><i class="fa-solid fa-envelope"></i></span>
+        <p>Email: Dravikstore@gmail.com</p>
+      </div>
+    </div>
+    <div class="col-4-footer">
+      <h4>Hỗ trợ khách hàng</h4>
+      <p class="mgb-20">Chính sách đổi hàng</p>
+      <p class="mgb-20">Chính sách bảo hành</p>
+      <p class="mgb-20">Chính sách Membership</p>
+      <p class="mgb-20">Bảo mật thông tin</p>
+      <p class="mgb-20">Hỗ trợ giao hàng</p>
+    </div>
+    <div class="col-4-footer htkh">
+      <h4>Tổng đài hỗ trợ</h4>
+      <p class="mgb-20">Gọi mua hàng: 1234567890 (8h-20h)</p>
+      <p class="mgb-20">Gọi bảo hành: 1234567890 (8h-20h)</p>
+      <p class="mgb-20">Gọi khiếu nại: 1234567890 (8h-20h)</p>
+    </div>
+    <div class="col-4-footer">
+      <h4>Gửi mail ngay để nhận ưu đãi !</h4>
+      <div class="subscribe-box">
+        <input type="email" placeholder="Thả email nhận khuyến mãi...">
+        <button><i class="fas fa-paper-plane"></i></button>
+      </div>
+      <h4>Phương thức thanh toán</h4>
+      <div class="payment-methods">
+        <img src="images/VNPAY.jpg" alt="VNPAY">
+        <img src="images/cod.jpg" alt="COD">
+        <img src="images/momo.jpg" alt="MoMo">
+        <img src="images/visa.jpg" alt="Vietcombank">
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">© Bản quyền thuộc về DRAVIK STORE</div>
+</footer>
+
+<!-- PHÂN TRANG -->
+<script>
+  const rowsPerPage = 5;
+  let currentPage = 1;
+
+  function paginateTable() {
+    const rows = document.querySelectorAll('#ordersBody tr');
+    const totalPages = Math.ceil(rows.length / rowsPerPage);
+
+    rows.forEach((row, index) => {
+      row.style.display = (index >= (currentPage - 1) * rowsPerPage && index < currentPage * rowsPerPage)
+        ? '' : 'none';
+    });
+
+    const pagination = document.getElementById('pagination');
+    pagination.innerHTML = '';
+
+    if (currentPage > 1) {
+      const prev = document.createElement('a');
+      prev.href = '#';
+      prev.innerHTML = '&laquo;';
+      prev.addEventListener('click', e => {
+        e.preventDefault();
+        currentPage--;
+        paginateTable();
+      });
+      pagination.appendChild(prev);
+    }
+
+    for (let i = 1; i <= totalPages; i++) {
+      const page = document.createElement('a');
+      page.href = '#';
+      page.textContent = i;
+      if (i === currentPage) page.classList.add('active');
+      page.addEventListener('click', e => {
+        e.preventDefault();
+        currentPage = i;
+        paginateTable();
+      });
+      pagination.appendChild(page);
+    }
+
+    if (currentPage < totalPages) {
+      const next = document.createElement('a');
+      next.href = '#';
+      next.innerHTML = '&raquo;';
+      next.addEventListener('click', e => {
+        e.preventDefault();
+        currentPage++;
+        paginateTable();
+      });
+      pagination.appendChild(next);
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', paginateTable);
+</script>
+
+</body>
+</html>

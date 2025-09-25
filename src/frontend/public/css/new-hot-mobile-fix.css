@@ -1,0 +1,229 @@
+/* ================= New/Hot (mobile ≤768px) ================= */
+
+@media (max-width: 768px) {
+    /* Chỉ giữ tab "SẢN PHẨM MỚI" */
+    .new-sp #tab-hot {
+        display: none !important;
+    }
+    .new-sp .product-tabs>span {
+        display: none !important;
+    }
+    .new-sp #tab-new .tab-label {
+        color: #000 !important;
+        font-weight: 700 !important;
+        font-size: 16px !important;
+    }
+    /* Khắc phục width cứng 1300px và chiều cao box */
+    .new-sp {
+        width: 100% !important;
+    }
+    .new-sp .row-3 {
+        width: 100% !important;
+    }
+    .new-sp .product-box {
+        height: auto !important;
+    }
+    /* Luôn hiển thị danh sách NEW, ẩn HOT */
+    .new-sp .row-3>div:nth-child(1) {
+        display: flex !important;
+    }
+    .new-sp .row-3>div:nth-child(2) {
+        display: none !important;
+    }
+    /* Danh sách -> flex-wrap 2 cột (đúng 1 hàng 2 sp) */
+    .new-sp .row-3>div {
+        flex-wrap: wrap !important;
+        width: 100% !important;
+        gap: 12px !important;
+        overflow: visible !important;
+        scroll-snap-type: none !important;
+    }
+    /* Mỗi card chiếm 1/2 hàng (tính cả gap) – chỉ hiển thị đúng 2 sản phẩm đầu */
+    .new-sp .row-3 .col-5-sp {
+        flex: 0 0 calc((100% - 12px)/2) !important;
+        width: calc((100% - 12px)/2) !important;
+        min-width: 0 !important;
+        max-width: none !important;
+        height: auto !important;
+        scroll-snap-align: unset !important;
+    }
+    .new-sp .row-3 .col-5-sp:nth-child(n+3) {
+        display: none !important;
+    }
+    /* Ảnh không tràn */
+    .new-sp .img-sp {
+        height: 180px !important;
+        padding: 10px !important;
+        display: grid !important;
+        place-items: center !important;
+        overflow: hidden !important;
+        background: #fff !important;
+        border-bottom: 1px solid #f1f5f9;
+    }
+    .new-sp .img-sp img {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: contain !important;
+    }
+    /* Layout text: buy + tim cùng hàng */
+    .new-sp .text-sp {
+        display: grid !important;
+        grid-template-columns: 1fr auto;
+        column-gap: 8px !important;
+        row-gap: 6px !important;
+        align-items: center !important;
+        margin: 8px 10px 12px !important;
+    }
+    .new-sp .left-sp {
+        display: contents !important;
+    }
+    .new-sp .left-sp .name-sp {
+        grid-column: 1 / -1;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        display: -webkit-box;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        min-height: 38px;
+        font-size: 14px !important;
+    }
+    .new-sp .left-sp p:nth-of-type(2),
+    .new-sp .left-sp p:nth-of-type(3) {
+        grid-column: 1 / -1;
+        margin-top: 2px !important;
+    }
+    .new-sp .left-sp button {
+        grid-column: 1;
+        height: 34px !important;
+        border-radius: 8px !important;
+        font-weight: 700;
+    }
+    .new-sp .right-sp {
+        grid-column: 2;
+        display: inline-flex !important;
+        gap: 8px !important;
+        margin: 0 !important;
+    }
+    /* Ẩn giỏ hàng CHỈ khi responsive */
+    .new-sp .right-sp button:not(.heart-btn) {
+        display: none !important;
+    }
+    /* ===== TIÊU ĐỀ: căn giữa + line/diamond sát chữ ===== */
+    .new-sp .product-tabs {
+        justify-content: center !important;
+        align-items: center !important;
+        gap: 8px !important;
+    }
+    /* Nếu muốn giữ phần trang trí bên phải (line + diamond) mà không có chữ: bật lại block dưới
+     – còn nếu chỉ muốn 1 đầu bên trái thì để nguyên rule display:none ở trên. */
+    /* .new-sp #tab-hot{ display:flex !important; pointer-events:none !important; align-items:center !important; gap:8px !important; }
+     .new-sp #tab-hot .tab-label{ display:none !important; }
+     .new-sp #tab-new .tab-line, .new-sp #tab-hot .tab-line{ width:64px !important; height:2px !important; background:#000 !important; }
+     .new-sp #tab-new .tab-icon, .new-sp #tab-hot .tab-icon{ width:12px; height:12px; border:2px solid #000; } */
+    /* ===== NÚT ĐIỀU HƯỚNG: đặt DƯỚI và CĂN GIỮA ===== */
+    .new-sp .product-box>.absolute {
+        position: static !important;
+        inset: auto !important;
+        transform: none !important;
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        gap: 10px !important;
+        margin-top: 10px !important;
+    }
+    .new-sp .product-box>.absolute>button {
+        width: 36px !important;
+        height: 36px !important;
+        border-radius: 8px !important;
+    }
+}
+
+
+/* =============== Desktop reset (>768px): giữ nguyên =============== */
+
+@media (min-width: 769px) {
+    /* hiện lại giỏ hàng đầy đủ */
+    .new-sp .right-sp button:not(.heart-btn) {
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+
+/* ================= New/Hot (mobile ≤768px) ================= */
+
+@media (max-width: 768px) {
+    /* --- TIÊU ĐỀ: căn giữa + có thanh & diamond bên phải --- */
+    .new-sp .product-tabs {
+        justify-content: center !important;
+        align-items: center !important;
+        gap: 8px !important;
+    }
+    /* Hiện #tab-hot như 1 cụm TRANG TRÍ (chỉ line + diamond, ẩn chữ) */
+    .new-sp #tab-hot {
+        display: flex !important;
+        align-items: center !important;
+        gap: 8px !important;
+        pointer-events: none !important;
+        /* không bấm được, chỉ là trang trí */
+    }
+    .new-sp #tab-hot .tab-label {
+        display: none !important;
+    }
+    /* Kích thước line/diamond hai bên */
+    .new-sp #tab-new .tab-line,
+    .new-sp #tab-hot .tab-line {
+        width: 64px !important;
+        height: 2px !important;
+        background: #000 !important;
+    }
+    .new-sp #tab-new .tab-icon,
+    .new-sp #tab-hot .tab-icon {
+        width: 12px;
+        height: 12px;
+        border: 2px solid #000;
+    }
+    /* --- TRACK SẢN PHẨM: hiển thị 2 sp/viewport và CUỘN NGANG --- */
+    /* Quan trọng: KHÔNG wrap; cho phép cuộn ngang để 2 nút hoạt động */
+    .new-sp .row-3>div {
+        flex-wrap: nowrap !important;
+        overflow-x: auto !important;
+        overflow-y: hidden !important;
+        scroll-snap-type: x mandatory !important;
+        gap: 12px !important;
+        /* khớp với tính toán width item */
+    }
+    /* Mỗi item đúng 1/2 khung (tính cả gap), bám điểm cuộn */
+    .new-sp .row-3 .col-5-sp {
+        flex: 0 0 calc((100% - 12px)/2) !important;
+        width: calc((100% - 12px)/2) !important;
+        min-width: 0 !important;
+        max-width: none !important;
+        height: auto !important;
+        scroll-snap-align: start !important;
+    }
+    /* Nếu trước đó có rule ẩn sp thứ 3 trở đi thì hủy ẩn để còn cuộn */
+    .new-sp .row-3 .col-5-sp:nth-child(n+3) {
+        display: block !important;
+    }
+    /* --- NÚT ĐIỀU HƯỚNG: đặt DƯỚI và CĂN GIỮA, luôn click được --- */
+    .new-sp .product-box>.absolute {
+        position: static !important;
+        inset: auto !important;
+        transform: none !important;
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        gap: 10px !important;
+        margin-top: 10px !important;
+        z-index: 2;
+        /* đảm bảo nổi lên trên */
+    }
+    .new-sp .product-box>.absolute>button {
+        width: 36px !important;
+        height: 36px !important;
+        border-radius: 8px !important;
+        cursor: pointer;
+    }
+}

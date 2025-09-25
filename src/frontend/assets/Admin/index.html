@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DRAVIK STORE - Admin Dashboard</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/hmf.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <header class="header">
+        <button id="hamburgerButton" class="hamburger-menu-btn">
+            <i class="fas fa-bars"></i>
+        </button>
+        <div class="logo">
+            <img src="images/logo.png" alt="DRAVIK STORE Logo" class="logo-image">
+        </div>
+        <div class="header-right">
+            <div class="header-icon notification">
+                <i class="fas fa-bell"></i>
+                <span class="badge">7</span>
+            </div>
+            <div class="header-icon message">
+                <i class="fas fa-envelope"></i>
+                <span class="badge">3</span>
+            </div>
+            <div class="user-profile">
+                <img src="images/admin.jpg" alt="User Avatar" class="avatar">
+                <span class="username">John Doe</span>
+                <i class="fas fa-caret-down"></i>
+                <div class="user-dropdown">
+                    <a href="#" class="btnOpenPopup" data-form="form-account"><i class="fas fa-user-circle"></i> Tài khoản của tôi</a>
+                    <a href="#"><i class="fas fa-cog"></i> Cài đặt</a>
+                    <a href="#"><i class="fas fa-sign-out-alt"></i> Đăng xuất</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Popup dùng chung -->
+    <div id="popupOverlay" class="popup-overlay">
+        <div class="popup-content">
+            <button class="btn-close" id="btnClosePopup">&times;</button>
+            <div id="popupBody"></div>
+        </div>
+    </div>
+    <div id="formTemplates" style="display: none;">
+        <form action="" id="form-account">
+            <div class="popup-content">
+                <h3>Chỉnh sửa tài khoản</h3>
+                <div class="form-group">
+                    <label>Avatar:</label>
+                    <img src="https://i.pravatar.cc/100" id="previewAvatar" class="avatar-preview" />
+                    <input type="file" id="inputAvatar" accept="image/*" />
+                </div>
+                <div class="form-group">
+                    <label>Họ tên:</label>
+                    <input type="text" id="inputName" value="John Doe" required />
+                </div>
+                <div class="form-group">
+                    <label>Email:</label>
+                    <input type="email" id="inputEmail" value="john@example.com" required />
+                </div>
+                <div class="form-group">
+                    <label>SĐT:</label>
+                    <input type="tel" id="inputPhone" value="0123456789" required />
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="btn-save" id="btnSave">Lưu</button>
+                </div>
+            </div>
+        </form>
+
+    </div>
+
+    <aside class="sidebar" id="mySlidingSidebar">
+        <nav class="main-menu">
+            <ul>
+                <li><a href="index.html" class="active"><i class="fas fa-home"></i> <span class="menu-text">Trang chủ</span></a></li>
+                <li class="menu-section-header">Quản lý</li>
+                <li class="menu-item-has-children">
+                    <a href="product.html" class="menu-toggle"><i class="fas fa-box-open"></i> <span class="menu-text">Sản phẩm</span> <i class="fas fa-caret-down menu-arrow"></i></a>
+                    <ul class="sub-menu">
+                        <li><a href="product.html"><i class="fas fa-boxes"></i> <span class="menu-text">Tất cả sản phẩm</span></a></li>
+                        <li><a href="inventory.html"><i class="fas fa-warehouse"></i> <span class="menu-text">Sản phẩm tồn kho</span></a></li>
+                        <li><a href="spsaphet.htm"><i class="fas fa-fire-extinguisher"></i> <span class="menu-text">Sản phẩm hết hàng</span></a></li>
+                        <li><a href="spsale.html"><i class="fas fa-tag"></i> <span class="menu-text">Sản phẩm giảm giá</span></a></li>
+                    </ul>
+                </li>
+                <li><a href="categories.html"><i class="fas fa-sitemap"></i> <span class="menu-text">Danh mục</span></a></li>
+                <li><a href="brand.html"><i class="fas fa-award"></i> <span class="menu-text">Thương hiệu</span></a></li>
+                <li><a href="order.html"><i class="fas fa-receipt"></i> <span class="menu-text">Đơn hàng</span></a></li>
+                <li class="menu-item-has-children">
+                    <a href="" class="menu-toggle"><i class="fas fa-users"></i> <span class="menu-text">Tài khoản</span> <i class="fas fa-caret-down menu-arrow"></i></a>
+                    <ul class="sub-menu">
+                        <li><a href="account.html"><i class="fas fa-user"></i> <span class="menu-text">Người dùng</span></a></li>
+                        <li><a href="account-admin.html"><i class="fas fa-user-shield"></i> <span class="menu-text">Admin</span></a></li>
+                    </ul>
+                </li>
+                <li><a href="blog.html"><i class="fas fa-pen-nib"></i> <span class="menu-text">Bài viết</span></a></li>
+                <li><a href="voucher.html"><i class="fas fa-ticket-alt"></i> <span class="menu-text">Voucher</span></a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <main class="main-content" id="mainContent">
+        <section class="section-card store-activity">
+            <h2>Hoạt động cửa hàng</h2>
+            <div class="activity-cards">
+                <div class="activity-card">
+                    <div class="icon-wrapper primary-bg"><i class="fas fa-box-open"></i></div>
+                    <div class="info">
+                        <span class="count">38</span>
+                        <span class="label">Sản phẩm</span>
+                    </div>
+                </div>
+                <div class="activity-card">
+                    <div class="icon-wrapper warning-bg"><i class="fas fa-exclamation-triangle"></i></div>
+                    <div class="info">
+                        <span class="count">6</span>
+                        <span class="label">Sắp hết hàng</span>
+                    </div>
+                </div>
+                <div class="activity-card">
+                    <div class="icon-wrapper success-bg"><i class="fas fa-warehouse"></i></div>
+                    <div class="info">
+                        <span class="count">2</span>
+                        <span class="label">Tồn kho</span>
+                    </div>
+                </div>
+                <div class="activity-card">
+                    <div class="icon-wrapper info-bg"><i class="fas fa-clock"></i></div>
+                    <div class="info">
+                        <span class="count">5</span>
+                        <span class="label">Chờ xác nhận</span>
+                    </div>
+                </div>
+                <div class="activity-card">
+                    <div class="icon-wrapper danger-bg"><i class="fas fa-handshake"></i></div>
+                    <div class="info">
+                        <span class="count">28</span>
+                        <span class="label">Tổng đơn hàng</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-card revenue-summary">
+            <h2>Doanh thu</h2>
+            <div class="revenue-cards">
+                <div class="revenue-card primary-border">
+                    <div class="icon-wrapper primary-text"><i class="fas fa-money-bill-wave"></i></div>
+                    <div class="info">
+                        <span class="amount">156 triệu 500 đ</span>
+                        <span class="label">Tổng doanh thu</span>
+                    </div>
+                </div>
+                <div class="revenue-card success-border">
+                    <div class="icon-wrapper success-text"><i class="fas fa-calendar-check"></i></div>
+                    <div class="info">
+                        <span class="amount">12 triệu 300 đ</span>
+                        <span class="label">Doanh thu tháng này</span>
+                    </div>
+                </div>
+                <div class="revenue-card info-border">
+                    <div class="icon-wrapper info-text"><i class="fas fa-calendar-week"></i></div>
+                    <div class="info">
+                        <span class="amount">5 triệu 800 đ</span>
+                        <span class="label">Doanh thu tuần này</span>
+                    </div>
+                </div>
+                <div class="revenue-card danger-border">
+                    <div class="icon-wrapper danger-text"><i class="fas fa-calendar-day"></i></div>
+                    <div class="info">
+                        <span class="amount">2 triệu 100 đ</span>
+                        <span class="label">Doanh thu hôm nay</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-card chart-section-full">
+            <div class="chart-header">
+                <h2>Thống kê doanh thu 12 tháng</h2>
+                <div class="chart-controls">
+                    <select id="yearSelect">
+                        <option value="2025">2025</option>
+                        <option value="2024">2024</option>
+                        <option value="2023">2023</option>
+                    </select>
+                </div>
+            </div>
+            <div class="chart-container">
+                <canvas id="revenue12MonthsChart"></canvas>
+            </div>
+        </section>
+
+        <section class="section-row product-status-row">
+            <div class="section-card product-list-card">
+                <h2>Sản phẩm sắp hết hàng</h2>
+                <ul class="product-list">
+                    <li>
+                        <span>Áo hoodie oversize</span>
+                        <span class="stock-badge danger">Còn 3 SP</span>
+                    </li>
+                    <li>
+                        <span>Quần jeans nữ</span>
+                        <span class="stock-badge danger">Còn 3 SP</span>
+                    </li>
+                    <li>
+                        <span>Áo sơ mi công sở</span>
+                        <span class="stock-badge danger">Còn 1 SP</span>
+                    </li>
+                    <li>
+                        <span>Đầm maxi họa tiết</span>
+                        <span class="stock-badge danger">Còn 2 SP</span>
+                    </li>
+                    <li>
+                        <span>Giày thể thao nam</span>
+                        <span class="stock-badge danger">Còn 5 SP</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="section-card product-list-card">
+                <h2>Sản phẩm tồn kho</h2>
+                <ul class="product-list">
+                    <li>
+                        <span>Áo khoác dạ</span>
+                        <span class="stock-badge success">Còn 25 SP</span>
+                    </li>
+                    <li>
+                        <span>Quần short nam</span>
+                        <span class="stock-badge success">Còn 20 SP</span>
+                    </li>
+                    <li>
+                        <span>Váy công sở</span>
+                        <span class="stock-badge success">Còn 18 SP</span>
+                    </li>
+                    <li>
+                        <span>Túi xách nữ</span>
+                        <span class="stock-badge success">Còn 15 SP</span>
+                    </li>
+                    <li>
+                        <span>Kính râm</span>
+                        <span class="stock-badge success">Còn 10 SP</span>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="section-row chart-section-row">
+            <div class="section-card chart-card">
+                <h2>Doanh thu theo tuần</h2>
+                <div class="chart-container small-chart">
+                    <canvas id="weeklyRevenueChart"></canvas>
+                </div>
+            </div>
+            <div class="section-card chart-card">
+                <h2>Doanh thu theo năm</h2>
+                <div class="chart-container small-chart">
+                    <canvas id="yearlyRevenueChart"></canvas>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        © Bản quyền thuộc về DRAVIK STORE
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script src="js/product.js"></script>
+    <script src="js/account.js"></script>
+</body>
+
+</html>

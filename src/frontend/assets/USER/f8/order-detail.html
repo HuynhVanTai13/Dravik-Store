@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Chi tiết đơn hàng | DRAVIK STORE</title>
+  <link rel="stylesheet" href="css/orders.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: #f9f9f9;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 1000px;
+      margin: 50px auto;
+      background: #fff;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    h1 {
+      text-align: center;
+      color: #001d52;
+      margin-bottom: 30px;
+    }
+    .order-info p,
+    .product-box p {
+      font-size: 16px;
+      margin: 6px 0;
+    }
+    .product-info h3 {
+      margin-top: 30px;
+      color: #444;
+    }
+    .product-box {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      padding: 20px 0;
+      border-top: 1px solid #eee;
+    }
+    .product-box img {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+    .back-btn {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 10px 20px;
+      background-color: #001d52;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 6px;
+      transition: 0.3s;
+    }
+    .back-btn:hover {
+      background-color: #0033a0;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Chi tiết đơn hàng</h1>
+
+  <div class="order-info">
+    <p><strong>Mã đơn hàng:</strong> #DH001</p>
+    <p><strong>Người nhận:</strong> Võ Tuấn</p>
+    <p><strong>Số điện thoại:</strong> 0912345678</p>
+    <p><strong>Địa chỉ giao hàng:</strong> 115/47 Lê Đức Thọ, Gò Vấp, TP.HCM</p>
+    <p><strong>Ngày đặt hàng:</strong> 01/01/2025</p>
+    <p><strong>Phương thức thanh toán:</strong> MoMo</p>
+  </div>
+
+  <div class="product-info">
+    <h3>Sản phẩm đã đặt</h3>
+    <div class="product-box">
+      <img src="images/login-bg.jpg" alt="Áo A">
+      <div>
+        <p><strong>Tên sản phẩm:</strong> Áo A</p>
+        <p><strong>Số lượng:</strong> 1</p>
+        <p><strong>Giá:</strong> 119.000 VNĐ</p>
+      </div>
+    </div>
+  </div>
+
+  <a class="back-btn" href="orders.html"><i class="fas fa-arrow-left"></i> Quay lại đơn hàng</a>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,622 @@
+/* ===============================================================main========================== */
+
+
+/* Section Cards (remains same) */
+
+.section-card {
+    background-color: var(--card-bg);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.section-card h2 {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    color: var(--text-color);
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 10px;
+}
+
+
+/* Activity Cards (remains same) */
+
+.store-activity .activity-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 15px;
+}
+
+.activity-card {
+    display: flex;
+    align-items: center;
+    background-color: var(--card-bg);
+    border-radius: var(--border-radius);
+    padding: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--border-color);
+}
+
+.activity-card .icon-wrapper {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    color: #fff;
+    margin-right: 15px;
+}
+
+.activity-card .info {
+    display: flex;
+    flex-direction: column;
+}
+
+.activity-card .count {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: var(--text-color);
+}
+
+.activity-card .label {
+    font-size: 0.9rem;
+    color: var(--light-text-color);
+}
+
+
+/* Background colors for icons */
+
+.primary-bg {
+    background-color: var(--primary-color);
+}
+
+.success-bg {
+    background-color: var(--success-color);
+}
+
+.warning-bg {
+    background-color: var(--warning-color);
+}
+
+.danger-bg {
+    background-color: var(--danger-color);
+}
+
+.info-bg {
+    background-color: var(--info-color);
+}
+
+
+/* Revenue Cards (updated icons, styles remain same) */
+
+.revenue-summary .revenue-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.revenue-card {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    border-radius: var(--border-radius);
+    background-color: var(--card-bg);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    border-left: 5px solid;
+    /* For border-left color */
+}
+
+.revenue-card .icon-wrapper {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.8rem;
+    margin-right: 15px;
+    background-color: var(--light-bg);
+    /* A subtle background for icon */
+}
+
+.revenue-card .info {
+    display: flex;
+    flex-direction: column;
+}
+
+.revenue-card .amount {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--text-color);
+    margin-bottom: 5px;
+}
+
+.revenue-card .label {
+    font-size: 0.9rem;
+    color: var(--light-text-color);
+}
+
+
+/* Border colors for revenue cards */
+
+.primary-border {
+    border-left-color: var(--primary-color);
+}
+
+.success-border {
+    border-left-color: var(--success-color);
+}
+
+.info-border {
+    border-left-color: var(--info-color);
+}
+
+.danger-border {
+    border-left-color: var(--danger-color);
+}
+
+
+/* Text colors for icons */
+
+.primary-text {
+    color: var(--primary-color);
+}
+
+.success-text {
+    color: var(--success-color);
+}
+
+.info-text {
+    color: var(--info-color);
+}
+
+.danger-text {
+    color: var(--danger-color);
+}
+
+
+/* Chart Sections (remains same) */
+
+.chart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 10px;
+}
+
+.chart-header h2 {
+    margin-bottom: 0;
+    /* Override default h2 margin */
+}
+
+.chart-controls select {
+    padding: 8px 12px;
+    border-radius: 5px;
+    border: 1px solid var(--border-color);
+    background-color: var(--card-bg);
+    font-size: 0.9rem;
+    color: var(--text-color);
+}
+
+.chart-container {
+    position: relative;
+    /* For responsiveness of canvas */
+    height: 350px;
+    /* Fixed height for large chart */
+    width: 100%;
+}
+
+.chart-container.small-chart {
+    height: 250px;
+    /* Smaller height for two-column charts */
+}
+
+
+/* Product Status Lists (remains same) */
+
+.section-row {
+    display: flex;
+    flex-wrap: wrap;
+    /* Allow wrapping on smaller screens */
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.product-list-card,
+.chart-card {
+    flex: 1;
+    /* Allow cards to grow and shrink */
+    min-width: 300px;
+    /* Minimum width before wrapping */
+}
+
+.product-list {
+    list-style: none;
+}
+
+.product-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.product-list li:last-child {
+    border-bottom: none;
+}
+
+.product-list li span:first-child {
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+.stock-badge {
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: white;
+}
+
+.stock-badge.danger {
+    background-color: var(--danger-color);
+}
+
+.stock-badge.success {
+    background-color: var(--success-color);
+}
+
+
+/* --- START: Product List Page Specific Styles --- */
+
+.product-list-section .product-list-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    /* Allow wrapping on smaller screens */
+    gap: 15px;
+    /* Spacing between elements */
+}
+
+.product-list-section .product-list-header h2 {
+    flex-shrink: 0;
+    /* Prevent title from shrinking */
+    margin-bottom: 0;
+    border-bottom: none;
+    /* Remove bottom border for header h2 */
+    padding-bottom: 0;
+}
+
+.product-list-section .header-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    /* Spacing between search, filter, and add button */
+    flex-wrap: wrap;
+    /* Allow wrapping of action items */
+    margin-left: auto;
+    /* Push actions to the right */
+}
+
+.product-list-section .search-box {
+    display: flex;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    background-color: var(--card-bg);
+    flex-grow: 1;
+    /* Allow search box to take more space */
+    /* max-width: 350px; /* Dòng này đã được xóa hoặc comment để thanh tìm kiếm dài ra */
+}
+
+.product-list-section .search-box input {
+    border: none;
+    padding: 10px 15px;
+    font-size: 0.9rem;
+    outline: none;
+    flex-grow: 1;
+    /* This is already present, ensures input takes available space */
+    min-width: 150px;
+}
+
+.product-list-section .search-box button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    font-size: 0.9rem;
+}
+
+.product-list-section .search-box button:hover {
+    background-color: #0056b3;
+    /* Darker primary color on hover */
+}
+
+.product-list-section .status-filter {
+    padding: 10px 15px;
+    border-radius: var(--border-radius);
+    border: 1px solid var(--border-color);
+    background-color: var(--card-bg);
+    font-size: 0.9rem;
+    color: var(--text-color);
+    cursor: pointer;
+}
+
+.product-list-section .add-product-btn {
+    border: none;
+}
+
+.product-list-section .add-product-btn a {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: background-color 0.2s ease;
+    white-space: nowrap;
+    text-decoration: none;
+    /* Prevent button text from wrapping */
+}
+
+.product-list-section .add-product-btn:hover {
+    background-color: #0056b3;
+    border-radius: var(--border-radius);
+}
+
+
+/* Table Styles */
+
+.table-responsive {
+    overflow-x: auto;
+    /* Enable horizontal scrolling for tables on small screens */
+    margin-top: 20px;
+}
+
+.product-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: var(--card-bg);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    /* Ensures rounded corners apply to content */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    /* Center align all table content */
+}
+
+.product-table th,
+.product-table td {
+    padding: 12px 15px;
+    border: 1px solid var(--border-color);
+    vertical-align: middle;
+    /* Center content vertically */
+}
+
+.product-table th {
+    background-color: var(--table-header-bg);
+    /* Use the new variable for table header */
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    white-space: nowrap;
+    /* Prevent header text from wrapping */
+}
+
+.product-table td {
+    font-size: 0.9rem;
+    color: var(--text-color);
+}
+
+.product-table tbody tr:nth-child(even) {
+    background-color: #f8f8f8;
+    /* Slightly lighter background for even rows */
+}
+
+.product-table tbody tr:hover {
+    background-color: #e9e9e9;
+    /* Hover effect for rows */
+}
+
+.product-table .product-thumb {
+    width: 50px;
+    height: 50px;
+    border-radius: 4px;
+    object-fit: cover;
+    border: 1px solid var(--border-color);
+    display: block;
+    /* Ensures centering with margin auto */
+    margin: 0 auto;
+    /* Center image */
+}
+
+
+/* Removed old-price and current-price styles as per request */
+
+
+/*
+.product-table .old-price {
+    text-decoration: line-through;
+    color: var(--light-text-color);
+    font-size: 0.8em;
+}
+
+.product-table .current-price {
+    font-weight: bold;
+    color: var(--danger-color);
+}
+*/
+
+
+/* Toggle Switch (Trạng thái) */
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 45px;
+    /* Smaller width */
+    height: 25px;
+    /* Smaller height */
+    margin: 0 auto;
+    /* Center the switch */
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 25px;
+    /* Half of height for roundness */
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    /* Smaller circle */
+    width: 18px;
+    /* Smaller circle */
+    left: 4px;
+    bottom: 3.5px;
+    /* Adjust for vertical centering */
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked+.slider {
+    background-color: var(--success-color);
+    /* Green when checked */
+}
+
+input:focus+.slider {
+    box-shadow: 0 0 1px var(--success-color);
+}
+
+input:checked+.slider:before {
+    transform: translateX(20px);
+    /* Move circle to the right */
+}
+
+
+/* Action Buttons */
+
+.product-table .actions {
+    white-space: nowrap;
+    /* Prevent buttons from wrapping */
+}
+
+.product-table .action-btn {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    margin: 0 3px;
+    display: inline-flex;
+    /* For icon and text alignment */
+    align-items: center;
+    gap: 5px;
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.product-table .delete-btn {
+    background-color: var(--danger-color);
+    color: white;
+}
+
+.product-table .delete-btn:hover {
+    background-color: #c82333;
+    /* Darker red */
+}
+
+.product-table .edit-btn {
+    background-color: var(--warning-color);
+    color: white;
+}
+
+.product-table .edit-btn:hover {
+    background-color: #e0a800;
+    /* Darker yellow */
+}
+
+
+/* Pagination */
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 25px;
+    gap: 5px;
+    /* Space between pagination links */
+}
+
+.pagination .page-link {
+    display: flex;
+    /* For icon and text */
+    align-items: center;
+    gap: 5px;
+    padding: 8px 15px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    text-decoration: none;
+    color: var(--text-color);
+    background-color: var(--card-bg);
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+    font-size: 0.9rem;
+    min-width: 40px;
+    /* Ensure consistent width for page numbers */
+    justify-content: center;
+    /* Center content in page links */
+}
+
+.pagination .page-link:hover {
+    background-color: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+.pagination .page-link.active {
+    background-color: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+    font-weight: bold;
+}
+
+.pagination .page-dots {
+    padding: 8px 5px;
+    color: var(--light-text-color);
+}
+
+.pagination .page-link.prev,
+.pagination .page-link.next {
+    padding: 8px 12px;
+    /* Slightly different padding for prev/next buttons */
+}

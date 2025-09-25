@@ -1,0 +1,296 @@
+/* Auth Container (login/register box) */
+
+a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.auth-container {
+    display: flex;
+    max-width: 900px;
+    min-height: 400px;
+    margin: 50px auto;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+    background-color: white;
+}
+
+.auth-container .form-left,
+.auth-container .form-right {
+    flex: 1;
+    padding: 40px;
+}
+
+.auth-container .form-left {
+    background-color: #003366;
+    color: white;
+}
+
+.auth-container .form-left h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 22px;
+}
+
+.auth-container .form-left form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+}
+.auth-container input,
+.auth-container input:focus {
+    color: #191919 !important;
+    background: #fff;      /* Đảm bảo nền input là trắng, nếu muốn */
+    caret-color: #003366;  /* (Tùy chọn) Màu con trỏ */
+}
+
+.auth-container .form-left button {
+    width: 100%;
+    padding: 12px;
+    background-color: #004bb5;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 15px;
+    transition: background 0.3s;
+}
+
+.auth-container .form-left button:hover {
+    background-color: #026bff;
+}
+
+.forgot-password {
+    text-align: right;
+    margin-bottom: 10px;
+}
+
+.forgot-password a {
+    color: #aad4ff;
+    font-size: 13px;
+    text-decoration: none;
+}
+
+.forgot-password a:hover {
+    text-decoration: underline;
+}
+
+.social-login {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.social-login button {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s;
+}
+
+.social-login button i {
+    margin-right: 8px;
+}
+
+
+/* Facebook button */
+
+.facebook-btn {
+    background-color: #3b5998;
+    /* Facebook blue */
+}
+
+.facebook-btn:hover {
+    background-color: #2d4373;
+    /* Darker on hover */
+}
+
+
+/* Google button */
+
+.google-btn {
+    background-color: #db4437;
+    /* Google red */
+}
+
+.google-btn:hover {
+    background-color: #c1351d;
+    /* Darker on hover */
+}
+
+.auth-container .form-right {
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #003366;
+}
+
+.auth-container .form-right h2 {
+    font-size: 22px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.auth-container .form-right p {
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+.auth-container .form-right button {
+    padding: 10px 20px;
+    background-color: #003366;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background 0.3s;
+}
+
+.auth-container .form-right button:hover {
+    background-color: #002244;
+}
+
+:root {
+    --footer-bg: #05214e;
+}
+
+
+/* Tablet nhỏ và mobile */
+
+@media (max-width: 768px) {
+    /* Đổi thành cột, đồng thời đưa phần register lên trên */
+    #auth-box.auth-container {
+        flex-direction: column;
+        width: 95%;
+        margin: 20px auto;
+        padding: 0;
+    }
+    /* Thứ tự hiển thị: register trước, login sau */
+    #register-side {
+        order: 1;
+        padding: 20px;
+    }
+    #login-form {
+        order: 2;
+        padding: 20px;
+    }
+    /* Đảm bảo các nút và input full-width */
+    .auth-container input,
+    .auth-container button,
+    .social-login button {
+        width: 100%;
+        box-sizing: border-box;
+    }
+    /* Giảm margin giữa các phần */
+    .auth-container .form-left,
+    .auth-container .form-right {
+        margin: 0 0 15px 0;
+    }
+    /* Điều chỉnh font-size cho dễ đọc */
+    .auth-container h2 {
+        font-size: 20px;
+    }
+    .auth-container p,
+    .auth-container .forgot-password a {
+        font-size: 14px;
+    }
+}
+
+
+/* Mobile siêu nhỏ */
+
+@media (max-width: 480px) {
+    /* Giảm padding nội dung */
+    #auth-box.auth-container {
+        padding: 10px;
+    }
+    /* Thu hẹp khoảng cách giữa các thành phần */
+    .social-login {
+        flex-direction: column;
+        gap: 8px;
+    }
+    /* Bé hơn một chút cho input và nút */
+    .auth-container input {
+        padding: 8px;
+        font-size: 13px;
+    }
+    .auth-container button {
+        padding: 10px;
+        font-size: 14px;
+    }
+}
+
+
+/* Tablet nhỏ và mobile (<= 768px) */
+
+@media (max-width: 768px) {
+    .auth-container {
+        flex-direction: column;
+        width: 95%;
+        margin: 20px auto;
+        padding: 0;
+    }
+    /* Đưa phần “ĐĂNG KÝ” lên trước, “CHÀO MỪNG” xuống sau */
+    .auth-container .form-left {
+        order: 1;
+        padding: 20px;
+    }
+    .auth-container .form-right {
+        order: 2;
+        padding: 20px;
+    }
+    /* Các input, button full-width */
+    .auth-container input,
+    .auth-container button {
+        width: 100%;
+        box-sizing: border-box;
+    }
+    /* Giảm gap giữa social-login */
+    .social-login {
+        flex-direction: column;
+        gap: 10px;
+    }
+    /* Điều chỉnh font cho vừa */
+    .auth-container h2 {
+        font-size: 20px;
+    }
+    .auth-container p {
+        font-size: 14px;
+    }
+}
+
+
+/* Mobile siêu nhỏ (<= 480px) */
+
+@media (max-width: 480px) {
+    .auth-container {
+        padding: 10px;
+    }
+    .auth-container input {
+        padding: 8px;
+        font-size: 13px;
+    }
+    .auth-container button {
+        padding: 10px;
+        font-size: 14px;
+    }
+    .social-login button i {
+        margin-right: 6px;
+    }
+}

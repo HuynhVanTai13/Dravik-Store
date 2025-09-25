@@ -1,0 +1,238 @@
+.account-container {
+    max-width: 1300px;
+    margin: 20px auto;
+    padding: 0px;
+}
+
+.account-wrapper {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+}
+
+.account-sidebar {
+    width: 250px;
+    flex-shrink: 0;
+}
+
+.account-sidebar h3 {
+    margin-bottom: 10px;
+}
+
+.account-sidebar p {
+    margin-bottom: 20px;
+    font-size: 16PX;
+}
+
+.account-sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.account-sidebar ul li {
+    margin-bottom: 12px;
+}
+
+.account-sidebar ul li a {
+    text-decoration: none;
+    color: #333;
+    transition: 0.3s;
+}
+
+.account-sidebar ul li a.active,
+.account-sidebar ul li a:hover {
+    color: red;
+}
+
+.account-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex: 1;
+    gap: 100px;
+}
+
+.account-info {
+    flex: 1;
+}
+
+.account-info P {
+    margin-bottom: 10PX;
+}
+
+.account-info h2 {
+    margin-bottom: 20px;
+}
+
+.avatar-box {
+    text-align: center;
+}
+
+.avatar-box img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border: 3px solid #ccc;
+    border-radius: 8px;
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+
+.avatar-box label {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 6px 12px;
+    background-color: #001d52;
+    color: #fff;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.avatar-box input[type="file"] {
+    display: none;
+}
+
+@media (max-width: 1024px) {
+    .account-wrapper {
+        flex-direction: column;
+    }
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+input:focus {
+    outline: none;
+}
+
+
+/* ========== ACCOUNT PAGE ========== */
+
+.account-container {
+    max-width: 1300px;
+    min-height: 400px;
+    margin: 40px auto;
+    display: flex;
+    gap: 40px;
+    padding: 0px;
+}
+
+.account-sidebar {
+    flex-basis: 250px;
+}
+
+.account-sidebar h3 {
+    margin-bottom: 10px;
+}
+
+.account-sidebar p {
+    margin-bottom: 20px;
+}
+
+.account-sidebar ul {
+    list-style: none;
+}
+
+.account-sidebar ul li {
+    margin-bottom: 12px;
+}
+
+.account-sidebar ul li a {
+    text-decoration: none;
+    color: #333;
+    transition: 0.3s;
+}
+
+.account-sidebar ul li a.active,
+.account-sidebar ul li a:hover {
+    color: red;
+}
+
+.account-details {
+    flex: 1;
+}
+
+.account-details h2 {
+    margin-bottom: 20px;
+}
+
+
+/* ========== RESPONSIVE ========== */
+
+
+/* Tablet và mobile lớn (<= 1024px) */
+
+@media (max-width: 1024px) {
+    .account-container {
+        flex-direction: column;
+        gap: 30px;
+        padding: 0 20px;
+    }
+    .account-sidebar,
+    .account-details {
+        flex-basis: 100%;
+    }
+}
+
+
+/* Mobile (<= 768px) */
+
+@media (max-width: 768px) {
+    .account-container {
+        gap: 20px;
+        margin: 20px auto;
+        padding: 0 15px;
+    }
+    .account-sidebar {
+        order: 1;
+        background: #f9f9f9;
+        padding: 20px;
+        border-radius: 8px;
+    }
+    .account-details {
+        order: 2;
+        padding: 20px;
+        background: #fff;
+        border-radius: 8px;
+    }
+    .account-sidebar h3 {
+        font-size: 18px;
+    }
+    .account-sidebar p,
+    .account-details h2 {
+        font-size: 16px;
+    }
+    .account-sidebar ul li {
+        margin-bottom: 10px;
+    }
+}
+
+
+/* Mobile siêu nhỏ (<= 480px) */
+
+@media (max-width: 480px) {
+    .account-container {
+        padding: 0 10px;
+        gap: 15px;
+    }
+    .account-sidebar,
+    .account-details {
+        padding: 15px;
+    }
+    .account-sidebar h3 {
+        font-size: 16px;
+    }
+    .account-details h2 {
+        font-size: 18px;
+    }
+    .account-sidebar ul li a {
+        font-size: 14px;
+    }
+    .account-sidebar p,
+    .account-details p {
+        font-size: 14px;
+    }
+}

@@ -1,0 +1,402 @@
+:root {
+  --primary: #042868;
+  --accent: #1fb5e9;
+  --light-bg: #e9f5fb;
+  --menu-active: #34d6f7;
+  --footer-bg: #05214e;
+  --border: #dde2ef;
+}
+
+html, body {
+  font-family: 'Baloo Bhaina 2', Arial, sans-serif;
+  background: #fff;
+  margin: 0;
+  padding: 0;
+  font-size: 17px;
+  color: #191919;
+}
+
+.gift-icon {
+  margin-right: 8px;
+  animation: shake-gift 0.8s infinite alternate cubic-bezier(0.4,0.05,0.6,0.95);
+  display: inline-block;
+  font-size: 1.32em;
+}
+@keyframes shake-gift {
+  0% { transform: rotate(-15deg) scale(1.1);}
+  100% { transform: rotate(17deg) scale(1.08);}
+}
+
+.main.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 32px 24px 0 24px;
+  min-height: 680px;
+}
+
+/* Breadcrumb */
+.breadcrumb {
+  font-size: 1rem;
+  color: #9195b2;
+  margin-bottom: 5px;
+  background-color: #f0f0f0;
+  padding: 12px 30px;
+}
+.breadcrumb a {
+  color: #0055cc;
+  text-decoration: none !important;
+}
+
+/* TITLE */
+.page-title {
+  margin: 20px 0 20px 0;
+  text-align: center;
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: #042868;
+  letter-spacing: 0.01em;
+}
+
+/* FILTER ROW */
+.filter-row {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  margin-bottom: 16px;
+}
+.filter-row select, .filter-row button {
+  height: 38px;
+  padding: 0 20px;
+  border-radius: 10px;
+  border: 1.2px solid #d3e4f7;
+  background: #f3f6fb;
+  font-size: 1.03rem;
+  color: #263969;
+  font-family: inherit;
+  font-weight: 600;
+}
+.filter-row button {
+  background: #ededf7;
+  color: #042868;
+  font-weight: 700;
+  cursor: pointer;
+  border: 1.3px solid #d8dbe7;
+}
+.filter-row select:focus, .filter-row button:focus {
+  outline: 2px solid #aad7ff;
+}
+
+/* MAIN GRID */
+.main-row {
+  display: flex;
+  gap: 30px;
+  margin-top: 0;
+}
+.main-left {
+  flex: 6.7;
+  min-width: 0;
+}
+.main-right {
+  flex: 3.5;
+  min-width: 260px;
+}
+
+/* SECTION TITLE */
+.sec-title, .side-title, .new-banner-title {
+  font-size: 1.19rem;
+  font-weight: 700;
+  color: #001F5D;
+  margin-bottom: 18px;
+}
+
+/* ========== BÀI VIẾT NỔI BẬT ========== */
+.news-highlight {
+  background: #f8fafd;
+  margin-bottom: 10px;
+  padding-bottom: 9px;
+  box-shadow: 0 2px 12px #c0d3ee15;
+  /* Không border-radius */
+}
+.news-highlight-img {
+  width: 100%;
+  display: block;
+  /* Không border-radius */
+  border-radius: 0;
+}
+.highlight-meta {
+  font-size: 0.80rem;
+  color: #6570a8;
+  margin: 8px 10px 3px 0;
+}
+.highlight-title {
+  font-size: 1.03rem;
+  line-height: 1.6;
+  color: #042868;
+  font-weight: 700;
+  margin: 0 10px 3px 0;
+}
+.highlight-title, .highlight-title a {
+  text-decoration: none !important;
+}
+.highlight-desc {
+  color: #3c4060;
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 2px;
+  padding-left: 0px;
+  padding-right: 5px;
+  /* Giới hạn tối đa 2 dòng + ... */
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+/* ========== SIDEBAR ========== */
+.main-right .side-block {
+  margin-bottom: 32px;
+  background: #f8fafd;
+  /* Không border-radius */
+  padding: 15px 12px 14px 12px;
+}
+.side-title {
+  color: #042868;
+  font-size: 1.11rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  letter-spacing: 0.01em;
+}
+.side-news-list {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+.side-news-item {
+  display: flex;
+  gap: 18px;
+  align-items: flex-start;
+}
+.side-news-item img {
+  width: 135px;    /* to lên */
+  height: 94px;    /* to lên */
+  object-fit: cover;
+  border-radius: 0 !important;
+}
+.side-news-item span {
+  color: #18235c;
+  font-size: 1.01rem;
+  font-weight: 600;
+  line-height: 1.25;
+}
+.side-news-item a, .side-news-item a:visited, .side-news-item a:hover {
+  color: #001F5D;
+  text-decoration: none !important;
+  font-weight: 700;
+}
+.xemnhieu {
+  font-size: 10px;
+  color: #A08F8F;
+}
+.hot-events-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 7px;
+}
+.hot-event-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  border-bottom: 1.1px solid #e6eaf7;
+  padding-bottom: 7px;
+  margin-bottom: 4px;
+}
+.event-date {
+  display: block;
+  background: #fff3dd;
+  color: #ff9100;
+  font-size: 0.95rem;
+  font-weight: 700;
+  border-radius: 6px;
+  padding: 3px 10px;
+  margin-top: 3px;
+  min-width: 42px;
+  text-align: center;
+}
+.vip-list {
+  margin-top: 12px;
+  padding-left: 18px;
+  color: #1a3182;
+  font-size: 0.99rem;
+  font-weight: 700;
+  list-style-type: disc;
+}
+.vip-list li {
+  margin-bottom: 6px;
+  list-style: none;
+  margin-top: auto;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.vip-list li .gift-icon {
+  margin-right: 8px;
+  animation: shake-gift 0.8s infinite alternate cubic-bezier(0.4,0.05,0.6,0.95);
+  display: inline-block;
+  font-size: 1.32em;
+}
+@keyframes shake-gift {
+  0% { transform: rotate(-15deg) scale(1.1);}
+  100% { transform: rotate(17deg) scale(1.08);}
+}
+
+/* ========== BANNER “CÓ GÌ MỚI” ========== */
+.new-banner {
+  margin: 36px 0 30px 0;
+  background: #B0E0E6;
+  border-radius: 18px;
+  padding: 18px 20px 16px 20px;
+}
+.new-banner-title {
+  font-size: 1.23rem;
+  font-weight: 700;
+  color: #1a3182;
+  margin-bottom: 16px;
+}
+.new-banner-cards {
+  display: flex;
+  gap: 30px;
+}
+.new-banner-card {
+  flex: 1;
+  background: #D0E8FF;
+  border-radius: 13px;
+  box-shadow: 0 2px 8px #b2c8e033;
+  padding: 10px 8px 12px 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.new-banner-card img {
+  width: 99%;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+.event-desc { width: 100%; }
+.event-meta {
+  color: #393636a3;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+.event-title {
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-top: 3px;
+  line-height: 1.25;
+}
+
+/* ========== GRID BÀI VIẾT MỚI ========== */
+.latest-news {
+  margin: 40px 0 32px 0;
+}
+.latest-grid {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 32px 26px;
+  margin-top: 14px;
+}
+.latest-card {
+  background: #f7f9fc;
+  /* Không border-radius */
+  box-shadow: 0 2px 8px #c7d7ef21;
+  padding: 10px 12px 14px 12px;
+  display: flex;
+  flex-direction: column;
+}
+.latest-card img {
+  width: 100%;
+  height: 242px;
+  object-fit: cover;
+  border-radius: 0 !important;
+  margin-bottom: 7px;
+}
+.latest-card-title {
+  font-size: 0.9rem;
+  color: #0b2272;
+  font-weight: 700;
+  margin-bottom: 4px;
+  line-height: 1.23;
+  text-decoration: none !important;
+}
+.latest-card a, .latest-card-title, .latest-meta a {
+  text-decoration: none !important;
+}
+.latest-card-desc {
+  color: #32436b;
+  font-size: 0.9rem;
+  margin-bottom: 8px;
+  /* Giới hạn 2 dòng */
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.latest-meta {
+  font-size: 0.8rem;
+  color: #001F5D;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+}
+.latest-meta a {
+  color: #001F5D;
+  text-decoration: none !important;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+/* ========== PAGINATION ========== */
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 9px;
+  margin: 20px 0 0 0;
+  font-size: 1.15rem;
+}
+.pagination span {
+  padding: 2px 9px;
+  border-radius: 6px;
+  cursor: pointer;
+  background: #f1f3fa;
+}
+.pagination .active {
+  background: var(--accent);
+  color: #fff;
+}
+.pagination span {
+  text-decoration: none !important;
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 1150px) {
+  .main.container { max-width: 98vw;}
+}
+@media (max-width: 900px) {
+  .main-row { flex-direction: column; gap: 18px;}
+  .main-left, .main-right { width: 100%; min-width: 0;}
+  .new-banner-cards { flex-direction: column; gap: 18px;}
+  .latest-grid { grid-template-columns: 1fr;}
+}
+@media (max-width: 700px) {
+  .main.container { padding: 12px 3vw;}
+  .latest-grid { grid-template-columns: 1fr;}
+}
+
+/* body fallback font */
+body {
+    font-family: 'Inter', Arial, sans-serif;
+    background: #fff;
+    margin: 0;
+    padding: 0;
+}

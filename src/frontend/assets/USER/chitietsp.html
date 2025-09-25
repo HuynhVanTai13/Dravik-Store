@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Chi tiết sản phẩm</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Font Awesome & Inter -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="CSS/chitietsp.css">
+    <link rel="stylesheet" href="css/hmf.css">
+</head>
+
+<body>
+    <!-- HEADER -->
+    <header>
+        <div class="header-main">
+            <div class="img-logo">
+                <img src="img/logo.png" alt="Dravik Store">
+            </div>
+            <div class="header-nav">
+                <div class="header-search">
+                    <div class="search">
+                        <input type="text" placeholder="Nhập sản phẩm cần tìm kiếm ...">
+                        <button class="icon-search"><i class="fas fa-search"></i></button>
+                    </div>
+                    <div class="nav-top">
+                        <a href=""><i class="fas fa-file-alt"></i><p>Đơn hàng </p></a>
+                        <a href=""><i class="fas fa-heart"></i><p>Yêu thích </p></a>
+                        <a href=""><i class="fas fa-user"></i><p>Tài khoản </p></a>
+                        <a href="" class="cart"><i class="fas fa-shopping-cart"></i><p>Giỏ hàng </p><span class="badge">3</span></a>
+                    </div>
+                </div>
+                <div class="nav-bottom">
+                    <a href="">Trang chủ</a>
+                    <a href="">Giới thiệu</a>
+                    <a href="">Sản phẩm </a>
+                    <a href="">Tin tức </a>
+                    <a href="">Hàng mới </a>
+                    <a href="">Liên hệ </a>
+                    <a href="">Sản phẩm giảm giá  </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- HEADER MOBILE -->
+    <div class="mobile-header">
+        <span class="menu-icon"><i class="fas fa-bars"></i></span>
+        <div class="img-logo"><img src="img/logo.png" alt="Dravik Store"></div>
+        <div class="icon-group">
+            <span><i class="fas fa-search"></i></span>
+            <span class="cart"><i class="fas fa-shopping-cart"></i><span class="badge">3</span></span>
+        </div>
+    </div>
+    <!-- SIDEBAR/OFFCANVAS MENU -->
+    <div id="mobileMenu" class="mobile-offcanvas">
+        <div class="mobile-menu-header">
+            <span class="close-btn" id="closeMobileMenu">&times;</span>
+            <img src="img/logo.png" alt="Dravik Store" class="offcanvas-logo">
+        </div>
+        <nav class="mobile-menu-nav">
+            <a href="#">Trang chủ</a>
+            <a href="#">Giới thiệu</a>
+            <a href="#">Sản phẩm</a>
+            <a href="#">Tin tức</a>
+            <a href="#">Hàng mới</a>
+            <a href="#">Liên hệ</a>
+            <a href="#">Sản phẩm giảm giá</a>
+            <hr>
+            <a href="#"><i class="fas fa-user"></i> Tài khoản</a>
+            <a href="#"><i class="fas fa-heart"></i> Yêu thích</a>
+            <a href="#"><i class="fas fa-file-alt"></i> Đơn hàng</a>
+            <a href="#"><i class="fas fa-shopping-cart"></i> Giỏ hàng</a>
+            <div class="mobile-search">
+                <input type="text" placeholder="Tìm kiếm...">
+                <button><i class="fas fa-search"></i></button>
+            </div>
+        </nav>
+    </div>
+    <div id="menuOverlay" class="menu-overlay"></div>
+
+    <!-- CHI TIẾT SẢN PHẨM -->
+    <br>
+    <div class="product-page">
+        <!-- Cột trái: Hình ảnh -->
+        <div class="product-images">
+            <img class="main-image" id="mainImage" src="img/ao-thun-nam-excool-den-1.webp" alt="Áo thun nam">
+            <div class="thumbnail-list">
+                <img class="thumbnail selected" src="img/ao-thun-nam-excool-den-1.webp" alt="Ảnh phụ">
+                <img class="thumbnail" src="img/ao-thun-nam-excool-den-2.webp" alt="Ảnh phụ">
+                <img class="thumbnail" src="img/ao-thun-nam-excool-den-3.webp" alt="Ảnh phụ">
+                <img class="thumbnail" src="img/ao-thun-nam-excool-den-4.webp" alt="Ảnh phụ">
+            </div>
+        </div>
+
+        <!-- Cột phải: Thông tin sản phẩm -->
+        <div class="product-details">
+            <h2>Áo thun nam mặc trong thoáng khí nhanh khô Excool</h2>
+
+            <!-- Dòng thông tin chung -->
+            <div class="info-row">
+                <span>Mã SP: <a style="color: #2A8AE7;"><strong>DH123800506CEE</strong></a></span>
+                <span>Thương hiệu: <strong style="color: #2A8AE7;">Coolmate</strong></span>
+                <span>Đã bán: <strong style="color: #FA3D38;">1759</strong></span>
+                <span><span>Tình trạng:</span> <span style="padding: 4px 5px; background-color: #38BF57; border-radius: 5px; color: white;"> Còn hàng </span></span>
+            </div>
+
+            <p class="price" style="display: flex; align-items: center; gap: 10px;">
+                <strong>Giá:</strong><span style="font-size: 20px;">119.000 ₫</span>
+                <span class="price-new" style="text-decoration: line-through; color: gray; font-size: 15px;">350.000 đ</span>
+            </p>
+
+            <!-- Mô tả -->
+            <div class="description-box">
+                <p>
+                    Thiết kế thời thượng, chất liệu thoáng mát – mỗi sản phẩm đều mang đến sự tự tin và thoải mái tối đa cho mọi phong cách sống hiện đại.
+                </p>
+                <ul style="margin-left: 20px;">
+                    <li>Thời trang năng động – phong cách hiện đại</li>
+                    <li>Chất liệu cao cấp, form dáng chuẩn</li>
+                    <li>Thoải mái, tự tin trong từng chuyển động</li>
+                    <li>Đa dạng mẫu mã, bắt kịp xu hướng</li>
+                    <li>Phù hợp mọi cá tính – sẵn sàng mọi hoàn cảnh</li>
+                </ul>
+            </div>
+
+            <!-- Chọn màu -->
+            <div class="option-group">
+                <label><strong>Màu sắc:</strong> <span id="color-info" class="color-description"></span></label>
+                <div class="colors">
+                    <div class="color black" data-color="Đen"></div>
+                    <div class="color white" data-color="Trắng"></div>
+                    <div class="color red" data-color="Đỏ"></div>
+                    <div class="color blue" data-color="Xanh dương"></div>
+                    <div class="color yellow" data-color="Vàng"></div>
+                </div>
+            </div>
+
+            <!-- Chọn size -->
+            <div class="option-group">
+                <label><strong>Kích thước:</strong><span id="size-info" class="size-description"></span></label>
+                <div class="sizes">
+                    <button data-info="(1m55 – 1m65 | 50kg – 58kg)">S</button>
+                    <button data-info="(1m60 – 1m70 | 58kg – 65kg)">M</button>
+                    <button data-info="(1m65 – 1m75 | 65kg – 72kg)">L</button>
+                    <button data-info="(1m70 – 1m80 | 72kg – 80kg)">XL</button>
+                    <button data-info="(1m75 – 1m85 | 80kg – 90kg)">XXL</button>
+                </div>
+
+                <!-- Số lượng + Nút hành động -->
+                <div class="actions">
+                    <div class="quantity-selector">
+                        <button class="qty-btn" onclick="changeQty(-1)">-</button>
+                        <input type="number" id="qty" value="1" min="1">
+                        <button class="qty-btn" onclick="changeQty(1)">+</button>
+                    </div>
+                    <button class="add-cart">THÊM VÀO GIỎ HÀNG</button>
+                    <button class="buy-now">MUA NGAY</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="product-tab-container">
+        <ul class="tabs">
+            <li class="tab active" data-tab="detail">Chi tiết sản phẩm</li>
+            <li class="tab" data-tab="policy">Chính sách đổi & trả hàng</li>
+            <li class="tab" data-tab="review">Đánh giá & Nhận xét</li>
+        </ul>
+
+
+
+
+
+        <!-- CHI TIET SAN PHAM -->
+        <div class="tab-panel active" id="detail">
+            <div class="detail-content">
+                <!-- Cột trái: Nội dung -->
+                <div class="detail-text">
+                    <h3 style="font-size: 26px; margin: 10px;">Chi tiết sản phẩm</h3>
+                    <p style="margin: 10px;"><strong>Chất liệu:</strong> 100% Polyester</p>
+                    <p style="margin: 10px;"><strong>Kiểu dáng:</strong> Regular fit</p>
+                    <p style="margin: 10px;"><strong>Phù hợp:</strong> Mặc trong áo sơ mi, vest, hoặc sử dụng khi vận động, chơi thể thao</p>
+                    <p style="margin: 10px;"><strong>Tính năng:</strong> Co dãn và thoáng khí</p>
+
+                    <h4 style="margin-left: 10px; margin-bottom: 9px;">Hướng dẫn bảo quản:</h4>
+                    <ul style="margin-left: 15px;">
+                        <li style="margin: 5px;">Giặt sản phẩm bằng tay hoặc chọn chế độ giặt nhẹ trong nước.</li>
+                        <li style="margin: 5px;">Không sử dụng chất tẩy mạnh hoặc ngâm lâu trong nước.</li>
+                        <li style="margin: 5px;">Ủi (là) ở nhiệt độ thấp, đặc biệt với các sản phẩm có họa tiết in/thêu.</li>
+                        <li style="margin: 5px;">Phơi trong bóng râm, tránh nắng trực tiếp để giữ màu sắc bền lâu.</li>
+                        <li style="margin: 5px;">Đối với áo len, áo khoác: nên gấp gọn thay vì treo để tránh giãn dáng.</li>
+                    </ul>
+                </div>
+                <!-- Cột phải: Ảnh ngang -->
+                <div class="detail-images">
+                    <img src="img/ao-thun-nam-excool-den-1.webp" alt="Mặt trước áo">
+                    <img src="img/ao-thun-nam-excool-den-2.webp" alt="Mặt sau áo">
+                    <img src="img/ao-thun-nam-excool-den-3.webp" alt="Chất liệu áo">
+                </div>
+            </div>
+
+            <div class="video-preview">
+                <iframe width="820" height="495" src="https://www.youtube.com/embed/jJ0UDDEhJwU?si=WZgUcPwq4ML1nheo" title="Video sản phẩm" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+  </iframe>
+                <p>Video sản phẩm</p>
+            </div>
+
+            <!-- Phần đặc điểm nổi bật của sản phẩm -->
+            <div class="product-features">
+                <div class="feature-item">
+                    <img src="img/ao-thun-nam-excool-den-1.webp" alt="Chất vải nhẹ">
+                    <h4>Chất vải nhẹ</h4>
+                    <p>Chất liệu polyester bền bỉ nhưng vẫn giữ được độ nhẹ và khả năng thoáng khí, mang lại cảm giác thoải mái suốt ngày dài</p>
+                </div>
+                <div class="feature-item">
+                    <img src="img/ao-thun-nam-excool-den-2.webp" alt="Thấm hút dễ dàng">
+                    <h4>Thấm hút dễ dàng</h4>
+                    <p>Áo ít nhăn, nhanh khô, dễ chăm sóc là chiếc áo lí tưởng để mặc hằng ngày và không phải lo nghĩ</p>
+                </div>
+                <div class="feature-item">
+                    <img src="img/ao-thun-nam-excool-den-3.webp" alt="Giữ form tốt">
+                    <h4>Giữ form tốt</h4>
+                    <p>Giữ form chuẩn, không bai gião sau nhiều lần giặt và bền dáng theo thời gian</p>
+                </div>
+                <div class="feature-item">
+                    <img src="img/ao-thun-nam-excool-den-4.webp" alt="Đơn giản và dễ phối">
+                    <h4>Đơn giản và dễ phối</h4>
+                    <p>Thiết kế cổ tròn tay ngắn đơn giản, dễ mặc – kết hợp cùng gam màu cơ bản, dễ dàng phối đồ hoặc mặc hằng ngày</p>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+        <!-- CHINH SACH HOAN VA TRA -->
+        <div class="tab-panel" id="policy">
+            <div class="return-policy-section" style="display: flex; gap: 30px; margin: 10px;">
+                <!-- Nội dung chính sách bên trái -->
+                <div class="return-policy-text" style="flex: 1;">
+                    <h2 style="color: #000; margin-bottom: 10px; font-size: 26px;">Chính sách đổi & trả hàng:</h2>
+
+                    <h4 style="margin: 10px; font-size: 18px;">Điều kiện áp dụng:</h4>
+                    <ul style="padding-left: 25px;">
+                        <li style="margin: 5px;">Yêu cầu đổi hàng được gửi trong vòng 7 ngày kể từ ngày nhận hàng.</li>
+                        <li style="margin: 5px;">Sản phẩm phải còn nguyên tem mác, chưa qua sử dụng, chưa giặt là, còn nguyên tem mác, bao bì. Không bị dơ bẩn, hư hại (rách, sơn...), không dính mỹ phẩm hay ám mùi như nước hoa, khói thuốc…</li>
+                        <li style="margin: 5px;">Sản phẩm trả phải kèm phiếu tính tiền hoặc hoá đơn VAT.</li>
+                        <li style="margin: 5px;">Shop giao sai mẫu, sai size, sai màu (khách không muốn đổi mà muốn hoàn tiền).</li>
+                        <li style="margin: 5px;">Sản phẩm lỗi kỹ thuật từ nhà sản xuất.</li>
+                    </ul>
+
+                    <h4 style="margin: 10px; font-size: 18px;">Quy trình đổi hàng:</h4>
+                    <ul style="padding-left: 25px;">
+                        <li style="margin: 5px;">Liên hệ <strong>hotline/zalo: 0862.489.972</strong> và gửi hình ảnh sản phẩm + mã đơn hàng.</li>
+                        <li style="margin: 5px;">Gửi sản phẩm về shop.</li>
+                        <li style="margin: 5px;">Shop xử lý và gửi lại sản phẩm mới trong vòng 3–5 ngày làm việc.</li>
+                    </ul>
+
+                    <h4 style="margin: 10px; font-size: 18px;">Phí vận chuyển:</h4>
+                    <ul style="padding-left: 25px;">
+                        <li style="margin: 5px;">Miễn phí nếu lỗi từ shop.</li>
+                        <li style="margin: 5px;">Khách hàng chịu phí 2 chiều nếu đổi vì lý do cá nhân (không vừa, không thích...).</li>
+                    </ul>
+
+                    <h4 style="margin: 10px; font-size: 18px;">Hình thức hoàn tiền:</h4>
+                    <ul style="padding-left: 25px;">
+                        <li style="margin: 5px;">Chuyển khoản ngân hàng hoặc ví điện tử theo thông tin khách hàng cung cấp.</li>
+                    </ul>
+                </div>
+                <!-- Hình ảnh minh họa bên phải -->
+                <div class="return-policy-image" style="flex-shrink: 0;">
+                    <img src="img/ao-thun-nam-excool-den-6.webp" alt="Chính sách đổi trả" width="505" height="430" style="border-radius: 10px;">
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+        <!-- DANH GIA VA NHAN XET -->
+        <!-- LỌC ĐÁNH GIÁ -->
+        <div class="tab-panel" id="review">
+            <div class="review-container">
+                <div class="review-flex">
+                    <div class="review-column">
+                        <h3 style="margin: 5px; font-size: 20px;">ĐÁNH GIÁ SẢN PHẨM</h3>
+                        <select style="width: 150px; height: 30px; margin-bottom: 5px; font-size: 16px;">
+            <option>Sắp xếp</option>
+            <option>Tăng dần</option>
+            <option>Giảm dần</option>
+          </select>
+                        <p style="margin: 5px;">Phân loại xếp hạng</p>
+                        <label><input type="checkbox"> 5 <span class="review-stars" style="font-size: 1.3em;">★ ★ ★ ★ ★</span></label><br>
+                        <label><input type="checkbox"> 4 <span class="review-stars" style="font-size: 1.3em;">★ ★ ★ ★ ☆</span></label><br>
+                        <label><input type="checkbox"> 3 <span class="review-stars" style="font-size: 1.3em;">★ ★ ★ ☆ ☆</span></label><br>
+                        <label><input type="checkbox"> 2 <span class="review-stars" style="font-size: 1.3em;">★ ★ ☆ ☆ ☆</span></label><br>
+                        <label><input type="checkbox"> 1 <span class="review-stars" style="font-size: 1.3em;">★ ☆ ☆ ☆ ☆</span></label>
+                    </div>
+
+
+
+
+
+                    <!-- ĐÁNH GIÁ GẦN ĐÂY -->
+                    <div class="review-column">
+                        <h3 style="margin: 5px; font-size: 20px;">ĐÁNH GIÁ GẦN ĐÂY:</h3>
+                        <!-- Checkbox điều khiển -->
+                        <input type="checkbox" id="toggle-comments">
+
+                        <div class="review-scroll">
+                            <!-- Bình luận 1 (hiển thị mặc định) -->
+                            <div class="review-comment">
+                                <strong>Lê Minh Triết - 20/5/2025</strong><br>
+                                <span class="review-stars" style="font-size: 1.3em;">★ ★ ★ ★ ★</span>
+                                <div class="review-images">
+                                    <div class="review-image-placeholder"></div>
+                                    <div class="review-image-placeholder"></div>
+                                    <div class="review-image-placeholder"></div>
+                                </div>
+                                <p>Sản phẩm rất đẹp, vải rất tốt, shipper giao nhanh, sẽ ủng hộ tiếp</p>
+                            </div>
+
+                            <div class="review-comment">
+                                <strong>Lê Minh Triết - 20/5/2025</strong><br>
+                                <span class="review-stars" style="font-size: 1.3em;">★ ★ ★ ★ ★</span>
+                                <div class="review-images">
+                                    <div class="review-image-placeholder"></div>
+                                    <div class="review-image-placeholder"></div>
+                                    <div class="review-image-placeholder"></div>
+                                </div>
+                                <p>Sản phẩm rất đẹp, vải rất tốt, shipper giao nhanh, sẽ ủng hộ tiếp</p>
+                            </div>
+
+                            <!-- Bình luận 2 + 3 (ẩn trước, hiển thị khi checked) -->
+                            <div class="extra-comments">
+                                <div class="review-comment">
+                                    <strong>Nguyễn Văn A - 21/5/2025</strong><br>
+                                    <span class="review-stars" style="font-size: 1.3em;">★ ★ ★ ★ ☆</span>
+                                    <div class="review-images">
+                                        <div class="review-image-placeholder"></div>
+                                        <div class="review-image-placeholder"></div>
+                                    </div>
+                                    <p>Sản phẩm ổn áp, nhưng giao hơi chậm.</p>
+                                </div>
+
+                                <div class="review-comment">
+                                    <strong>Trần Thị B - 22/5/2025</strong><br>
+                                    <span class="review-stars" style="font-size: 1.3em;">★ ★ ★ ★ ★</span>
+                                    <div class="review-images">
+                                        <div class="review-image-placeholder"></div>
+                                    </div>
+                                    <p>Tuyệt vời ông mặt trời!</p>
+                                </div>
+
+                            </div>
+                        </div>
+                        <!-- Nút nhấn dùng label của checkbox -->
+                        <label for="toggle-comments" class="see-more-label">Xem thêm bình luận >></label>
+                    </div>
+
+
+
+
+
+                    <!-- ĐÁNH GIÁ TỔNG QUAN -->
+                    <div class="review-column">
+                        <div class="review-box">
+                            <h3 style="margin: 10px; margin-top: -5px; font-size: 20px;">Đánh giá tổng quan:
+                                <span class="review-star-input" id="star-rating">
+              <span class="star" style="font-size: 1.0em;">★</span>
+                                <span class="star" style="font-size: 1.0em;">★</span>
+                                <span class="star" style="font-size: 1.0em;">★</span>
+                                <span class="star" style="font-size: 1.0em;">★</span>
+                                <span class="star" style="font-size: 1.0em;">★</span>
+                                </span>
+                            </h3>
+                            <p style="margin: 5px;"><strong>Chia sẻ thêm về trải nghiệm của bạn:</strong></p>
+                            <p style="margin: 5px;">1. Bạn cảm thấy như thế nào về chất lượng và độ thoải mái?</p>
+                            <textarea class="review-textarea" placeholder="Hãy chia sẻ đánh giá của bạn về sản phẩm tại đây..."></textarea>
+
+                            <p style="margin: 5px;">2. Hình ảnh đánh giá: (định dạng .jpg, .jpeg, .png)</p>
+                            <input style="margin: 5px;" type="file" accept="image/*" multiple>
+                            <br>
+                            <button class="review-button review-cancel">HỦY</button>
+                            <button class="review-button review-submit">GỬI ĐÁNH GIÁ</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    </div>
+    <!-- FOOTER -->
+    <footer>
+        <div class="row-footer">
+            <div class="col-4-footer">
+                <img src="img/logo-footer.png" alt="">
+                <div class="icon-3-footer">
+                    <span><i class="fa-solid fa-location-dot"></i></span>
+                    <p>Địa chỉ: 158/25, Phạm Văn Chiêu, Phường 8, Gò Vấp, TP Hồ Chí Minh</p>
+                </div>
+                <div class="icon-3-footer">
+                    <span><i class="fa-solid fa-phone"></i></span>
+                    <p>Số điện thoại: 1234567890</p>
+                </div>
+                <div class="icon-3-footer">
+                    <span><i class="fa-solid fa-envelope"></i></span>
+                    <p>Email: Dravikstore@gmail.com</p>
+                </div>
+            </div>
+            <div class="col-4-footer">
+                <h4>Hỗ trợ khách hàng</h4>
+                <p class="mgb-20">Chính sách đổi hàng</p>
+                <p class="mgb-20">Chính sách bảo hành</p>
+                <p class="mgb-20">Bảo mật thông tin</p>
+                <p class="mgb-20">Hỗ trợ giao hàng</p>
+            </div>
+            <div class="col-4-footer htkh">
+                <h4>Tổng đài hỗ trợ</h4>
+                <p class="mgb-20">Gọi mua hàng: 123456790 (8h-20h)</p>
+                <p class="mgb-20">Gọi bảo hành: 1234567890 (8h-20h)</p>
+                <p class="mgb-20">Gọi khiếu nại: 1234567890 (8h-20h)</p>
+            </div>
+            <div class="col-4-footer">
+                <h4>Gửi mail ngay để nhận ưu đãi !</h4>
+                <div class="subscribe-box">
+                    <input type="email" placeholder="Thả email nhận khuyến mãi...">
+                    <button><i class="fas fa-paper-plane"></i></button>
+                </div>
+                <h4>Phương thức thanh toán</h4>
+                <div class="payment-methods">
+                    <img src="img/vnpay.jpg" alt="VNPAY">
+                    <img src="img/cod.jpg" alt="COD">
+                    <img src="img/momo.jpg" alt="MoMo">
+                    <img src="img/visa.jpg" alt="Vietcombank">
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">© Bản quyền thuộc về DRAVIK STORE</div>
+    </footer>
+    <script src="js/hmf.js"></script>
+    <script src="js/chitietsp.js"></script>
+</body>
+
+</html>

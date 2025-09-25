@@ -1,0 +1,528 @@
+
+
+body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+
+
+/* Breadcrumb */
+.breadcrumb {
+  background-color: #f0f0f0;
+  padding: 12px 30px;
+  font-size: 14px;
+}
+
+.breadcrumb a {
+  color: #0055cc;
+  text-decoration: none;
+}
+
+/* Auth Container (login/register box) */
+.auth-container {
+  display: flex;
+  max-width: 900px;
+  margin: 50px auto;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+  background-color: white;
+}
+
+.auth-container .form-left,
+.auth-container .form-right {
+  flex: 1;
+  padding: 40px;
+}
+
+.auth-container .form-left {
+  background-color: #003366;
+  color: white;
+}
+
+.auth-container .form-left h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 22px;
+}
+
+.auth-container .form-left form input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.auth-container .form-left button {
+  width: 100%;
+  padding: 12px;
+  background-color: #004bb5;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 15px;
+  transition: background 0.3s;
+}
+
+.auth-container .form-left button:hover {
+  background-color: #026bff;
+}
+
+.forgot-password {
+  text-align: right;
+  margin-bottom: 10px;
+}
+
+.forgot-password a {
+  color: #aad4ff;
+  font-size: 13px;
+  text-decoration: none;
+}
+
+.forgot-password a:hover {
+  text-decoration: underline;
+}
+
+.social-login {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.social-login button {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s;
+}
+
+.social-login button i {
+  margin-right: 8px;
+}
+
+/* Facebook button */
+.facebook-btn {
+  background-color: #3b5998; /* Facebook blue */
+}
+
+.facebook-btn:hover {
+  background-color: #2d4373; /* Darker on hover */
+}
+
+/* Google button */
+.google-btn {
+  background-color: #db4437; /* Google red */
+}
+
+.google-btn:hover {
+  background-color: #c1351d; /* Darker on hover */
+}
+
+.auth-container .form-right {
+  background-image: url('https://i.imgur.com/0WVrZzH.png');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #003366;
+}
+
+.auth-container .form-right h2 {
+  font-size: 22px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.auth-container .form-right p {
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+.auth-container .form-right button {
+  padding: 10px 20px;
+  background-color: #003366;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.3s;
+}
+
+.auth-container .form-right button:hover {
+  background-color: #002244;
+}
+
+:root {
+  --footer-bg: #05214e;
+}
+
+/* ---------------------------------- header --------------------------------------------------------- */
+
+header {
+    width: 100%;
+    height: 130px;
+    background-color: #001F5D;
+}
+
+.header-main {
+    width: 1240px;
+    height: 100%;
+    margin: 0px auto;
+    display: flex;
+    gap: 40px;
+    justify-content: space-between;
+}
+
+.nav-top {
+    margin-left: 15px;
+}
+
+.img-logo {
+    width: 190px;
+    height: 130px;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+}
+
+.header-search {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    justify-content: space-between;
+    margin: 10px 0px;
+}
+
+.search {
+    display: flex;
+}
+
+.search input {
+    width: 550px;
+    height: 30px;
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+    padding: 0px 10px;
+    font-size: 14px;
+    font-weight: 400;
+    border: none;
+    padding: 5px 20px;
+}
+
+.search button {
+    width: 50px;
+    height: 40px;
+    text-align: center;
+    font-size: 16px;
+    background-color: #298FC6;
+    color: #ffffff;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+    border: none;
+}
+
+.nav-top {
+    width: 330px;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    margin: 10px 0px;
+}
+
+.nav-top a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 22px;
+    padding: 0px;
+}
+
+.nav-top a p {
+    font-size: 16px;
+    margin: 5px;
+}
+
+.nav-top a p:hover {
+    color: #298FC6;
+}
+
+.nav-bottom {
+    display: flex;
+    gap: 50px;
+}
+
+.nav-bottom a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 16px;
+}
+
+.nav-bottom a:hover {
+    color: #298FC6;
+}
+
+.cart {
+    position: relative;
+}
+
+.badge {
+    width: 7px;
+    height: 7px;
+    position: absolute;
+    top: -5px;
+    right: 20px;
+    background: red;
+    color: white;
+    font-size: 12px;
+    border-radius: 50%;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    /* căn ngang */
+    align-items: center;
+}
+
+input:focus {
+    outline: none;
+}
+
+
+/* -----------------------------footer------------------------ */
+
+footer {
+    width: 100%;
+    min-height: 300px;
+    background-color: #001F5D;
+    color: #ffffff;
+    margin-top: 20px;
+}
+
+.row-footer {
+    width: 1240px;
+    height: 100%;
+    margin: 0px auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.col-4-footer {
+    width: calc(calc(100% - 60px)/4);
+    height: 100%;
+}
+
+.col-4-footer img {
+    width: 187px;
+    height: 90px;
+}
+
+.icon-3-footer {
+    display: flex;
+    gap: 15px;
+    font-size: 16px;
+    align-items: center;
+    margin: 0px;
+}
+
+.col-4-footer h4 {
+    margin: 20px 0px;
+}
+
+.mgb-20 {
+    margin-bottom: 20px;
+}
+.mgt-50{
+  margin-top: 50px;
+}
+
+/* Subscribe box */
+
+.subscribe-box {
+    display: flex;
+    background: #2e326e;
+    border-radius: 20px;
+    overflow: hidden;
+    margin: 10px 0;
+}
+
+.subscribe-box input {
+    border: none;
+    padding: 10px;
+    flex: 1;
+    background: transparent;
+    color: white;
+    outline: none;
+}
+
+.subscribe-box button {
+background: #4c8ed9;
+    border: none;
+    padding: 10px 15px;
+    color: white;
+    cursor: pointer;
+}
+
+
+/* Payment logos */
+
+.payment-methods {
+    width: 100%;
+    height: 30px;
+    margin: 3px 3px 0 0;
+    border-radius: 2px;
+    padding: 2px;
+    display: flex;
+    gap: 5px;
+}
+
+.payment-methods img {
+    height: 30px;
+    margin: 3px 3px 0 0;
+    border-radius: 5px;
+    padding: 2px;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 10px;
+    font-size: 20px;
+    color: #ccc;
+}
+
+/* Tablet nhỏ và mobile */
+@media (max-width: 768px) {
+  /* Đổi thành cột, đồng thời đưa phần register lên trên */
+  #auth-box.auth-container {
+    flex-direction: column;
+    width: 95%;
+    margin: 20px auto;
+    padding: 0;
+  }
+  /* Thứ tự hiển thị: register trước, login sau */
+  #register-side {
+    order: 1;
+    padding: 20px;
+  }
+  #login-form {
+    order: 2;
+    padding: 20px;
+  }
+  /* Đảm bảo các nút và input full-width */
+  .auth-container input,
+  .auth-container button,
+  .social-login button {
+    width: 100%;
+    box-sizing: border-box;
+  }
+  /* Giảm margin giữa các phần */
+  .auth-container .form-left,
+  .auth-container .form-right {
+    margin: 0 0 15px 0;
+  }
+  /* Điều chỉnh font-size cho dễ đọc */
+  .auth-container h2 {
+    font-size: 20px;
+  }
+  .auth-container p,
+  .auth-container .forgot-password a {
+    font-size: 14px;
+  }
+}
+
+/* Mobile siêu nhỏ */
+@media (max-width: 480px) {
+  /* Giảm padding nội dung */
+  #auth-box.auth-container {
+    padding: 10px;
+  }
+  /* Thu hẹp khoảng cách giữa các thành phần */
+  .social-login {
+    flex-direction: column;
+    gap: 8px;
+  }
+  /* Bé hơn một chút cho input và nút */
+  .auth-container input {
+    padding: 8px;
+    font-size: 13px;
+  }
+  .auth-container button {
+    padding: 10px;
+    font-size: 14px;
+  }
+}
+/* Tablet nhỏ và mobile (<= 768px) */
+@media (max-width: 768px) {
+  .auth-container {
+    flex-direction: column;
+    width: 95%;
+    margin: 20px auto;
+    padding: 0;
+  }
+
+  /* Đưa phần “ĐĂNG KÝ” lên trước, “CHÀO MỪNG” xuống sau */
+  .auth-container .form-left {
+    order: 1;
+    padding: 20px;
+  }
+  .auth-container .form-right {
+    order: 2;
+    padding: 20px;
+  }
+
+  /* Các input, button full-width */
+  .auth-container input,
+  .auth-container button {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* Giảm gap giữa social-login */
+  .social-login {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  /* Điều chỉnh font cho vừa */
+  .auth-container h2 {
+    font-size: 20px;
+  }
+  .auth-container p {
+    font-size: 14px;
+  }
+}
+
+/* Mobile siêu nhỏ (<= 480px) */
+@media (max-width: 480px) {
+  .auth-container {
+    padding: 10px;
+  }
+
+  .auth-container input {
+    padding: 8px;
+    font-size: 13px;
+  }
+
+  .auth-container button {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .social-login button i {
+    margin-right: 6px;
+  }
+}

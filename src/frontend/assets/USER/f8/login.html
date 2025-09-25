@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Đăng Nhập | DRAVIK STORE</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"/>
+</head>
+<body>
+ <header>
+    <div class="header-main">
+      <div class="img-logo">
+        <img src="images/logo.png" alt="Dravik Store">
+      </div>
+      <div class="header-nav">
+        <div class="header-search">
+          <div class="search">
+            <input type="text" placeholder="Nhập sản phẩm cần tìm kiếm ...">
+            <button class="icon-search"><i class="fas fa-search"></i></button>
+          </div>
+          <div class="nav-top">
+            <a href=""><i class="fas fa-file-alt"></i><p>Đơn hàng </p></a>
+            <a href=""><i class="fas fa-heart"></i><p>Yêu thích </p></a>
+            <a href=""><i class="fas fa-user"></i><p>Tài khoản </p></a>
+            <a href="" class="cart"><i class="fas fa-shopping-cart"></i><p>Giỏ hàng </p><span class="badge">3</span></a>
+          </div>
+        </div>
+        <div class="nav-bottom">
+          <a href="">Trang chủ</a>
+          <a href="introduce.html">Giới thiệu</a>
+          <a href="">Sản phẩm </a>
+          <a href="">Tin tức </a>
+          <a href="">Hàng mới </a>
+          <a href="contact.html">Liên hệ </a>
+          <a href="">Sản phẩm giảm giá  </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- HEADER MOBILE -->
+  <div class="mobile-header">
+    <span class="menu-icon"><i class="fas fa-bars"></i></span>
+    <div class="img-logo"><img src="images/logo.png" alt="Dravik Store"></div>
+    <div class="icon-group">
+      <span><i class="fas fa-search"></i></span>
+      <span class="cart"><i class="fas fa-shopping-cart"></i><span class="badge">3</span></span>
+    </div>
+  </div>
+  <!-- SIDEBAR/OFFCANVAS MENU -->
+  <div id="mobileMenu" class="mobile-offcanvas">
+    <div class="mobile-menu-header">
+      <span class="close-btn" id="closeMobileMenu">&times;</span>
+      <img src="img/logo.png" alt="Dravik Store" class="offcanvas-logo">
+    </div>
+    <nav class="mobile-menu-nav">
+      <a href="#">Trang chủ</a>
+      <a href="#">Giới thiệu</a>
+      <a href="#">Sản phẩm</a>
+      <a href="#">Tin tức</a>
+      <a href="#">Hàng mới</a>
+      <a href="#">Liên hệ</a>
+      <a href="#">Sản phẩm giảm giá</a>
+      <hr>
+      <a href="#"><i class="fas fa-user"></i> Tài khoản</a>
+      <a href="#"><i class="fas fa-heart"></i> Yêu thích</a>
+      <a href="#"><i class="fas fa-file-alt"></i> Đơn hàng</a>
+      <a href="#"><i class="fas fa-shopping-cart"></i> Giỏ hàng</a>
+      <div class="mobile-search">
+        <input type="text" placeholder="Tìm kiếm...">
+        <button><i class="fas fa-search"></i></button>
+      </div>
+    </nav>
+  </div>
+  <div id="menuOverlay" class="menu-overlay"></div>
+
+<div class="breadcrumb">
+  <a href="index.html">Trang chủ</a> / Đăng nhập
+</div>
+
+<section class="auth-container" id="auth-box">
+  <div class="form-right" id="register-side">
+    <h2>CHƯA CÓ TÀI KHOẢN?</h2>
+    <p>Đăng ký tài khoản để sử dụng tất cả các tính năng của trang web</p>
+    <a href="register.html"><button id="registerBtn">Đăng Ký</button></a>
+  </div>
+  <div class="form-left" id="login-form">
+    <h2>ĐĂNG NHẬP</h2>
+    <form>
+      <input type="email" placeholder="Email" required />
+      <input type="password" placeholder="Mật khẩu" required />
+      <div class="forgot-password"><a href="forgot-password.html">Quên mật khẩu?</a></div>
+      <button type="submit">Đăng Nhập</button>
+    </form>
+    <div class="social-login">
+      <button class="facebook-btn"><i class="fab fa-facebook-f"></i> Facebook</button>
+      <button class="google-btn"><i class="fab fa-google"></i> Google</button>
+    </div>
+  </div>
+</section>
+
+ <!-- FOOTER -->
+  <footer>
+    <div class="row-footer">
+      <div class="col-4-footer">
+        <img src="images/logo-footer.png" alt="">
+        <div class="icon-3-footer">
+          <span><i class="fa-solid fa-location-dot"></i></span>
+          <p>Địa chỉ: 158/25, Phạm Văn Chiêu, Phường 8, Gò Vấp, TP Hồ Chí Minh</p>
+        </div>
+        <div class="icon-3-footer">
+          <span><i class="fa-solid fa-phone"></i></span>
+          <p>Số điện thoại: 1234567890</p>
+        </div>
+        <div class="icon-3-footer">
+          <span><i class="fa-solid fa-envelope"></i></span>
+          <p>Email: Dravikstore@gmail.com</p>
+        </div>
+      </div>
+      <div class="col-4-footer">
+        <h4>Hỗ trợ khách hàng</h4>
+        <p class="mgb-20">Chính sách đổi hàng</p>
+        <p class="mgb-20">Chính sách bảo hành</p>
+        <p class="mgb-20">Chính sách Membership</p>
+        <p class="mgb-20">Bảo mật thông tin</p>
+        <p class="mgb-20">Hỗ trợ giao hàng</p>
+      </div>
+      <div class="col-4-footer htkh">
+        <h4>Tổng đài hỗ trợ</h4>
+        <p class="mgb-20">Gọi mua hàng: 1234567890 (8h-20h)</p>
+        <p class="mgb-20">Gọi bảo hành: 1234567890 (8h-20h)</p>
+        <p class="mgb-20">Gọi khiếu nại: 1234567890 (8h-20h)</p>
+      </div>
+      <div class="col-4-footer">
+        <h4>Gửi mail ngay để nhận ưu đãi !</h4>
+        <div class="subscribe-box">
+          <input type="email" placeholder="Thả email nhận khuyến mãi...">
+          <button><i class="fas fa-paper-plane"></i></button>
+        </div>
+        <h4>Phương thức thanh toán</h4>
+        <div class="payment-methods">
+          <img src="images/VNPAY.jpg" alt="VNPAY">
+          <img src="images/cod.jpg" alt="COD">
+          <img src="images/momo.jpg" alt="MoMo">
+          <img src="images/visa.jpg" alt="Vietcombank">
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">© Bản quyền thuộc về DRAVIK STORE</div>
+  </footer>
+
+  <script>
+  // Toggle menu mobile
+  const mobileMenuBtn = document.querySelector('.menu-icon');
+  const mobileMenu = document.getElementById('mobileMenu');
+  const menuOverlay = document.getElementById('menuOverlay');
+  const closeBtn = document.getElementById('closeMobileMenu');
+
+  mobileMenuBtn && mobileMenuBtn.addEventListener('click', () => {
+    mobileMenu.classList.add('open');
+    menuOverlay.classList.add('open');
+  });
+  closeBtn && closeBtn.addEventListener('click', () => {
+    mobileMenu.classList.remove('open');
+    menuOverlay.classList.remove('open');
+  });
+  menuOverlay && menuOverlay.addEventListener('click', () => {
+    mobileMenu.classList.remove('open');
+    menuOverlay.classList.remove('open');
+  });
+  </script>
+</body>
+</html>

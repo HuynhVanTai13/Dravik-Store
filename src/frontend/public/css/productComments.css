@@ -1,0 +1,504 @@
+/* ===== Wrapper ===== */
+
+.pc-wrap {
+    display: block;
+    color: #111827;
+}
+
+
+/* ===== GRID 3 CỘT (giữa to hơn xíu) ===== */
+
+.pc-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr 1fr;
+    /* giữa rộng hơn 40% */
+    gap: 24px;
+}
+
+.pc-col-left,
+.pc-col-center,
+.pc-col-right {
+    min-width: 0;
+}
+
+
+/* Panel khung trắng dùng chung */
+
+.pc-panel,
+.pc-form-wrap {
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    background: #fff;
+    padding: 16px;
+}
+
+
+/* Responsive: xuống 1 cột trên màn hình nhỏ */
+
+@media (max-width:1024px) {
+    .pc-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* ===== Toolbar / Chips ===== */
+
+.pc-toolbar {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    flex-wrap: nowrap;
+    /* không rớt dòng */
+    overflow-x: auto;
+    scrollbar-width: none;
+}
+
+.pc-toolbar::-webkit-scrollbar {
+    display: none;
+}
+
+.pc-toolbar-center {
+    justify-content: flex-start;
+}
+
+
+/* canh trái cho rộng chỗ */
+
+.pc-chips {
+    display: flex;
+    gap: 8px;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scrollbar-width: none;
+}
+
+.pc-chips::-webkit-scrollbar {
+    display: none;
+}
+
+.pc-chips-center {
+    justify-content: flex-start;
+}
+
+.pc-chip {
+    font-size: 12px;
+    padding: 6px 10px;
+    border-radius: 999px;
+    border: 1px solid #e5e7eb;
+    background: #fff;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.pc-chip-active {
+    color: #fff;
+    background: #001F5D;
+    border-color: #001F5D;
+}
+
+
+/* Sort nhỏ lại */
+
+.pc-sort-box {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.pc-sort-box label {
+    font-size: 13px;
+    color: #374151;
+}
+
+.pc-select {
+    height: 30px;
+    /* ↓ từ 34 còn 30 */
+    font-size: 13px;
+    border-radius: 8px;
+    border: 1px solid #e5e7eb;
+    padding: 0 8px;
+    background: #fff;
+}
+
+
+/* Buttons (giữ lại để dùng nơi khác) */
+
+.pc-btn-primary {
+    background: #001F5D;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    padding: 8px 14px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.pc-btn-primary:disabled {
+    opacity: .6;
+    cursor: not-allowed;
+}
+
+.pc-btn-ghost {
+    background: #fff;
+    color: #111827;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    padding: 8px 12px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.pc-btn-ghost:disabled {
+    opacity: .5;
+    cursor: not-allowed;
+}
+
+.pc-muted {
+    color: #6b7280;
+    font-size: 14px;
+}
+
+
+/* ===== SCORE + STATS (bên trái) ===== */
+
+.pc-score-wrap {
+    display: grid;
+    grid-template-columns: auto;
+    gap: 4px;
+    align-items: center;
+    justify-items: start;
+}
+
+.pc-avg-score {
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.pc-star-row {
+    font-size: 18px;
+    color: #f59e0b;
+}
+
+.pc-total-text {
+    font-size: 12px;
+    color: #6b7280;
+}
+
+.pc-stats-wrap {
+    display: grid;
+    gap: 6px;
+    min-width: 240px;
+}
+
+.pc-stat-row {
+    display: grid;
+    grid-template-columns: 56px 1fr 40px;
+    gap: 10px;
+    align-items: center;
+    padding: 6px 8px;
+    border-radius: 10px;
+    border: 1px solid #e5e7eb;
+    background: #fff;
+    cursor: pointer;
+    transition: transform .06s ease, box-shadow .06s ease;
+}
+
+.pc-stat-row:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, .06);
+}
+
+.pc-stat-row-active {
+    border-color: #001F5D;
+    box-shadow: 0 0 0 3px rgba(0, 31, 93, .08);
+}
+
+.pc-stat-label {
+    font-size: 12px;
+    color: #374151;
+}
+
+.pc-stat-num {
+    font-size: 12px;
+    color: #374151;
+    text-align: right;
+}
+
+.pc-stat-bar {
+    height: 8px;
+    background: #f3f4f6;
+    border-radius: 999px;
+    overflow: hidden;
+}
+
+.pc-stat-bar-fill {
+    height: 100%;
+    background: #001F5D;
+    border-radius: 999px;
+}
+
+
+/* ===== LIST & CARD (giữa) ===== */
+
+.pc-list-wrap {
+    display: grid;
+    gap: 12px;
+}
+
+.pc-card {
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    background: #fff;
+    padding: 14px;
+}
+
+.pc-card-comment {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 8px;
+}
+
+.pc-card-title {
+    font-weight: 600;
+}
+
+.pc-card-meta {
+    font-size: 12px;
+    color: #6b7280;
+}
+
+.pc-card-rating {
+    font-size: 18px;
+    color: #f59e0b;
+    margin-top: 2px;
+}
+
+.pc-star-muted {
+    color: #e5e7eb;
+}
+
+.pc-card-content {
+    font-size: 14px;
+    margin-top: 8px;
+    white-space: pre-wrap;
+}
+
+.pc-images-row {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+.pc-image {
+    width: 88px;
+    height: 88px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 1px solid #e5e7eb;
+}
+
+
+/* ===== Pagination ===== */
+
+.pc-pagination {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 12px;
+}
+
+.pc-page-info {
+    font-size: 14px;
+    color: #374151;
+}
+
+
+/* ===== RIGHT FORM (sticky) ===== */
+
+.pc-sticky {
+    position: sticky;
+    top: 12px;
+}
+
+.pc-form-title {
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.pc-notice {
+    font-size: 14px;
+    color: #6b7280;
+}
+
+.pc-form {
+    display: grid;
+    gap: 12px;
+}
+
+.pc-form-group {
+    display: grid;
+    gap: 6px;
+}
+
+.pc-form-group>label {
+    font-size: 12px;
+    color: #374151;
+}
+
+.pc-stars-control {
+    display: flex;
+    gap: 6px;
+}
+
+.pc-star-btn {
+    font-size: 24px;
+    color: #d1d5db;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.pc-star-active {
+    color: #f59e0b;
+}
+
+.pc-textarea {
+    width: 100%;
+    min-height: 120px;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    padding: 10px 12px;
+    font-size: 14px;
+    outline: none;
+}
+
+.pc-textarea:focus {
+    border-color: #001F5D;
+    box-shadow: 0 0 0 3px rgba(0, 31, 93, .08);
+}
+
+.pc-file-input {
+    font-size: 12px;
+}
+
+.pc-previews {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.pc-preview-img {
+    width: 72px;
+    height: 72px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 1px solid #e5e7eb;
+}
+
+.pc-submit-area {
+    display: flex;
+    justify-content: flex-end;
+}
+
+
+/* === Toast cảm ơn sau khi gửi đánh giá (2s) === */
+
+.pc-toast {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    display: grid;
+    place-items: start end;
+    /* góc phải trên; đổi thành center nếu thích */
+    padding: 16px;
+    z-index: 9999;
+}
+
+.pc-toast-card {
+    pointer-events: auto;
+    background: linear-gradient(135deg, #1e3a8a, #0ea5e9);
+    color: #fff;
+    border-radius: 14px;
+    padding: 12px 16px;
+    box-shadow: 0 14px 40px rgba(2, 8, 23, .25);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    animation: pc-toast-in .25s ease-out, pc-toast-pop 1.2s ease-in-out infinite;
+}
+
+.pc-toast-icon {
+    font-size: 18px;
+    filter: drop-shadow(0 2px 0 rgba(0, 0, 0, .2));
+}
+
+.pc-toast-text {
+    font-weight: 700;
+    letter-spacing: .2px
+}
+
+@keyframes pc-toast-in {
+    from {
+        transform: translateY(-10px) scale(.95);
+        opacity: 0
+    }
+    to {
+        transform: translateY(0) scale(1);
+        opacity: 1
+    }
+}
+
+@keyframes pc-toast-pop {
+    0%,
+    100% {
+        transform: translateY(0)
+    }
+    50% {
+        transform: translateY(-2px)
+    }
+}
+
+
+/* === Pháo sao 3s (cute) === */
+
+.pc-starsfx {
+    position: fixed;
+    inset: 0;
+    z-index: 9998;
+    pointer-events: none;
+    display: grid;
+    place-items: center;
+}
+
+.pc-starsfx .s {
+    position: absolute;
+    font-size: 14px;
+    color: #facc15;
+    /* vàng */
+    text-shadow: 0 0 6px rgba(250, 204, 21, .7), 0 0 16px rgba(250, 204, 21, .35);
+    opacity: 0;
+    transform: translate(0, 0) scale(.6) rotate(0);
+    animation: star-fly 900ms ease-out forwards;
+    animation-delay: var(--d, 0ms);
+}
+
+@keyframes star-fly {
+    0% {
+        opacity: 0;
+        transform: translate(0, 0) scale(.2) rotate(0)
+    }
+    10% {
+        opacity: 1
+    }
+    80% {
+        opacity: 1
+    }
+    100% {
+        opacity: 0;
+        transform: translate(var(--tx), var(--ty)) scale(var(--sc, .9)) rotate(var(--rot, 0))
+    }
+}

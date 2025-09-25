@@ -1,0 +1,300 @@
+/* ========== ACCOUNT PAGE ========== */
+
+.account-container {
+    width: 1300px;
+    margin: 20px auto;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.account-wrapper {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+}
+
+.account-sidebar {
+    width: 15%;
+    flex-shrink: 0;
+}
+
+.account-sidebar h3 {
+    margin-bottom: 10px;
+}
+
+.account-sidebar p {
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+.account-sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.account-sidebar ul li {
+    margin-bottom: 12px;
+}
+
+.account-sidebar ul li a {
+    color: #333;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.account-sidebar ul li a.active,
+.account-sidebar ul li a:hover {
+    color: red;
+}
+
+.order-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.order-tabs a {
+    padding: 8px 16px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    font-size: 13px;
+    background-color: white;
+    color: black;
+    transition: 0.2s;
+    white-space: nowrap;
+    /* Giữ nút không bị xuống dòng */
+}
+
+.order-tabs a.active {
+    background-color: #0d6efd;
+    color: white;
+    border-color: #0d6efd;
+}
+
+
+/* Table */
+
+.orders-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    min-width: 900px;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.orders-table th,
+.orders-table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: center;
+}
+
+.orders-table th {
+    background-color: #f2f2f2;
+    font-weight: 600;
+}
+
+.orders-table img {
+    width: 36px;
+    height: 36px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+
+/* Trạng thái */
+
+.status.pending {
+    color: orange;
+    font-weight: bold;
+}
+
+.status.done {
+    color: green;
+    font-weight: bold;
+}
+
+
+/* Thanh toán */
+
+.payment.unpaid {
+    color: #007bff;
+    font-weight: bold;
+}
+
+.payment.paid {
+    color: green;
+    font-weight: bold;
+}
+
+
+/* Hành động */
+
+.cancel {
+    color: red;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.review,
+.buy-again {
+    color: green;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+
+/* Pagination */
+
+.pagination {
+    display: flex;
+    gap: 8px;
+    margin-top: 10px;
+    justify-content: center;
+}
+
+.pagination a {
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 50%;
+    background: white;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    color: black;
+    transition: 0.2s;
+}
+
+.pagination a:hover {
+    background: #eee;
+}
+
+.pagination a.active {
+    background: #0d6efd;
+    color: white;
+    border-color: #0d6efd;
+}
+
+.account-orders {
+    width: calc(85% - 20px);
+}
+
+
+/* ===== Tablet và mobile lớn (<= 1024px) ===== */
+
+@media (max-width: 1024px) {
+    .wrapper.grid-12 {
+        display: block;
+        padding: 0 1.5cm;
+    }
+    .account-sidebar,
+    .account-orders {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+    .orders-table {
+        width: 100%;
+        min-width: 0;
+        overflow-x: auto;
+        display: block;
+    }
+    .breadcrumb {
+        max-width: 100%;
+        padding: 10px 20px;
+        font-size: 15px;
+    }
+    .header-main,
+    .footer-row,
+    .account-wrapper {
+        flex-direction: column;
+        padding: 0 20px;
+    }
+}
+
+
+/* ===== Mobile (<= 768px) ===== */
+
+@media (max-width: 768px) {
+    .wrapper {
+        padding: 0 1cm;
+    }
+    .account-sidebar {
+        background: #f9f9f9;
+        padding: 15px;
+        border-radius: 8px;
+        margin-bottom: 20px;
+    }
+    .account-sidebar h3 {
+        font-size: 18px;
+    }
+    .order-tabs {
+        gap: 6px;
+    }
+    .order-tabs a {
+        padding: 6px 12px;
+        font-size: 12px;
+    }
+    .orders-table th,
+    .orders-table td {
+        padding: 8px;
+        font-size: 12px;
+    }
+    .orders-table img {
+        width: 28px;
+        height: 28px;
+    }
+    .pagination a {
+        padding: 5px 10px;
+        font-size: 12px;
+    }
+    .breadcrumb {
+        padding: 10px 15px;
+        font-size: 14px;
+    }
+}
+
+
+/* ===== Mobile siêu nhỏ (<= 480px) ===== */
+
+@media (max-width: 480px) {
+    .wrapper {
+        padding: 0 0.5cm;
+    }
+    .account-sidebar h3 {
+        font-size: 16px;
+    }
+    .account-sidebar ul li a,
+    .account-sidebar p {
+        font-size: 14px;
+    }
+    .account-orders h2 {
+        font-size: 18px;
+    }
+    .order-tabs {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+    }
+    .order-tabs a {
+        padding: 5px 10px;
+        font-size: 11px;
+    }
+    .orders-table th,
+    .orders-table td {
+        padding: 6px;
+        font-size: 11px;
+    }
+    .breadcrumb {
+        padding: 8px 12px;
+        font-size: 13px;
+        text-align: left;
+    }
+    .breadcrumb a {
+        display: inline-block;
+        word-break: break-word;
+    }
+}

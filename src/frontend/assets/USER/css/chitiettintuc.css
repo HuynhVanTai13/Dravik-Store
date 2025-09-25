@@ -1,0 +1,426 @@
+.main-content {
+    font-family: 'Inter', Arial, sans-serif;
+    background: #fff;
+    color: #191919;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.container-tt {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 28px 20px 0 20px;
+}
+
+.article-title {
+    font-size: 1.45rem;
+    font-weight: 700;
+    margin: 18px 0 7px 0;
+    text-align: center;
+    color: #173875;
+    letter-spacing: 0.01em;
+}
+
+.meta {
+    color: #a5a5af;
+    font-size: 0.83rem;
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+.row {
+    display: flex;
+    gap: 36px;
+    align-items: flex-start;
+}
+
+.col-8 {
+    flex: 0 0 70%;
+    max-width: 70%;
+}
+
+.col-4 {
+    flex: 0 0 30%;
+    max-width: 30%;
+}
+
+@media (max-width: 1050px) {
+    .container-tt {
+        max-width: 96vw;
+    }
+    .row {
+        flex-direction: column;
+        gap: 42px;
+    }
+    .col-8,
+    .col-4 {
+        max-width: 100%;
+        flex: 1 1 100%;
+    }
+}
+
+.main-article {
+    padding-right: 10px;
+}
+
+.section {
+    margin-bottom: 28px;
+}
+
+.section-title {
+    background: #f6f6fa;
+    font-weight: 700;
+    font-size: 1.03rem;
+    padding: 7px 13px;
+    border-left: 3.5px solid #1fb5e9;
+    margin-bottom: 10px;
+    color: #234079;
+}
+
+.section h2 {
+    font-size: 1.19rem;
+    font-weight: 700;
+    color: #1a3182;
+    margin: 16px 0 7px 0;
+}
+
+.section h3 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    margin: 12px 0 6px 0;
+}
+
+.article-img {
+    max-width: 100%;
+    border-radius: 10px;
+    display: block;
+    margin: 25px auto;
+}
+
+.section-content b {
+    color: #144ca7;
+}
+
+.section-content ul,
+.section-content ol {
+    margin-left: 24px;
+}
+
+
+/* SIDEBAR */
+
+.sidebar {
+    padding-left: 0;
+    width: 100%;
+    margin-bottom: 36px;
+}
+
+
+/* Sticky toàn bộ sidebar */
+
+@media (min-width: 900px) {
+    .sidebar {
+        position: sticky;
+        top: 24px;
+        align-self: flex-start;
+        max-width: 330px;
+        width: 100%;
+        z-index: 10;
+    }
+    .sidebar-block {
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+    .sidebar-block img,
+    .cat-card img,
+    .side-article img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+    }
+}
+
+.sidebar-block {
+    margin-bottom: 24px;
+}
+
+.sidebar-title {
+    color: #0A2463;
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+    font-family: 'Inter', Arial, sans-serif;
+    letter-spacing: 0.01em;
+}
+
+.sidebar-categories {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.cat-card {
+    width: 95%;
+    overflow: hidden;
+    border-radius: 9px;
+    background: #f7f7f7;
+    box-shadow: 0 2px 8px #cfd4e033;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cat-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 9px;
+    display: block;
+}
+
+.highlight-box {
+    background: #f8fafd;
+    border-radius: 13px;
+    box-shadow: 0 2px 8px #ccd8f833;
+    margin-bottom: 20px;
+}
+
+.side-title {
+    color: #173875;
+    font-size: 1.08rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    margin-top: 30px;
+}
+
+.side-article {
+    display: flex;
+    gap: 11px;
+    align-items: flex-start;
+    margin-bottom: 15px;
+}
+
+.side-article img {
+    width: 35%;
+    height: 64px;
+    border-radius: 7px;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.side-article-info {
+    flex: 1;
+}
+
+.side-article-info .date {
+    font-size: 0.72rem;
+    color: #a1a1b0;
+    margin-bottom: 1px;
+}
+
+.side-article-info a {
+    color: #13297b;
+    font-weight: 600;
+    font-size: 0.86rem;
+    text-decoration: none;
+    line-height: 1.2;
+}
+
+.tag-list {
+    margin-top: 24px;
+    background: #f8fafd;
+    border-radius: 11px;
+    padding: 13px 13px 9px 13px;
+}
+
+.tag-title {
+    color: #222b6b;
+    font-size: 1.01rem;
+    font-weight: 700;
+    margin-bottom: 7px;
+}
+
+.tag-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+}
+
+.tag {
+    display: inline-block;
+    background: #e2eefe;
+    color: #247dbd;
+    font-size: 0.98rem;
+    padding: 5px 11px;
+    border-radius: 8px;
+    font-weight: 600;
+}
+
+
+/* ====== LIÊN QUAN ====== */
+
+.related-posts-block {
+    margin-top: 38px;
+    border-top: 1.5px solid #cad1e7;
+    padding-top: 19px;
+}
+
+.related-title {
+    font-size: 1.26rem;
+    font-weight: 700;
+    color: #183c7e;
+    text-align: center;
+    margin-bottom: 21px;
+    letter-spacing: 0.02em;
+}
+
+.related-grid {
+    display: flex;
+    gap: 46px;
+    justify-content: center;
+}
+
+.related-item {
+    text-align: left;
+    width: 220px;
+}
+
+.related-item img {
+    width: 100%;
+    border-radius: 11px;
+    margin-bottom: 8px;
+    object-fit: cover;
+    aspect-ratio: 1/1.1;
+    box-shadow: 0 2px 12px #cbe1f642;
+}
+
+.related-item a {
+    color: #222b6b;
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-decoration: underline;
+    display: block;
+    margin-bottom: 2px;
+}
+
+.related-item .date {
+    color: #787d97;
+    font-size: 0.8rem;
+    margin-bottom: 0;
+}
+
+@media (max-width: 900px) {
+    .container-tt {
+        padding: 18px 2vw 0 2vw;
+    }
+    .row {
+        flex-direction: column;
+        gap: 42px;
+    }
+    .main-article {
+        padding-right: 0;
+    }
+    .sidebar {
+        padding-left: 0;
+        margin-top: 22px;
+    }
+    .related-grid {
+        flex-direction: column;
+        gap: 32px;
+        align-items: center;
+    }
+    .related-item {
+        width: 90vw;
+        max-width: 320px;
+    }
+}
+
+@media (max-width: 550px) {
+    .container-tt {
+        padding: 8px 0 0 0;
+    }
+    .article-title {
+        font-size: 1.09rem;
+    }
+    .section-title {
+        font-size: 0.96rem;
+    }
+    .related-title {
+        font-size: 1.04rem;
+    }
+    .related-item {
+        font-size: 0.97rem;
+    }
+}
+
+
+/* (Toàn bộ CSS cũ của bạn giữ nguyên!) */
+
+
+/* ... Các class cũ như .main-content, .sidebar, .sidebar-block ... */
+
+@media (min-width: 900px) {
+    .sidebar {
+        position: sticky;
+        top: 24px;
+        align-self: flex-start;
+        max-width: 330px;
+        width: 100%;
+        z-index: 10;
+    }
+    .sidebar-block {
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+    .sidebar-block img,
+    .cat-card img,
+    .side-article img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+    }
+}
+
+
+/* Hiệu ứng accordion (toggle) */
+
+.sidebar-title-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    user-select: none;
+    padding-right: 12px;
+}
+
+.toggle-icon {
+    font-size: 1.7rem;
+    font-weight: 400;
+    color: #555;
+    margin-left: 8px;
+    transition: transform 0.15s;
+    display: flex;
+    align-items: center;
+}
+
+.sidebar-content {
+    transition: max-height 0.25s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.15s;
+    overflow: hidden;
+}
+
+.sidebar-block.collapsed .sidebar-content {
+    max-height: 0;
+    opacity: 0;
+    padding: 0 !important;
+}
+
+.sidebar-block:not(.collapsed) .sidebar-content {
+    max-height: 999px;
+    opacity: 1;
+}
+
+.sidebar-block.collapsed .toggle-icon {
+    transform: rotate(90deg);
+}

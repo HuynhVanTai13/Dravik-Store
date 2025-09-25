@@ -1,0 +1,399 @@
+.voucher-section {
+    margin-bottom: 30px;
+}
+
+.voucher-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 8px;
+}
+
+.voucher-title {
+    margin: 0;
+}
+
+#selectedCodesContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.selected-code {
+    background: #dfe4e8;
+    padding: 5px 10px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: #454f5b;
+}
+
+.selected-code i {
+    margin-right: 5px;
+    color: #000000;
+}
+
+.selected-code button {
+    background: transparent;
+    border: none;
+    margin-left: 8px;
+    color: #000000;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+#openVoucherBtn {
+    padding: 6px 12px;
+    background: #ffffff;
+    color: #001f5d;
+    border: 1px solid #001f5d;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+
+#openVoucherBtn:hover {
+    background: #001f5d;
+    color: #ffffff;
+    border-color: #001f5d;
+}
+
+#voucherPopupOverlay {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    transition: right 0.3s ease;
+    z-index: 999;
+}
+
+#voucherPopupOverlay.active {
+    right: 0;
+}
+
+.voucher-popup {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: #fff;
+    width: 400px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.voucher-popup h4 {
+    margin-top: 0;
+}
+
+.voucher-content {
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px;
+}
+
+.voucher-group {
+    margin-bottom: 20px;
+    padding-top: 15px;
+}
+
+.voucher-item {
+    background: #f9f9f9;
+    padding: 10px;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 10px;
+    cursor: pointer;
+    transition: 0.2s;
+    position: relative;
+}
+
+.voucher-item.disabled {
+    opacity: 0.5;
+    filter: grayscale(0.1);
+}
+
+.voucher-radio {
+    width: 16px;
+    height: 16px;
+    margin-top: 5px;
+}
+
+.voucher-item button {
+    font-size: 12px;
+    padding: 2px 6px;
+    border-radius: 4px;
+    border: 1px solid #aaa;
+    background: white;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.voucher-info {
+    flex: 1;
+}
+
+.voucher-info .code {
+    font-weight: bold;
+    margin-bottom: 4px;
+}
+
+.voucher-info .desc {
+    font-size: 14px;
+    color: #555;
+}
+
+#applyBtn {
+    width: calc(100% - 40px);
+    margin: 0 20px 20px 20px;
+    padding: 12px;
+    background: #001f5d;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#closeVoucherBtn {
+    background: transparent;
+    border: none;
+    font-size: 22px;
+    float: right;
+    cursor: pointer;
+    color: #666;
+    margin: 10px 15px 0 auto;
+}
+
+#conditionPopupOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1001;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.condition-popup {
+    background: white;
+    width: 90%;
+    max-width: 400px;
+    border-radius: 6px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    position: relative;
+}
+
+.condition-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.condition-header h3 {
+    margin: 0;
+    font-size: 18px;
+}
+
+.close-condition-btn {
+    font-size: 22px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.condition-body {
+    margin-top: 15px;
+}
+
+.condition-body ul {
+    padding-left: 20px;
+    margin-top: 5px;
+}
+
+
+/*  ================================================*/
+
+.cart-container {
+    max-width: 1300px;
+    min-height: 450px;
+    margin: 20px auto 0px;
+}
+
+.cart-header {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    border-top: 1px solid #ccc;
+    padding: 10px 0;
+}
+
+.cart-item img {
+    width: 60px;
+    margin-right: 20px;
+}
+
+.cart-item input[type="checkbox"] {
+    margin-right: 10px;
+    accent-color: auto;
+}
+
+.cart-details {
+    flex: 1;
+}
+
+.product-name {
+    white-space: normal;
+    word-wrap: break-word;
+    max-width: 390px;
+    font-weight: 100;
+}
+
+.cart-price {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    /* khoảng cách giữa giá gốc và giá sale */
+    align-items: center;
+    margin-right: 20px;
+}
+
+.quantity-controls {
+    display: flex;
+    align-items: center;
+}
+
+.quantity-controls button {
+    width: 24px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.quantity-controls input {
+    width: 30px;
+    text-align: center;
+}
+
+
+/* NÚT XOÁ */
+
+.delete-btn {
+    background-color: #001858;
+    color: white;
+    height: 30px;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+
+/* NÚT XOA TAT CA */
+
+.delete-all {
+    background-color: white;
+    color: red;
+    height: 30px;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    border: 1px solid red;
+    float: right;
+}
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-top: 20px;
+}
+
+.footer .voucher {
+    margin-bottom: 10px;
+}
+
+.footer .total {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.checkout-btn {
+    background-color: #001858;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.strike {
+    text-decoration: line-through;
+    color: #888;
+    font-size: 14px;
+}
+
+.sale-price {
+    font-size: 16px;
+}
+
+
+/* TĂNG GIẢM SỐ LƯỢNG */
+
+.actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 16px;
+    flex-wrap: wrap;
+}
+
+.quantity-selector {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    overflow: hidden;
+    height: 30px;
+}
+
+.quantity-selector input[type="number"] {
+    width: 32px;
+    height: 100%;
+    border: none;
+    text-align: center;
+    font-size: 16px;
+}
+
+.qty-btn {
+    width: 36px;
+    height: 100%;
+    border: none;
+    background-color: #eee;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.qty-btn:hover {
+    background-color: #ddd;
+}

@@ -1,0 +1,386 @@
+/* ========= DRAVIK – Address Page (tone thanh & nhỏ gọn) ========= */
+
+:root {
+    --brand-700: #0b3b77;
+    /* navy */
+    --brand-600: #114a8a;
+    --brand-500: #1f60b6;
+    --brand-50: #f4f7fc;
+    --text: #22304a;
+    /* dịu hơn #111 */
+    --muted: #6b7890;
+    /* xám xanh nhạt */
+    --line: #e6ebf2;
+    --line-strong: #d7deea;
+    --ok: #22c55e;
+    --danger: #ef4444;
+    --radius: 12px;
+    --shadow: 0 8px 22px rgba(2, 8, 23, .05);
+}
+
+
+/* Toàn trang dùng Inter + size cơ sở nhỏ hơn */
+
+.address-page {
+    font-family: var(--font-inter), Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+    font-size: 14px;
+    /* ↓ nhỏ hơn */
+    color: var(--text);
+}
+
+.breadcrumb {
+    background: #f0f0f0;
+    padding: 15px 10px;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.breadcrumb a {
+    color: #0055cc;
+    text-decoration: none;
+}
+
+.address-page .account-sidebar h3 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #1b2a45
+}
+
+.address-page .account-sidebar p {
+    font-size: 13.5px;
+    color: var(--muted)
+}
+
+.address-page .account-sidebar ul li a {
+    font-size: 14px
+}
+
+
+/* ===== buttons – nhỏ gọn, ít đậm hơn ===== */
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 36px;
+    padding: 0 12px;
+    border-radius: 9px;
+    border: 1px solid transparent;
+    font-weight: 600;
+    letter-spacing: .1px;
+    cursor: pointer;
+    transition: transform .12s ease, box-shadow .15s ease, background .15s ease, color .15s ease, border-color .15s ease;
+    text-decoration: none;
+    user-select: none
+}
+
+.btn:hover {
+    transform: translateY(-1px)
+}
+
+.btn:active {
+    transform: none
+}
+
+.btn-sm {
+    height: 30px;
+    padding: 0 10px;
+    font-size: 13px;
+    border-radius: 8px
+}
+
+.btn--primary {
+    background: var(--brand-700);
+    color: #fff;
+    border-color: var(--brand-700)
+}
+
+.btn--primary:hover {
+    background: var(--brand-600);
+    border-color: var(--brand-600)
+}
+
+.btn--outline {
+    background: #fff;
+    color: var(--brand-700);
+    border-color: #cfd8ea
+}
+
+.btn--outline:hover {
+    background: #f7f9fe;
+    border-color: #b9c8ea
+}
+
+.btn--danger {
+    background: var(--danger);
+    color: #fff;
+    border-color: var(--danger)
+}
+
+.btn--danger:hover {
+    filter: brightness(.96)
+}
+
+
+/* ===== phần tiêu đề phải ===== */
+
+.address-cards {
+    flex: 1
+}
+
+.addr-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 6px 0 12px
+}
+
+.addr-top h2 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 700;
+    color: #1b2a45
+}
+
+
+/* ↓ nhỏ hơn, đậm vừa */
+
+
+/* ===== bảng địa chỉ ===== */
+
+.addr-table-wrap {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    overflow: hidden
+}
+
+.addr-table {
+    width: 100%;
+    border-collapse: collapse
+}
+
+.addr-table th,
+.addr-table td {
+    padding: 10px 10px;
+    border-bottom: 1px solid var(--line);
+    font-size: 13.5px;
+    color: var(--text);
+    vertical-align: middle
+}
+
+.addr-table thead th {
+    background: #f7f9fe;
+    color: #23375e;
+    border-bottom: 1px solid var(--line-strong);
+    font-weight: 700
+}
+
+.addr-table tr:last-child td {
+    border-bottom: none
+}
+
+.addr-table td:first-child,
+.addr-table th:first-child {
+    width: 38px;
+    text-align: center
+}
+
+.addr-table .addr-text {
+    max-width: 560px;
+    text-align: left;
+    word-break: break-word
+}
+
+.addr-actions {
+    display: flex;
+    gap: 8px;
+    justify-content: center
+}
+
+
+/* ===== trạng thái ===== */
+
+.pill-default {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 999px;
+    font-size: 12px;
+    color: #0a5b2b;
+    background: #e8fff2;
+    border: 1px solid #c5efd7
+}
+
+
+/* ===== empty state ===== */
+
+.addr-empty {
+    background: #fff;
+    border: 1px dashed var(--line);
+    border-radius: var(--radius);
+    padding: 22px;
+    text-align: center;
+    box-shadow: var(--shadow)
+}
+
+.addr-empty img {
+    width: 80px;
+    margin-bottom: 6px;
+    opacity: .9
+}
+
+.muted {
+    color: var(--muted)
+}
+
+
+/* ===== MODAL ===== */
+
+.addr-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 23, 42, .42);
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+    display: grid;
+    place-items: center;
+    z-index: 1000;
+    padding: 16px;
+    animation: fade .18s ease-out
+}
+
+.addr-modal {
+    width: 100%;
+    max-width: 520px;
+    background: #fff;
+    color: var(--text);
+    border-radius: 14px;
+    box-shadow: 0 12px 36px rgba(2, 8, 23, .18);
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    overflow: hidden;
+    animation: pop .2s cubic-bezier(.2, .8, .2, 1)
+}
+
+.addr-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 14px;
+    border-bottom: 1px solid var(--line)
+}
+
+.addr-title {
+    font-weight: 700;
+    font-size: 15px;
+    color: #1b2a45
+}
+
+.addr-close {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    border-radius: 9px;
+    border: 1px solid var(--line);
+    background: #fff;
+    color: #1b2a45;
+    cursor: pointer;
+    transition: background .15s ease, transform .12s ease
+}
+
+.addr-close:hover {
+    background: #f7f9fe;
+    transform: translateY(-1px)
+}
+
+.addr-body {
+    padding: 14px;
+    display: grid;
+    gap: 12px;
+    background: #fff
+}
+
+.addr-field {
+    display: grid;
+    gap: 6px
+}
+
+.addr-field>span {
+    font-size: 12px;
+    color: #5b6786;
+    font-weight: 600
+}
+
+.addr-field input {
+    height: 38px;
+    border-radius: 10px;
+    border: 1px solid var(--line);
+    padding: 0 12px;
+    background: #fff;
+    outline: none;
+    transition: border-color .15s ease, box-shadow .15s ease
+}
+
+.addr-field input:focus {
+    border-color: var(--brand-500);
+    box-shadow: 0 0 0 4px rgba(31, 96, 182, .12)
+}
+
+.addr-field.check {
+    display: flex;
+    gap: 8px;
+    align-items: center
+}
+
+.addr-row {
+    display: flex;
+    gap: 8px;
+    align-items: center
+}
+
+.addr-foot {
+    display: flex;
+    gap: 8px;
+    justify-content: flex-end;
+    padding: 10px 14px;
+    border-top: 1px solid var(--line);
+    background: #fff
+}
+
+
+/* ===== Responsive ===== */
+
+@media (max-width: 1024px) {
+    .addr-table .addr-text {
+        max-width: unset
+    }
+}
+
+
+/* ===== Animations ===== */
+
+@keyframes pop {
+    0% {
+        transform: scale(.96);
+        opacity: 0
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1
+    }
+}
+
+@keyframes fade {
+    from {
+        opacity: 0
+    }
+    to {
+        opacity: 1
+    }
+}

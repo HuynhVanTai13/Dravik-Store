@@ -1,0 +1,59 @@
+.form-table {
+  width: 100%;
+  max-width: 600px;
+  border-collapse: separate;
+  border-spacing: 15px;
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+.form-table td {
+  vertical-align: top;
+}
+
+.form-table label {
+  font-weight: 600;
+  display: block;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.form-table input {
+  width: 100%;
+  padding: 10px 12px;
+  font-size: 15px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-sizing: border-box;
+  transition: border-color 0.2s ease;
+  background-color: white !important; /* đồng nhất tất cả input */
+  color: #333;
+}
+
+.form-table input:focus {
+  border-color: #0070f3;
+  outline: none;
+}
+
+.add-product-btn {
+  background-color: #0070f3;
+  color: white;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.add-product-btn:hover {
+  background-color: #0059c9;
+}
+
+.form-message {
+  margin-top: 10px;
+  color: red;
+  font-weight: 500;
+}

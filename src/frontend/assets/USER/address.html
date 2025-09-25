@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Địa chỉ của bạn | DRAVIK STORE</title>
+    <link rel="stylesheet" href="css/address.css" />
+    <link rel="stylesheet" href="css/hmf.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
+
+</head>
+
+<body>
+    <!-- HEADER -->
+    <header>
+        <div class="header-main">
+            <div class="img-logo">
+                <img src="img/logo.png" alt="Dravik Store">
+            </div>
+            <div class="header-nav">
+                <div class="header-search">
+                    <div class="search">
+                        <input type="text" placeholder="Nhập sản phẩm cần tìm kiếm ...">
+                        <button class="icon-search"><i class="fas fa-search"></i></button>
+                    </div>
+                    <div class="nav-top">
+                        <a href=""><i class="fas fa-file-alt"></i><p>Đơn hàng </p></a>
+                        <a href=""><i class="fas fa-heart"></i><p>Yêu thích </p></a>
+                        <a href=""><i class="fas fa-user"></i><p>Tài khoản </p></a>
+                        <a href="" class="cart"><i class="fas fa-shopping-cart"></i><p>Giỏ hàng </p><span class="badge">3</span></a>
+                    </div>
+                </div>
+                <div class="nav-bottom">
+                    <a href="">Trang chủ</a>
+                    <a href="">Giới thiệu</a>
+                    <a href="">Sản phẩm </a>
+                    <a href="">Tin tức </a>
+                    <a href="">Hàng mới </a>
+                    <a href="">Liên hệ </a>
+                    <a href="">Sản phẩm giảm giá  </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- HEADER MOBILE -->
+    <div class="mobile-header">
+        <span class="menu-icon"><i class="fas fa-bars"></i></span>
+        <div class="img-logo"><img src="img/logo.png" alt="Dravik Store"></div>
+        <div class="icon-group">
+            <span><i class="fas fa-search"></i></span>
+            <span class="cart"><i class="fas fa-shopping-cart"></i><span class="badge">3</span></span>
+        </div>
+    </div>
+    <!-- SIDEBAR/OFFCANVAS MENU -->
+    <div id="mobileMenu" class="mobile-offcanvas">
+        <div class="mobile-menu-header">
+            <span class="close-btn" id="closeMobileMenu">&times;</span>
+            <img src="img/logo.png" alt="Dravik Store" class="offcanvas-logo">
+        </div>
+        <nav class="mobile-menu-nav">
+            <a href="#">Trang chủ</a>
+            <a href="#">Giới thiệu</a>
+            <a href="#">Sản phẩm</a>
+            <a href="#">Tin tức</a>
+            <a href="#">Hàng mới</a>
+            <a href="#">Liên hệ</a>
+            <a href="#">Sản phẩm giảm giá</a>
+            <hr>
+            <a href="#"><i class="fas fa-user"></i> Tài khoản</a>
+            <a href="#"><i class="fas fa-heart"></i> Yêu thích</a>
+            <a href="#"><i class="fas fa-file-alt"></i> Đơn hàng</a>
+            <a href="#"><i class="fas fa-shopping-cart"></i> Giỏ hàng</a>
+            <div class="mobile-search">
+                <input type="text" placeholder="Tìm kiếm...">
+                <button><i class="fas fa-search"></i></button>
+            </div>
+        </nav>
+    </div>
+    <div id="menuOverlay" class="menu-overlay"></div>
+
+    <main class="main-container">
+        <div class="sidebar">
+            <h2>Trang tài khoản</h2>
+            <p>Xin chào, <span class="username">Tuấn Võ</span>!</p>
+            <ul>
+                <li><a href="account.html">Thông tin tài khoản</a></li>
+                <li><a href="orders.html">Đơn hàng của bạn</a></li>
+                <li><a href="changepassword.html">Đổi mật khẩu</a></li>
+                <li class="active"><a href="#">Địa chỉ</a></li>
+            </ul>
+        </div>
+
+        <div class="content">
+            <h2>Địa chỉ của bạn</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>STT</th>
+                        <th>Địa chỉ</th>
+                        <th>Người nhận</th>
+                        <th>Số điện thoại</th>
+                        <th>Trạng thái</th>
+                        <th>Thao tác</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>115/47 Lê Đức Thọ, Gò Vấp</td>
+                        <td>Võ Tuấn</td>
+                        <td>0912345678</td>
+                        <td><button class="active-btn">Đang sử dụng</button></td>
+                        <td>
+                            <button class="btn-edit">Sửa</button>
+                            <button class="btn-delete">Xóa</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>25 Trần Hưng Đạo, Quận 1</td>
+                        <td>Nguyễn Văn A</td>
+                        <td>0987654321</td>
+                        <td><button class="choose-btn">Chọn</button></td>
+                        <td>
+                            <button class="btn-edit">Sửa</button>
+                            <button class="btn-delete">Xóa</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="add-address">
+                <button id="addAddressBtn">Thêm địa chỉ</button>
+            </div>
+        </div>
+    </main>
+
+    <!-- MODAL -->
+    <div id="editAddressModal" class="modal-overlay" style="display: none;">
+        <div class="modal">
+            <h3 id="modalTitle">Thêm địa chỉ</h3>
+            <form id="editAddressForm">
+                <label for="edit-address">Địa chỉ <span style="color:red">*</span></label>
+                <input type="text" id="edit-address" required>
+
+                <label for="edit-name">Người nhận <span style="color:red">*</span></label>
+                <input type="text" id="edit-name" required>
+
+                <label for="edit-phone">Số điện thoại <span style="color:red">*</span></label>
+                <input type="tel" id="edit-phone" required>
+
+                <div class="modal-actions">
+                    <button type="button" id="cancelEdit">Hủy</button>
+                    <button type="submit">Lưu thay đổi</button>
+                </div>
+            </form>
+            <span class="modal-close" id="closeEditModal">&times;</span>
+        </div>
+    </div>
+    <!-- FOOTER -->
+    <footer>
+        <div class="row-footer">
+            <div class="col-4-footer">
+                <img src="img/logo-footer.png" alt="">
+                <div class="icon-3-footer">
+                    <span><i class="fa-solid fa-location-dot"></i></span>
+                    <p>Địa chỉ: 158/25, Phạm Văn Chiêu, Phường 8, Gò Vấp, TP Hồ Chí Minh</p>
+                </div>
+                <div class="icon-3-footer">
+                    <span><i class="fa-solid fa-phone"></i></span>
+                    <p>Số điện thoại: 1234567890</p>
+                </div>
+                <div class="icon-3-footer">
+                    <span><i class="fa-solid fa-envelope"></i></span>
+                    <p>Email: Dravikstore@gmail.com</p>
+                </div>
+            </div>
+            <div class="col-4-footer">
+                <h4>Hỗ trợ khách hàng</h4>
+                <p class="mgb-20">Chính sách đổi hàng</p>
+                <p class="mgb-20">Chính sách bảo hành</p>
+                <p class="mgb-20">Bảo mật thông tin</p>
+                <p class="mgb-20">Hỗ trợ giao hàng</p>
+            </div>
+            <div class="col-4-footer htkh">
+                <h4>Tổng đài hỗ trợ</h4>
+                <p class="mgb-20">Gọi mua hàng: 123456790 (8h-20h)</p>
+                <p class="mgb-20">Gọi bảo hành: 1234567890 (8h-20h)</p>
+                <p class="mgb-20">Gọi khiếu nại: 1234567890 (8h-20h)</p>
+            </div>
+            <div class="col-4-footer">
+                <h4>Gửi mail ngay để nhận ưu đãi !</h4>
+                <div class="subscribe-box">
+                    <input type="email" placeholder="Thả email nhận khuyến mãi...">
+                    <button><i class="fas fa-paper-plane"></i></button>
+                </div>
+                <h4>Phương thức thanh toán</h4>
+                <div class="payment-methods">
+                    <img src="img/vnpay.jpg" alt="VNPAY">
+                    <img src="img/cod.jpg" alt="COD">
+                    <img src="img/momo.jpg" alt="MoMo">
+                    <img src="img/visa.jpg" alt="Vietcombank">
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">© Bản quyền thuộc về DRAVIK STORE</div>
+    </footer>
+    <script src="js/hmf.js"></script>
+
+</body>
+
+</html>
